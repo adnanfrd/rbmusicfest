@@ -2,9 +2,9 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { festivalData } from "@/data/festival-data"
 import { useReducedMotion } from "@/components/use-reduced-motion"
+import { CustomAccordion, CustomAccordionItem } from "@/components/custom-accordion"
 
 export function FaqSection() {
   const ref = useRef(null)
@@ -29,14 +29,13 @@ export function FaqSection() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Accordion type="single" collapsible className="w-full">
+          <CustomAccordion>
             {festivalData.faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-bold">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
+              <CustomAccordionItem key={index} value={`item-${index}`} title={faq.question} defaultOpen={index === 0}>
+                {faq.answer}
+              </CustomAccordionItem>
             ))}
-          </Accordion>
+          </CustomAccordion>
         </motion.div>
       </div>
     </section>
