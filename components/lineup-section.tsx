@@ -4,8 +4,6 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/simple-card"
-import { Button } from "@/components/simple-button"
 import { festivalData } from "@/data/festival-data"
 import { ExternalLink } from "lucide-react"
 import { useReducedMotion } from "@/components/use-reduced-motion"
@@ -56,8 +54,8 @@ export function LineupSection() {
         >
           {festivalData.bands.map((band) => (
             <motion.div key={band.name} variants={itemVariants}>
-              <Card className="overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
-                <CardHeader className="p-0 aspect-video relative bg-gray-100 flex items-center justify-center">
+              <div className="rounded-lg border bg-white text-gray-900 shadow-sm overflow-hidden h-full flex flex-col hover:shadow-lg transition-shadow duration-300">
+                <div className="p-0 aspect-video relative bg-gray-100 flex items-center justify-center">
                   <Image
                     src={band.logo || "/placeholder.svg"}
                     alt={band.name}
@@ -65,22 +63,24 @@ export function LineupSection() {
                     height={200}
                     className="object-contain p-6"
                   />
-                </CardHeader>
-                <CardContent className="flex-grow pt-6">
+                </div>
+                <div className="p-6 flex-grow">
                   <div className="mb-2 text-sm font-medium text-festival-pink">
                     {band.time} • {band.stage}
                   </div>
                   <p className="text-gray-700">{band.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <Button variant="outline" className="w-full">
-                    <Link href={band.website} target="_blank" className="flex items-center w-full justify-center">
-                      Visit Website
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardFooter>
-              </Card>
+                </div>
+                <div className="p-6 pt-0">
+                  <Link
+                    href={band.website}
+                    target="_blank"
+                    className="inline-flex items-center justify-center w-full h-10 px-4 py-2 text-sm font-medium rounded-md border border-gray-300 bg-white hover:bg-gray-100"
+                  >
+                    Visit Website
+                    <ExternalLink className="ml-2 h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

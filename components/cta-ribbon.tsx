@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Button } from "@/components/simple-button"
 import { festivalData } from "@/data/festival-data"
 import { Calendar, MapPin, Mail, Crown } from "lucide-react"
 import { SimpleDialog } from "@/components/simple-dialog"
@@ -44,10 +43,10 @@ export function CtaRibbon() {
   }
 
   const emailButton = (
-    <Button size="sm" variant="outline" className="whitespace-nowrap">
+    <button className="inline-flex items-center justify-center h-9 px-3 py-2 text-sm font-medium rounded-md border border-gray-300 bg-white hover:bg-gray-100 whitespace-nowrap">
       <Mail className="mr-2 h-4 w-4" />
       <span className="hidden sm:inline">Get Updates</span>
-    </Button>
+    </button>
   )
 
   return (
@@ -59,34 +58,36 @@ export function CtaRibbon() {
     >
       <div className="container py-3">
         <div className="flex justify-between items-center gap-2 overflow-x-auto">
-          <Button size="sm" className="bg-festival-blue hover:bg-festival-blue/90 whitespace-nowrap">
-            <Link href={festivalData.eventbriteUrl} target="_blank" className="flex items-center">
-              <Calendar className="mr-2 h-4 w-4" />
-              <span className="hidden sm:inline">RSVP</span>
-            </Link>
-          </Button>
-
-          <Button
-            size="sm"
-            variant="outline"
-            className="border-festival-pink text-festival-pink hover:bg-festival-pink hover:text-white whitespace-nowrap"
+          <Link
+            href={festivalData.eventbriteUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-9 px-3 py-2 text-sm font-medium rounded-md bg-blue-500 text-white hover:bg-blue-600 whitespace-nowrap"
           >
-            <Link href={festivalData.vipUrl} target="_blank" className="flex items-center">
-              <Crown className="mr-2 h-4 w-4" />
-              <span className="hidden sm:inline">VIP Access</span>
-            </Link>
-          </Button>
+            <Calendar className="mr-2 h-4 w-4" />
+            <span className="hidden sm:inline">RSVP</span>
+          </Link>
+
+          <Link
+            href={festivalData.vipUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-9 px-3 py-2 text-sm font-medium rounded-md border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white whitespace-nowrap"
+          >
+            <Crown className="mr-2 h-4 w-4" />
+            <span className="hidden sm:inline">VIP Access</span>
+          </Link>
 
           <SimpleDialog trigger={emailButton} title="Stay Updated">
             <EmailSignupForm />
           </SimpleDialog>
 
-          <Button size="sm" variant="outline" className="whitespace-nowrap">
-            <Link href={festivalData.mapUrl} target="_blank" className="flex items-center">
-              <MapPin className="mr-2 h-4 w-4" />
-              <span className="hidden sm:inline">Directions</span>
-            </Link>
-          </Button>
+          <Link
+            href={festivalData.mapUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-9 px-3 py-2 text-sm font-medium rounded-md border border-gray-300 bg-white hover:bg-gray-100 whitespace-nowrap"
+          >
+            <MapPin className="mr-2 h-4 w-4" />
+            <span className="hidden sm:inline">Directions</span>
+          </Link>
         </div>
       </div>
     </motion.div>

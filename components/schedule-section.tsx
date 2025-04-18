@@ -2,7 +2,6 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/simple-table"
 import { festivalData } from "@/data/festival-data"
 import { useReducedMotion } from "@/components/use-reduced-motion"
 
@@ -30,31 +29,33 @@ export function ScheduleSection() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-[150px]">Time</TableHead>
-                <TableHead>Stage</TableHead>
-                <TableHead>Artist</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {festivalData.bands
-                .sort((a, b) => {
-                  // Sort by time (assuming format "H:MM PM - H:MM PM")
-                  const timeA = a.time.split(" - ")[0]
-                  const timeB = b.time.split(" - ")[0]
-                  return timeB.localeCompare(timeA) // Reverse order (latest first)
-                })
-                .map((band) => (
-                  <TableRow key={band.name}>
-                    <TableCell className="font-medium">{band.time}</TableCell>
-                    <TableCell>{band.stage}</TableCell>
-                    <TableCell>{band.name}</TableCell>
-                  </TableRow>
-                ))}
-            </TableBody>
-          </Table>
+          <div className="w-full">
+            <table className="w-full caption-bottom text-sm">
+              <thead className="[&_tr]:border-b">
+                <tr>
+                  <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground w-[150px]">Time</th>
+                  <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Stage</th>
+                  <th className="h-12 px-4 text-left align-middle font-medium text-muted-foreground">Artist</th>
+                </tr>
+              </thead>
+              <tbody className="[&_tr:last-child]:border-0">
+                {festivalData.bands
+                  .sort((a, b) => {
+                    // Sort by time (assuming format "H:MM PM - H:MM PM")
+                    const timeA = a.time.split(" - ")[0]
+                    const timeB = b.time.split(" - ")[0]
+                    return timeB.localeCompare(timeA) // Reverse order (latest first)
+                  })
+                  .map((band) => (
+                    <tr key={band.name} className="border-b transition-colors hover:bg-muted/50">
+                      <td className="p-4 align-middle font-medium">{band.time}</td>
+                      <td className="p-4 align-middle">{band.stage}</td>
+                      <td className="p-4 align-middle">{band.name}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
         </motion.div>
       </div>
     </section>

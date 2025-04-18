@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
-import { Button } from "@/components/simple-button"
 import { festivalData } from "@/data/festival-data"
 import { MapPin } from "lucide-react"
 import { useReducedMotion } from "@/components/use-reduced-motion"
@@ -50,12 +49,14 @@ export function MapSection() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <Button size="lg" className="bg-festival-blue hover:bg-festival-blue/90">
-            <Link href={festivalData.mapUrl} target="_blank" className="flex items-center">
-              <MapPin className="mr-2 h-5 w-5" />
-              Open in Google Maps
-            </Link>
-          </Button>
+          <Link
+            href={festivalData.mapUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-11 px-8 py-2 font-medium rounded-md bg-blue-500 text-white hover:bg-blue-600"
+          >
+            <MapPin className="mr-2 h-5 w-5" />
+            Open in Google Maps
+          </Link>
         </motion.div>
       </div>
     </section>

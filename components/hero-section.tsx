@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/simple-button"
 import { festivalData } from "@/data/festival-data"
 import { useReducedMotion } from "@/components/use-reduced-motion"
 
@@ -62,21 +61,21 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="bg-festival-blue hover:bg-festival-blue/90 text-white">
-            <Link href={festivalData.eventbriteUrl} target="_blank">
-              RSVP on Eventbrite
-            </Link>
-          </Button>
-
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-festival-pink text-festival-pink hover:bg-festival-pink hover:text-white"
+          <Link
+            href={festivalData.eventbriteUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-11 px-8 py-2 font-medium rounded-md bg-blue-500 text-white hover:bg-blue-600"
           >
-            <Link href={festivalData.vipUrl} target="_blank">
-              Get VIP Access
-            </Link>
-          </Button>
+            RSVP on Eventbrite
+          </Link>
+
+          <Link
+            href={festivalData.vipUrl}
+            target="_blank"
+            className="inline-flex items-center justify-center h-11 px-8 py-2 font-medium rounded-md border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white"
+          >
+            Get VIP Access
+          </Link>
         </motion.div>
       </motion.div>
     </section>
