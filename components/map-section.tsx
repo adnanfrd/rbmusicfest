@@ -13,20 +13,24 @@ export function MapSection() {
   const reduceMotion = useReducedMotion()
 
   return (
-    <section className="py-20 bg-gray-50" id="directions">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-100" id="directions">
       <div className="container px-4">
-        <motion.h2
-          className="text-4xl md:text-5xl text-center mb-12 text-festival-blue"
+        <motion.div
+          className="text-center mb-12"
           initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: -20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          VENUE & DIRECTIONS
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl mb-2 text-festival-blue font-bold">VENUE & DIRECTIONS</h2>
+          <div className="w-24 h-1 bg-festival-blue mx-auto mb-6"></div>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Join us at the beautiful Rockaway Beach Wayside, with stunning ocean views and easy access.
+          </p>
+        </motion.div>
 
         <motion.div
           ref={ref}
-          className="rounded-xl overflow-hidden shadow-md"
+          className="rounded-xl overflow-hidden shadow-md relative"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -41,6 +45,13 @@ export function MapSection() {
             referrerPolicy="no-referrer-when-downgrade"
             title="Festival Location"
           ></iframe>
+
+          <div className="absolute top-4 right-4 bg-white p-2 rounded-lg shadow-md">
+            <div className="flex items-center text-sm font-medium">
+              <MapPin className="h-4 w-4 text-red-500 mr-1" />
+              <span>Rockaway Beach Wayside</span>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -52,7 +63,7 @@ export function MapSection() {
           <Link
             href={festivalData.mapUrl}
             target="_blank"
-            className="inline-flex items-center justify-center h-11 px-8 py-2 font-medium rounded-md bg-blue-500 text-white hover:bg-blue-600"
+            className="inline-flex items-center justify-center px-6 py-3 font-bold rounded-lg bg-festival-blue text-white hover:bg-blue-700 transition-colors"
           >
             <MapPin className="mr-2 h-5 w-5" />
             Open in Google Maps
