@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   title: "Rockaway Beach Music Festival",
   description: "Annual music festival at Rockaway Beach, Oregon",
   generator: "v0.dev",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
 }
 
 export default function RootLayout({

@@ -8,22 +8,10 @@ export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [bgLoaded, setBgLoaded] = useState(false)
   const [titleLoaded, setTitleLoaded] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Check if we're on a mobile device
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    // Run on mount
-    checkMobile()
-
-    // Add resize listener
-    window.addEventListener("resize", checkMobile)
-
     // Log when the component mounts to verify it's loading
-    console.log("Hero section mounted, isMobile:", isMobile)
+    console.log("Hero section mounted")
 
     // Check if the background image is loaded
     const bgImg = new Image()
@@ -46,10 +34,6 @@ export default function HeroSection() {
     // Set overall loaded state when both images are loaded
     if (bgLoaded && titleLoaded) {
       setIsLoaded(true)
-    }
-
-    return () => {
-      window.removeEventListener("resize", checkMobile)
     }
   }, [bgLoaded, titleLoaded])
 
@@ -95,13 +79,18 @@ export default function HeroSection() {
         <div
           className={`mb-8 ${isLoaded ? "opacity-100 transform-none transition-all duration-1000 delay-100" : "opacity-0 transform translate-y-5"}`}
         >
-          {/* Mobile-optimized title image approach */}
-          <div className="mobile-title-container mx-auto">
-            {/* We're using a direct img tag with explicit mobile styling */}
+          {/* Title image - with explicit responsive styling */}
+          <div className="title-image-container w-full px-2">
             <img
               src="/rbmf-title.png"
               alt="Rockaway Beach Music Festival"
-              className="mx-auto filter drop-shadow-lg mobile-title-image"
+              className="mx-auto filter drop-shadow-lg w-full"
+              style={{
+                maxWidth: "100%",
+                width: "100%",
+                height: "auto",
+                objectFit: "contain",
+              }}
               onLoad={() => console.log("Title image rendered successfully")}
               onError={(e) => console.error("Error rendering title image:", e)}
             />
