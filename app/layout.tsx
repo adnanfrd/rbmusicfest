@@ -1,34 +1,31 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { DM_Sans, Rowdies } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import "./globals.css"
-import { ToastProvider } from "@/components/simple-toast"
 
-// Initialize the fonts
-const dmSans = DM_Sans({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-dm-sans",
-})
-
-const rowdies = Rowdies({
-  subsets: ["latin"],
-  weight: ["700"],
-  variable: "--font-rowdies",
+  variable: "--font-montserrat",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
   title: "Rockaway Beach Music Festival",
   description: "Annual music festival at Rockaway Beach, Oregon",
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={`${dmSans.variable} ${rowdies.variable}`}>
-        <ToastProvider>{children}</ToastProvider>
-      </body>
+      <head>
+        <link rel="preload" as="image" href="/squatch.png" />
+      </head>
+      <body className={`${montserrat.variable} font-sans`}>{children}</body>
     </html>
   )
 }
