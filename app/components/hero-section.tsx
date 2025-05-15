@@ -6,39 +6,9 @@ import { useEffect, useState } from "react"
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false)
-  const [bgLoaded, setBgLoaded] = useState(false)
-  const [titleLoaded, setTitleLoaded] = useState(false)
 
   useEffect(() => {
-    // Log when the component mounts to verify it's loading
-    console.log("Hero section mounted")
-
-    // Check if the background image is loaded
-    const bgImg = new Image()
-    bgImg.src = "/squatch.png"
-    bgImg.onload = () => {
-      console.log("Background image loaded successfully")
-      setBgLoaded(true)
-    }
-    bgImg.onerror = (e) => console.error("Failed to load background image:", e)
-
-    // Check if the title image is loaded
-    const titleImg = new Image()
-    titleImg.src = "/rbmf-title.png"
-    titleImg.onload = () => {
-      console.log("Title image loaded successfully")
-      setTitleLoaded(true)
-    }
-    titleImg.onerror = (e) => console.error("Failed to load title image:", e)
-
-    // Set overall loaded state when both images are loaded
-    if (bgLoaded && titleLoaded) {
-      setIsLoaded(true)
-    }
-  }, [bgLoaded, titleLoaded])
-
-  // Set isLoaded to true after a timeout as a fallback
-  useEffect(() => {
+    // Set isLoaded to true after a timeout as a fallback
     const timer = setTimeout(() => {
       setIsLoaded(true)
     }, 1000)
@@ -93,7 +63,6 @@ export default function HeroSection() {
                 height: "auto",
                 objectFit: "contain",
               }}
-              onLoad={() => console.log("Title image rendered successfully")}
               onError={(e) => {
                 console.error("Error rendering title image:", e)
                 e.currentTarget.src = "https://placehold.co/800x200/gray/white?text=Rockaway+Beach+Music+Festival"
