@@ -39,8 +39,8 @@ export default function ImageCarousel({ images, alt }: ImageCarouselProps) {
           alt={`${alt} - Image ${currentIndex + 1}`}
           className="w-full h-full object-cover rounded-lg"
           onError={(e) => {
-            console.error("Error loading image:", e)
-            e.currentTarget.src = `https://placehold.co/800x400/gray/white?text=${alt}`
+            console.error("Error loading image:", images[currentIndex])
+            e.currentTarget.src = `https://placehold.co/800x400/gray/white?text=${encodeURIComponent(alt)}`
           }}
         />
 

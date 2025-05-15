@@ -23,7 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preload critical images */}
         <link rel="preload" as="image" href="/squatch.png" />
+        <link rel="preload" as="image" href="/rbmf-title.png" />
+        <link
+          rel="preload"
+          as="image"
+          href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TyphoonPressPhoto2021-9G8ndu0cfbyIrKMtwKyq6dkiOBse4z.png"
+        />
       </head>
       <body className={`${montserrat.variable} font-sans`}>{children}</body>
     </html>

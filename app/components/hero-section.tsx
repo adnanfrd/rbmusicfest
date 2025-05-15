@@ -47,16 +47,18 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
-      {/* Background image container */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("/squatch.png")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      ></div>
+      {/* Background image container - Using direct HTML img tag instead of background-image */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/squatch.png"
+          alt="Festival Background"
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            console.error("Error loading background image:", e)
+            e.currentTarget.src = "https://placehold.co/1920x1080/gray/white?text=Festival+Background"
+          }}
+        />
+      </div>
 
       {/* Overlay gradient */}
       <div
@@ -92,7 +94,10 @@ export default function HeroSection() {
                 objectFit: "contain",
               }}
               onLoad={() => console.log("Title image rendered successfully")}
-              onError={(e) => console.error("Error rendering title image:", e)}
+              onError={(e) => {
+                console.error("Error rendering title image:", e)
+                e.currentTarget.src = "https://placehold.co/800x200/gray/white?text=Rockaway+Beach+Music+Festival"
+              }}
             />
           </div>
         </div>

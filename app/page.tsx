@@ -33,6 +33,20 @@ export default function Home() {
         console.error(`Image ${index} failed to load:`, img.src, e)
       })
     })
+
+    // Preload critical images
+    const preloadImages = [
+      "/squatch.png",
+      "/rbmf-title.png",
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TyphoonPressPhoto2021-9G8ndu0cfbyIrKMtwKyq6dkiOBse4z.png",
+    ]
+
+    preloadImages.forEach((src) => {
+      const img = new Image()
+      img.src = src
+      img.onload = () => console.log(`Preloaded: ${src}`)
+      img.onerror = (e) => console.error(`Failed to preload: ${src}`, e)
+    })
   }, [])
 
   return (

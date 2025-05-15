@@ -43,8 +43,9 @@ export default function LineupSection() {
       fullBio:
         'Typhoon is an American indie rock band that originated in Salem, Oregon, and is now based in Portland. Formed in 2005 by high school friends Kyle Morton (singer-songwriter, piano, guitar), Toby Tanabe (bass, vocals), and Dave Hall (guitar, vocals), the band is known for its large and fluctuating membership, which has included up to fourteen musicians in the past.\n\nCharacterized by their orchestral arrangements and big-hearted indie rock anthems, Typhoon\'s sound often incorporates a traditional rock setup complemented by brass, strings, and auxiliary percussion. Lyrically, many of their songs delve into themes of mortality, partly influenced by frontman Kyle Morton\'s childhood struggle with Lyme disease.\n\nOver their career, Typhoon has released five studio albums, including their self-titled debut in 2005, "Hunger and Thirst" (2010), "White Lighter" (2013), "Offerings" (2018), and "Sympathetic Magic" (2021), as well as EPs like "A New Kind of House." Their most recent album, "Underground Complex No. 1," was released in 2022. The band has gained recognition for their dynamic live performances and has toured with notable acts such as The Decemberists, Belle and Sebastian, and The Shins. Key members, in addition to the founders, include drummer Alex Fitch and violinist/vocalist Shannon Steele.',
       website: "https://wearetyphoon.com",
-      // Updated to use the new press photo
-      image: "/images/TyphoonPressPhoto2021.png",
+      // Using the direct blob URL for the image to ensure it works in production
+      image:
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/TyphoonPressPhoto2021-9G8ndu0cfbyIrKMtwKyq6dkiOBse4z.png",
       tag: "members of",
       videos: [
         {
