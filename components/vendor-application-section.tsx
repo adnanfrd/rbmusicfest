@@ -30,7 +30,7 @@ export default function VendorApplicationSection() {
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 text-lg"
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfxxNrOeyLAWN_obnU5UXP4tCpDSAat28PS4S1lPnyUi9Gmmg/viewform?usp=sharing&ouid=102988229401232022969"
+                  href="https://forms.gle/8aWUzQfmbEYnq7Kn7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -44,7 +44,7 @@ export default function VendorApplicationSection() {
                 className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-3 text-lg"
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScQOokdbDGt29jTj9QSYTEsKomxiYizxJqIeneJ7OfKG264nw/viewform?usp=sharing&ouid=102988229401232022969"
+                  href="https://forms.gle/RTn6MYiG3FVf4DpdA"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -57,7 +57,7 @@ export default function VendorApplicationSection() {
                 className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-3 text-lg"
               >
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdcJ-HJFmjmAp1nbJtmOm3vVTSD1i_5gqlbFv1ieJl8xGaXkA/viewform?usp=sharing&ouid=102988229401232022969"
+                  href="https://forms.gle/ne19NiY9FJpCYFXV8"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
