@@ -57,11 +57,12 @@ export default function Home() {
       <LineupSection />
       <div className="section-divider"></div>
       <ExperienceSection />
+      <VendorApplicationSection />
       <div className="section-divider"></div>
       <MapSection />
       <div className="section-divider"></div>
       <FaqSection />
       <Footer />
-    </main>
+  </main>
   )
 }
