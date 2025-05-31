@@ -51,7 +51,7 @@ export default function CtaRibbon() {
           </Link>
 
           <Link
-            href="https://www.google.com/maps/dir/?api=1&destination=Wayside+Rockaway+Beach+OR"
+            href="https://maps.app.goo.gl/KGv1hedczPd91QC8A"
             target="_blank"
             className="inline-flex items-center justify-center h-8 sm:h-9 px-2 sm:px-3 py-1 sm:py-2 text-xs sm:text-sm font-medium rounded-md border border-gray-300 bg-white hover:bg-gray-100 whitespace-nowrap"
           >
