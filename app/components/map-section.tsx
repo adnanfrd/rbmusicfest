@@ -80,7 +80,7 @@ export default function MapSection() {
           }}
         >
           <Link
-            href="https://www.google.com/maps/dir/?api=1&destination=Wayside+Rockaway+Beach+OR"
+            href="https://maps.app.goo.gl/KGv1hedczPd91QC8A"
             target="_blank"
             className="inline-flex items-center justify-center px-6 py-3 font-bold rounded-lg bg-festival-blue text-white hover:bg-blue-700 transition-colors"
           >
