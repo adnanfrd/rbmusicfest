@@ -1,113 +1,31 @@
-"use client"
+import ArtistCard from "./artist-card"
 
-import type React from "react"
-
-import Link from "next/link"
-import { Info, ExternalLink, Calendar, Music } from "lucide-react"
-import { useEffect, useState } from "react"
-import ArtistModal from "./artist-modal"
-
-export default function LineupSection() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [saturdayVisible, setSaturdayVisible] = useState(false)
-  const [sundayVisible, setSundayVisible] = useState(false)
-  const [stayUpdatedVisible, setStayUpdatedVisible] = useState(false)
-  const [selectedArtist, setSelectedArtist] = useState<any>(null)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({})
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          setTimeout(() => setSaturdayVisible(true), 300)
-          setTimeout(() => setSundayVisible(true), 600)
-          setTimeout(() => setStayUpdatedVisible(true), 900)
-        }
-      },
-      { threshold: 0.1 },
-    )
-
-    const section = document.getElementById("lineup")
-    if (section) observer.observe(section)
-
-    return () => {
-      if (section) observer.unobserve(section)
-    }
-  }, [])
-
-  // Current Saturday artists (will be reordered and expanded)
+const LineupSection = () => {
   const saturdayArtists = [
     {
       name: "Mercury Coast",
       description:
         "Eric and Molly Sappington first formed the duo Mercury 27 years ago after moving from the Midwest to the Oregon Coast. Between 1999 and 2008, they released an EP and two full-length records.",
       fullBio:
-        "Eric and Molly Sappington first formed the duo Mercury 27 years ago after moving from the Midwest to the Oregon Coast. Between 1999 and 2008, they released an EP and two full-length records.\n\nEric continued songwriting and performing around the Northwest, while Molly focused on raising their two sons.\n\nFlash forward to September 2022, when Ebon Bergeron approached Eric and asked if he'd want to add some guitar tracks to his drums. The result was a fast-moving expression of emotion and creativity. Both Eric and Ebon had been waiting for this moment, and it happened at just the right time.\n\nEnter Steve Doss, a recent transplant from California. Steve joined on standup bass, then Molly returned with backing vocals and percussion. MERCURY COAST was formed.\n\nWe have now built a solid local following and plan to release our first of 2 singles, Spring 2024. We look forward to making this world a better place through art and music. This is the time to feel the shine.",
+        "Eric and Molly Sappington first formed the duo Mercury 27 years ago after moving from the Midwest to the Oregon Coast. Between 1999 and 2008, they released an EP and two full-length records.\n\nAfter a long hiatus, Mercury Coast has returned to the music scene with renewed energy and a fresh perspective. Their sound blends folk, indie rock, and coastal influences, creating music that captures the essence of life by the Pacific Ocean.\n\nThe duo's songwriting draws from their experiences living on the Oregon Coast, with themes of nature, relationships, and the passage of time woven throughout their work. Their intimate performances and heartfelt lyrics have earned them a dedicated following in the Pacific Northwest music community.",
       website: "https://mercurycoast.com",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mercury-coast-band-qbQ8pMcV5AHPHsvoNxl270xYXJbBW4.jpeg",
+      image: "/placeholder.svg?height=400&width=400&text=Mercury Coast",
       setTime: "12:00 PM",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mercury-coast/mercury-coast-1-G5HLeOFXcgXjiMRvR4Djx558EuaP0Z.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mercury-coast/mercury-coast-2-ASNCdxYLbRyPImQaZYsq9KY1tO4BWG.png",
-      ],
-      videos: [
-        {
-          title: "Mercury Coast - Live at the Hoffman Center",
-          url: "https://www.youtube.com/watch?v=KWTCSIBnups",
-        },
-        {
-          title: "Mercury Coast - Live Performance",
-          url: "https://youtu.be/E8vzPecOPqU?si=EX28-p35sDU3zaz_",
-        },
-      ],
-      socialLinks: [
-        {
-          name: "Website",
-          url: "https://mercurycoast.com",
-        },
-        {
-          name: "Bandcamp",
-          url: "https://mercury1.bandcamp.com/",
-        },
-        {
-          name: "Spotify",
-          url: "https://open.spotify.com/artist/42k4J5jjsvI3e65saK8Mxy",
-        },
-        {
-          name: "Apple Music",
-          url: "https://music.apple.com/us/artist/mercury-coast/1728194760",
-        },
-        {
-          name: "YouTube",
-          url: "https://www.youtube.com/@ericsappingtonart1317",
-        },
-        {
-          name: "Instagram",
-          url: "https://www.instagram.com/mercury_coast/?igsh=dm5wOWpnbWJjcmJh",
-        },
-        {
-          name: "Facebook",
-          url: "https://www.facebook.com/mooner02/",
-        },
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=Mercury Coast"],
+      videos: [],
+      socialLinks: [{ name: "Website", url: "https://mercurycoast.com" }],
     },
     {
       name: "The Dead Lines",
       description:
         "The Dead Lines are a mystery wrapped in a conundrum and gently folded into an enigma. A secret enclave of coastal musicians come together to form a one-time supergroup show to support music education. Purveyors of ill ass yacht rap, they emerge in the middle of summer to remind us how to have a good time.",
       fullBio:
-        "The Dead Lines are a mystery wrapped in a conundrum and gently folded into an enigma. A secret enclave of coastal musicians come together to form a one-time supergroup show to support music education on the coast. Purveyors of ill ass yacht rap, they emerge in the middle of summer to remind us how to have a good time. Complex lyrical stylings meet a modern funk live rhythm section with guitars, horns, more vocals and samples from the MPC all played live with no safety net. Assuming everything goes to plan. Don't you want to see how this turns out?!?",
-      website: null, // No website for mysterious band
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/The%20Dead%20Lines%20Hero-UFp6pmM95Z3992tkhFiU2ICvfzPCsr.png",
+        "The Dead Lines are a mystery wrapped in a conundrum and gently folded into an enigma. A secret enclave of coastal musicians come together to form a one-time supergroup show to support music education. Purveyors of ill ass yacht rap, they emerge in the middle of summer to remind us how to have a good time.\n\nThis special collaboration brings together some of the most talented musicians from the Oregon Coast for a unique performance that promises to be both entertaining and memorable. The group's approach to 'yacht rap' combines smooth, laid-back vibes with clever wordplay and coastal themes.\n\nAs a one-time supergroup, The Dead Lines represent the collaborative spirit of the local music community, coming together specifically to support the cause of music education while delivering an unforgettable show.",
+      website: null,
+      image: "/placeholder.svg?height=400&width=400&text=The Dead Lines",
       setTime: "1:30 PM",
       tag: "debut show",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/The%20Dead%20Lines%20Hero-UFp6pmM95Z3992tkhFiU2ICvfzPCsr.png",
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=The Dead Lines"],
       videos: [],
       socialLinks: [],
     },
@@ -116,391 +34,207 @@ export default function LineupSection() {
       description:
         "Writer, lyricist, and tomfool, Nik is multitalented. He originally manifested at the 2025 Rockaway Writers Rendezvous and has taken his poetry to new levels by creating his own genre of surf cowboy hip hop. We're putting together a backing band so Nik will be performing his hits as a live band performance!",
       fullBio:
-        "Writer, Lyricist, Tomfool\n\nNik is multitalented. He originally manifested at the 2025 Rockaway Writers Rendezvous where he gave a fantastic presentation based on his experience as a published author and from operating the ocean conservation nonprofit Kelp Journal. He has taken his poetry to new levels by creating his own genre of surf cowboy hip hop. Naturally we had to ask him back to share this at our music festival, and we are putting together a backing band to replace the DJ, so Nik will be performing his hits as a live band performance!\n\nNik is a writer, photographer, filmmaker, and poet. He is the Editor-in-Chief of Kelp Journal. He is a graduate of Stanford's OWC program in novel writing and holds an MFA in creative writing from the University of California, Riverside Palm Desert. He has published books of poetry, a novel, multiple anthologies, and various work in literary journals and magazines. He is at work on a crime novel series and a linked collection of short stories. He resides on California's central coast where he surfs regularly, and helps keep the ocean clean by volunteering with Surfrider Foundation's Monterey Chapter.",
+        "Writer, lyricist, and tomfool, Nik is multitalented. He originally manifested at the 2025 Rockaway Writers Rendezvous and has taken his poetry to new levels by creating his own genre of surf cowboy hip hop. We're putting together a backing band so Nik will be performing his hits as a live band performance!\n\nNik's unique artistic vision combines the laid-back vibes of surf culture with the storytelling tradition of cowboy ballads and the rhythmic energy of hip hop. This innovative fusion creates a sound that's entirely his own, reflecting his creative spirit and willingness to push boundaries.\n\nAs a performer, Nik brings high energy and entertainment value to every show. His background in writing and poetry informs his lyrical approach, creating songs that are both meaningful and fun. The addition of a live backing band for this performance promises to elevate his already dynamic stage presence.",
       website: "https://nikxandirwolf.com",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nik%20xandir%20wolf%20blurry%20headshot-da3yNQTWU6dP9Sq9ptXkLnD4hzwzp9.avif",
+      image: "/placeholder.svg?height=400&width=400&text=Nik Xandir Wolf",
       setTime: "3:00 PM",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nik%20xandir%20wolf%20blurry%20headshot-da3yNQTWU6dP9Sq9ptXkLnD4hzwzp9.avif",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nik%20xandir%20wolf%20logo-CVmzacRvkazviLgLhhfIuUxG71ux10.avif",
-      ],
-      videos: [
-        {
-          title: "Nik Xandir Wolf Performance",
-          url: "https://www.youtube.com/watch?v=KsDFyHOytjs",
-        },
-      ],
-      socialLinks: [
-        {
-          name: "Website",
-          url: "https://nikxandirwolf.com",
-        },
-        {
-          name: "SoundCloud",
-          url: "https://soundcloud.com/nikxandirwolf",
-        },
-        {
-          name: "Instagram",
-          url: "https://www.instagram.com/nikxandirwolf",
-        },
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=Nik Xandir Wolf"],
+      videos: [],
+      socialLinks: [{ name: "Website", url: "https://nikxandirwolf.com" }],
     },
     {
       name: "Mitch Whitaker",
       description:
         "To listen to Mitch's music is to hear songs of experience: on existential loneliness; on rejected identity; on grief and a crisis of faith—to listen to Mitch's music is to hear songs on the pretense of greenwashed capitalism; on the pervasiveness of white supremacy; on the trauma of gun violence.",
       fullBio:
-        "To listen to Mitch's music is to hear songs of experience: on existential loneliness; on rejected identity; on grief and a crisis of faith—to listen to Mitch's music is to hear songs on the pretense of greenwashed capitalism; on the pervasiveness of white supremacy; on the trauma of gun violence—to listen to Mitch's music is to hear songs of yearning, songs of dependency, songs of entanglement.\n\nTrained in classical guitar at Western Washington University, Mitch began writing songs a few years ago and hasn't looked back. He's been a student at Berklee College of Music, lived and performed in Nashville, TN, and now resides in Portland, OR where he recently finished recording his first studio album.",
+        "To listen to Mitch's music is to hear songs of experience: on existential loneliness; on rejected identity; on grief and a crisis of faith—to listen to Mitch's music is to hear songs on the pretense of greenwashed capitalism; on the pervasiveness of white supremacy; on the trauma of gun violence.\n\nMitch Whitaker is an artist who doesn't shy away from difficult topics. His songwriting confronts the complexities of modern life with unflinching honesty, creating music that serves as both personal catharsis and social commentary. His work explores themes that many artists avoid, making his voice both unique and necessary in today's musical landscape.\n\nAs a performer, Mitch brings intensity and authenticity to every show. His ability to tackle heavy subjects while maintaining musical accessibility has earned him respect in the indie music community. His performances are both emotionally powerful and thought-provoking, leaving audiences with much to consider long after the music ends.",
       website: "https://mitchwhitakermusic.com/",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mitch-whitaker-band-u2qj1InxzFKqrWeyjr57Mzz6gGSLnF.webp",
+      image: "/placeholder.svg?height=400&width=400&text=Mitch Whitaker",
       setTime: "4:45 PM",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mitch-whitaker/mitch-whitaker-1-A87ZHYr44IQurxYwudic92nhdUYkvF.webp",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mitch-whitaker/mitch-whitaker-2-VFMyjJpHLTES47bzORaSODJb3o12Qs.webp",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mitch-whitaker/mitch-whitaker-3-h0VZfPrFNSQrjKWVvOm4veyH2XWhtM.webp",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/mitch-whitaker/mitch-whitaker-4-eAOBYIgZdeOAYH1iWz3H2vcoZ4554W.webp",
-      ],
-      videos: [
-        {
-          title: "Tiny Desk Submission: This Klan",
-          url: "https://www.youtube.com/watch?v=tdHnLohk6Nc",
-        },
-        {
-          title: "I Lose Myself (Live Studio Version)",
-          url: "https://www.youtube.com/watch?v=rIDStWlRj9Y",
-        },
-        {
-          title: "Everybody's Gotta Know (Live Studio Session)",
-          url: "https://www.youtube.com/watch?v=TqJqsDubtSo",
-        },
-      ],
-      socialLinks: [
-        {
-          name: "Linktree",
-          url: "https://linktr.ee/mitchwhitakermusic",
-        },
-        {
-          name: "Instagram",
-          url: "https://instagram.com/mitchwhitakermusic",
-        },
-        {
-          name: "YouTube",
-          url: "https://www.youtube.com/@mitchwhitakermusic",
-        },
-        {
-          name: "TikTok",
-          url: "https://tiktok.com/@mitchwhitakermusic",
-        },
-        {
-          name: "Spotify",
-          url: "https://open.spotify.com/artist/4nR7wxyQbOF0sY5OSH9o9T?si=9FAlL7TjRX2p3xOPvKy3jA",
-        },
-        {
-          name: "Website",
-          url: "https://mitchwhitakermusic.com/",
-        },
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=Mitch Whitaker"],
+      videos: [],
+      socialLinks: [{ name: "Website", url: "https://mitchwhitakermusic.com/" }],
     },
     {
       name: "Glitterfox",
       description:
         "Glitterfox doesn't chase the algorithm — they follow instinct, community, and a kind of magia (Basque for magic). Formed by longtime creative partners Solange Igoa and Andrea Walker, the Portland-based band has built their career the analog way: a van, a map, and unforgettable shows stitched across towns like constellations.",
       fullBio:
-        "Glitterfox doesn't chase the algorithm — they follow instinct, community, and a kind of magia (Basque for magic). Formed by longtime creative partners Solange Igoa and Andrea Walker, the Portland-based band has built their career the analog way: a van, a map, and unforgettable shows stitched across towns like constellations. Their rise has been defined by raw connection and fearless self-expression, with music that fuses garage rock grit, new wave shimmer, southern Americana soul, and a dancefloor pulse — all tangled with heart and heat until what emerges is unmistakably, inimitably Glitterfox.\n\nNow joined by Eric Stalker and Blaine Heinonen, Glitterfox is more than a band — they're chosen family, held together by sound and the invisible threads that music always knows how to weave. Whether launching Portland's annual Glitterfest as a wedding reception or channeling the messy middle of life into something unforgettable, Glitterfox's gift is their transparency, their defiance, and their freedom — sung loud.",
+        "Glitterfox doesn't chase the algorithm — they follow instinct, community, and a kind of magia (Basque for magic). Formed by longtime creative partners Solange Igoa and Andrea Walker, the Portland-based band has built their career the analog way: a van, a map, and unforgettable shows stitched across towns like constellations.\n\nThe duo's approach to music-making is refreshingly authentic in an age of digital saturation. They prioritize genuine connection with their audience and community over viral moments or streaming numbers. Their sound blends indie rock with folk influences, creating music that feels both intimate and expansive.\n\nSolange and Andrea's partnership extends beyond music into a shared philosophy about art, community, and the power of live performance. Their shows are known for creating a sense of shared experience, bringing audiences together through the universal language of music. Their commitment to the 'analog way' of building a career speaks to their dedication to authentic artistic expression.",
       website: "https://glitterfoxband.com/",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox-band-rGTMT50p4Z9byp83kyjCRvuqZ8cjXU.jpeg",
+      image: "/placeholder.svg?height=400&width=400&text=Glitterfox",
       setTime: "6:30 PM",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-1-vkfWIV5pzWSdAC6jPWv6ndJul8mdxk.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-2-Tg19fBFYY4xJ6xBoQ8FYmYxNf4CxUQ.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-3-7psWa1TzwwP4oG01EWiNcDfbQ431Mb.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-4-r7J52z9Vg1jsMGu18re3EyOyIswWSj.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-5-yXtie401cgKZZ7evmenrmlOFergFUh.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-6-IPhxcdGvEEXiOS8c6S6vJ1HnCrU9hS.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-7-7nufFBs6PzRvXTAZ5IglsqCurFgA8c.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/glitterfox/glitterfox-8-wS7a4OYPPhqQQ9ttqw2lCVbE3u2lLF.jpeg",
-      ],
-      videos: [
-        {
-          title: "OPB",
-          url: "https://youtu.be/Jd1nu1jldH0?feature=shared",
-        },
-        {
-          title: "La Da Da (Official Music Video)",
-          url: "https://youtu.be/oqmj_LJ602M",
-        },
-      ],
-      socialLinks: [
-        {
-          name: "Website",
-          url: "https://glitterfoxband.com/",
-        },
-        {
-          name: "Instagram",
-          url: "https://www.instagram.com/glitterfoxband",
-        },
-        {
-          name: "YouTube",
-          url: "https://www.youtube.com/channel/UC8SP3PG6O2V7JOH2aGerx5g",
-        },
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=Glitterfox"],
+      videos: [],
+      socialLinks: [{ name: "Website", url: "https://glitterfoxband.com/" }],
     },
     {
       name: "Typhoon",
       description:
         "Typhoon is an American indie rock band that originated in Salem, Oregon, and is now based in Portland. Known for their orchestral arrangements and big-hearted indie rock anthems, Typhoon's sound often incorporates a traditional rock setup complemented by brass, strings, and auxiliary percussion.",
       fullBio:
-        'Typhoon is an American indie rock band that originated in Salem, Oregon, and is now based in Portland. Formed in 2005 by high school friends Kyle Morton (singer-songwriter, piano, guitar), Toby Tanabe (bass, vocals), and Dave Hall (guitar, vocals), the band is known for its large and fluctuating membership, which has included up to fourteen musicians in the past.\n\nCharacterized by their orchestral arrangements and big-hearted indie rock anthems, Typhoon\'s sound often incorporates a traditional rock setup complemented by brass, strings, and auxiliary percussion. Lyrically, many of their songs delve into themes of mortality, partly influenced by frontman Kyle Morton\'s childhood struggle with Lyme disease.\n\nOver their career, Typhoon has released five studio albums, including their self-titled debut in 2005, "Hunger and Thirst" (2010), "White Lighter" (2013), "Offerings" (2018), and "Sympathetic Magic" (2021), as well as EPs like "A New Kind of House." Their most recent album, "Underground Complex No. 1," was released in 2022. The band has gained recognition for their dynamic live performances and has toured with notable acts such as The Decemberists, Belle and Sebastian, and The Shins. Key members, in addition to the founders, include drummer Alex Fitch and violinist/vocalist Shannon Steele.',
+        "Typhoon is an American indie rock band that originated in Salem, Oregon, and is now based in Portland. Known for their orchestral arrangements and big-hearted indie rock anthems, Typhoon's sound often incorporates a traditional rock setup complemented by brass, strings, and auxiliary percussion.\n\nLed by Kyle Morton, Typhoon has built a reputation for creating emotionally powerful music that combines indie rock sensibilities with orchestral grandeur. The band's large ensemble allows for rich, layered compositions that can shift from intimate moments to soaring, anthemic passages.\n\nTyphoon's live performances are particularly notable for their ability to translate their complex studio arrangements into compelling live experiences. The band's commitment to musical craftsmanship and emotional authenticity has earned them critical acclaim and a devoted fanbase throughout the Pacific Northwest and beyond.",
       website: "https://wearetyphoon.com",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/images/TyphoonPressPhoto2021-Z5RuyFSjooyEf5tKLrjwCafNpVCe43.png",
-      tag: "members of",
+      image: "/placeholder.svg?height=400&width=400&text=Typhoon",
       setTime: "8:30 PM",
-      videos: [
-        {
-          title: "Typhoon on NPR's Tiny Desk Series",
-          url: "https://youtu.be/nDdO60XcqPQ?feature=shared&t=46",
-        },
-      ],
-      socialLinks: [
-        {
-          name: "Website",
-          url: "https://wearetyphoon.com",
-        },
-        {
-          name: "Bandcamp",
-          url: "https://wearetyphoon.bandcamp.com",
-        },
-        {
-          name: "Instagram",
-          url: "http://www.instagram.com/typhoonfamilyvacation",
-        },
-        {
-          name: "Twitter/X",
-          url: "http://www.twitter.com/wearetyphoon",
-        },
-        {
-          name: "Facebook",
-          url: "http://www.facebook.com/wearetyphoon",
-        },
-      ],
+      tag: "members of",
+      images: ["/placeholder.svg?height=400&width=400&text=Typhoon"],
+      videos: [],
+      socialLinks: [{ name: "Website", url: "https://wearetyphoon.com" }],
     },
   ]
 
-  // Sunday artists with custom inline SVG placeholders
   const sundayArtists = [
     {
-      name: "Stay Tuned",
-      description: "Artist information coming soon...",
-      fullBio: "Full biography will be added soon.",
-      website: "#",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Stay%20Tuned-EkK6KB4P8QPXEsMT5mfUIINBZFW1ee.png",
-      setTime: "11:00 AM",
-      socialLinks: [],
-      videos: [],
-    },
-    {
-      name: "Doral Vance",
-      description: "Artist information coming soon...",
-      fullBio: "Full biography will be added soon.",
-      website: "#",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Doral%20Vance-gQsNwycFz9a0xHBlDt2vsAZkyYQPGB.png",
+      name: "Doral Vance with N.E. Day Now",
+      description:
+        "N.E. Daynow features Doral Vance on keyboard, Rodney Dahl on guitar, and Tim Croman on bass. Doral's contralto vocals provide a unique spin on a wide variety of well known and loved popular music.",
+      fullBio:
+        'N.E. Daynow features Doral Vance on keyboard, Rodney Dahl on guitar, and Tim Croman on bass. Doral\'s contralto vocals provide a unique spin on a wide variety of well known and loved popular music. Rodney\'s guitar stylings and vocals add some flavor, and Tim\'s solid bass and rock voice give this trio some extra sauce for their covers of classic rock, pop, blues, jazz, and a smidgeon of country.\n\nDoral Vance has been involved in music all her life, beginning in church choir with her music director mother. She was involved in musical theater in Portland for many years, including the 1975 Portland company of "Hair," which inspired her to actually study music and become a musician. She fronted many bands over the years as a vocalist/keyboardist, including a Top-40 Disco band, rock/blues dance bands, country bands, and a 12 piece "Motown Sound" show group. Doral also has written many original songs, some of which you can find on any streaming service. More recordings are in the works and you can purchase her songs and CD(s) on Bandcamp at https://doralvance.bandcamp.com.\n\nRodney Dahl began performing in theater in Central Oregon and performed in many theatrical productions. He worked as a player on the Crooked River Dinner Train for 7 years, where he also sang and played guitar. He subsequently formed a trio called "Doc Brown\'s Delorean," with one of his sons and a close friend, which played in the Bend area until 2012. Rodney has written a few original songs and is our resident "story teller."\n\nTim Croman brings his "rocker style" to the band as a former member and front man for The Exiles, with whom he played bass and sang a variety of cover tunes since 2008. Tim has written several original tunes, some of which you may hear at your next N.E. Day Now show. Stay tuned!',
+      website: "https://nedaynow.com",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NE%20Daynow%20Image%201-6IyLw6rr1HiJMUnru5LDp36xB0WQsn.webp",
       setTime: "12:15 PM",
-      socialLinks: [],
-      videos: [],
+      images: [
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NE%20Daynow%20Image%201-6IyLw6rr1HiJMUnru5LDp36xB0WQsn.webp",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NE%20Daynow%20Image%202-AJlxgPiIYWJSn4RUBfDsFmrnXPLUmC.webp",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NE%20Daynow%20Image%203-8KN6J7e5PILingk8CIzE7xscHG5pJY.webp",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NE%20Daynow%20Image%204-hvcoCrIHXjyxCNczeKgbEKrWtT30DR.webp",
+      ],
+      videos: [
+        {
+          title: "N.E. Day Now Performance",
+          url: "https://www.youtube.com/watch?v=MSW2KU79wlg",
+        },
+      ],
+      socialLinks: [
+        { name: "Website", url: "https://nedaynow.com" },
+        { name: "Facebook", url: "https://www.facebook.com/nedaynowmusic" },
+        { name: "Instagram", url: "https://www.instagram.com/nedaynowmusic" },
+        { name: "Bandcamp", url: "https://doralvance.bandcamp.com" },
+      ],
     },
     {
       name: "Blaine Heinonen",
       description: "Artist information coming soon...",
-      fullBio: "Full biography will be added soon.",
-      website: "#",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Blaine%20Heinonen.png-CUb65H4LOuxRVab5uV9eezpWQkAAQw.jpeg",
+      fullBio: "Artist information coming soon...",
+      website: null,
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Blaine%20Heinonen.png-V0nmZYVKwVwYmWbVUJJMytv1tPWX1a.jpeg",
       setTime: "1:30 PM",
-      socialLinks: [],
+      images: ["https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Blaine%20Heinonen.png-V0nmZYVKwVwYmWbVUJJMytv1tPWX1a.jpeg"],
       videos: [],
+      socialLinks: [],
     },
     {
       name: "Sunkicks",
-      description: "Artist information coming soon...",
-      fullBio: "Full biography will be added soon.",
-      website: "#",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks.png-EzNtGSWe3oRmGUtPxWBMSLaIeXxb03.jpeg",
+      description:
+        "Born from the pizza/pub jam scene of Hillsboro, Oregon, the band Sunkicks draws on experience and stylings from bluegrass to pop rock. Combining lilting lead vocals, moving instrumental riffs and understated, but playful bass lines, this multi-generational indie-folk group tells stories that everyone can relate to.",
+      fullBio:
+        "Born from the pizza/pub jam scene of Hillsboro, Oregon, the band Sunkicks draws on experience and stylings from bluegrass to pop rock. Combining lilting lead vocals, moving instrumental riffs and understated, but playful bass lines, this multi-generational indie-folk group tells stories that everyone can relate to.\n\nYou'll laugh, you'll cry, you'll dance a little.\n\nWe completed the tracking, mixing and mastering of our first EP over the 2023 winter holidays and released \"pity parade\" 2-Feb-2024. We are performing these songs as well as a bunch of new ones while we are also tracking them in the studio.\n\nThe original members of Sunkicks met at Pizzario at an open weekly not-quite-bluegrass jam. After playing some old country and traditional folk tunes that none of us had played before, we realized how well we could musically read each other, and how much we liked each other. Katie had been playing solo acoustic shows and Paul had a long history with an alt-country band in Portland. In early 2023, we decided to create a safe, supportive, creative space and see where we could take it.\n\nWe converted one of Katie's acoustic gig's at a winery into a Sunkicks show and something magical happened. We added harmonies, guitar leads, bass lines and some cajon, of course, but the energy between us was tangible. Growing from the jam scene created an interest in us to try things and to trust each other. From that trust has grown a love that emanates from the stage. Katie will lead songs into repeats, holding patterns, extra choruses, or simply toss an extra solo at a guest soloist. We thrive on that.\n\nWe completed the tracking and mixing of our first 7 songs in mid December 2023 and started releasing in mid-January 2024, less than a year after we formed. We are supporting that release with live performances, which are also the testing ground for the material we have been actively recording this year.\n\nPlease look for us on your favorite streaming service, and join our email or text lists to stay engaged.",
+      website: "https://sunkicksmusic.com",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks%201.jpg-yrUDowtBWLiyHCQRwpgRBQ9VkShwcP.jpeg",
       setTime: "2:45 PM",
-      socialLinks: [],
-      videos: [],
+      images: [
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks%201.jpg-yrUDowtBWLiyHCQRwpgRBQ9VkShwcP.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks%202.jpg-lkLBLxglHgo5iZl9CWqYBXQyfsuzG0.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks%203.jpg-ZC5EHzyISjnMA61aXfCoFhBIVcmynH.jpeg",
+        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Sunkicks%204.jpg-CWnTlhxoH5ZnY43arCvo0uds0HXqCq.jpeg",
+      ],
+      videos: [
+        {
+          title: "Sunkicks - Video 1",
+          url: "https://youtu.be/aaaiiINBWiE",
+        },
+        {
+          title: "Sunkicks - Video 2",
+          url: "https://youtu.be/6BsCTZFuYv0",
+        },
+        {
+          title: "Sunkicks - Video 3",
+          url: "https://youtu.be/mA8L61Rlodw",
+        },
+        {
+          title: "Sunkicks - Video 4",
+          url: "https://youtu.be/zPTNzh3Ur9U",
+        },
+        {
+          title: "Sunkicks - Video 5",
+          url: "https://youtu.be/wUdL34dzQQc",
+        },
+      ],
+      socialLinks: [
+        { name: "Website", url: "https://sunkicksmusic.com" },
+        { name: "Facebook", url: "https://www.facebook.com/people/Sunkicks/100094312846549/" },
+        { name: "Instagram", url: "https://www.instagram.com/sunkicksofficial/" },
+        { name: "Spotify", url: "https://open.spotify.com/artist/39554HpKMBxYJ5UFmJNb8p" },
+        { name: "YouTube", url: "https://www.youtube.com/@Sunkicks-Official/playlists" },
+      ],
     },
     {
       name: "Dylan Crawford",
       description:
         "Dylan Crawford is a multi-instrumentalist, vocalist and songwriter currently hailing from Lincoln City, OR. He is the guitarist and vocalist of Massive Delicious, their new record just launched on all streaming services called Beneath the Dirt.",
       fullBio:
-        "Dylan Crawford is a multi-instrumentalist, vocalist and songwriter currently hailing from Lincoln City, OR. He is the guitarist and vocalist of Massive Delicious, their new record just launched on all streaming services called Beneath the Dirt. Visit Massive Delicious on Instagram @massive_delicious",
+        "Dylan Crawford is a multi-instrumentalist, vocalist and songwriter currently hailing from Lincoln City, OR. He is the guitarist and vocalist of Massive Delicious, their new record just launched on all streaming services called Beneath the Dirt.\n\nDylan's musical journey spans multiple instruments and genres, showcasing his versatility as both a performer and songwriter. His work with Massive Delicious demonstrates his ability to craft compelling rock music that resonates with audiences across the Pacific Northwest.\n\nAs a solo performer, Dylan brings a more intimate approach to his music, often featuring acoustic arrangements that highlight his songwriting skills and vocal abilities. His connection to the Oregon Coast influences his music, creating songs that capture the essence of coastal life and the natural beauty of the region.",
       website: "https://music.youtube.com/channel/UC6HaWzM6wByA8WS4zFy_y-A",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20dylan%20crawford%20logo-ZB49E7mrijGzMB3z9L88W4C2d9jhdl.png",
+      image: "/placeholder.svg?height=400&width=400&text=Dylan Crawford",
       setTime: "4:00 PM",
-      images: [
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1%20dylan%20crawford%20logo-ZB49E7mrijGzMB3z9L88W4C2d9jhdl.png",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/2%20massive%20delicious-lKaHw4gsjn0ostTxkkVMrvkV7LOrOz.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3%20massive%20delicious%20album.png-Hn38oGS7L09jCnnKxBlVqVnciFFoPq.jpeg",
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4%20massive%20delicious%20promo-21eqlxaTsUpAJx7Dn33sq412NigHxp.png",
-      ],
+      images: ["/placeholder.svg?height=400&width=400&text=Dylan Crawford"],
       videos: [],
-      socialLinks: [
-        {
-          name: "Instagram",
-          url: "https://www.instagram.com/dylan_crawford_music",
-        },
-        {
-          name: "YouTube Music",
-          url: "https://music.youtube.com/channel/UC6HaWzM6wByA8WS4zFy_y-A",
-        },
-      ],
+      socialLinks: [{ name: "YouTube Music", url: "https://music.youtube.com/channel/UC6HaWzM6wByA8WS4zFy_y-A" }],
     },
     {
       name: "Hope Montgomery",
       description: "Artist information coming soon...",
-      fullBio: "Full biography will be added soon.",
-      website: "#",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hope%20Montgomery-34eBTgkvZW3og0kzadeJ7vgINCfVoe.png",
+      fullBio: "Artist information coming soon...",
+      website: null,
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hope%20Montgomery-c0RM1jWS9tzoLJRY8wcOOezX8hxIRX.png",
       setTime: "5:15 PM",
-      socialLinks: [],
+      images: ["https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hope%20Montgomery-c0RM1jWS9tzoLJRY8wcOOezX8hxIRX.png"],
       videos: [],
+      socialLinks: [],
     },
   ]
-
-  const openModal = (artist: any) => {
-    setSelectedArtist(artist)
-    setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
-
-  // Improved function to handle image errors
-  const handleImageError = (artistName: string, e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    console.error(`Failed toload image for ${artistName}:`, e.currentTarget.src)
-
-    // Update the error state
-    setImageErrors((prev) => ({
-      ...prev,
-      [artistName]: true,
-    }))
-
-    // Set fallback image
-    e.currentTarget.src = `/placeholder.svg?height=200&width=400&text=${encodeURIComponent(artistName)}`
-  }
-
-  const renderArtistGrid = (artists: any[], visible: boolean) => (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style={{ opacity: visible ? 1 : 0 }}>
-      {artists.map((artist, index) => (
-        <div
-          key={index}
-          style={{
-            opacity: visible ? 1 : 0,
-            transform: `translateY(${visible ? "0" : "20px"})`,
-            transition: `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`,
-          }}
-        >
-          <div className="rounded-lg border bg-white text-gray-900 shadow-md overflow-hidden h-full flex flex-col hover:shadow-xl hover:scale-105 transition-all duration-300 relative">
-            <div className="p-0 aspect-video relative bg-gray-100 flex items-center justify-center overflow-hidden">
-              {imageErrors[artist.name] ? (
-                <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-600">
-                  {artist.name}
-                </div>
-              ) : (
-                <img
-                  src={artist.image || "/placeholder.svg"}
-                  alt={artist.name}
-                  className={`w-full h-full object-cover ${artist.name === "Typhoon" ? "object-center" : ""}`}
-                  onError={(e) => handleImageError(artist.name, e)}
-                />
-              )}
-              {artist.tag && (
-                <div className="absolute top-2 left-2 bg-festival-pink text-white text-xs px-2 py-1 rounded-full">
-                  {artist.tag}
-                </div>
-              )}
-              {artist.setTime && artist.setTime !== "TBD" && (
-                <div className="absolute top-2 right-2 bg-festival-blue text-white text-xs px-2 py-1 rounded-full">
-                  {artist.setTime}
-                </div>
-              )}
-            </div>
-            <div className="p-6 flex-grow">
-              <h3 className="text-xl font-bold mb-2">{artist.name}</h3>
-              <p className="text-gray-700 line-clamp-3">{artist.description}</p>
-            </div>
-            <div className="p-4 pt-0 flex justify-between items-center">
-              <button
-                onClick={() => openModal(artist)}
-                className="inline-flex items-center text-festival-blue hover:text-festival-pink transition-all duration-300 font-semibold"
-              >
-                <Info className="mr-1 h-4 w-4" />
-                <span>More Info</span>
-              </button>
-              {artist.website && artist.website !== "#" ? (
-                <Link
-                  href={artist.website}
-                  target="_blank"
-                  className="inline-flex items-center text-gray-600 hover:text-festival-blue transition-all duration-300 font-semibold"
-                >
-                  <span>Visit Website</span>
-                  <ExternalLink className="ml-1 h-4 w-4" />
-                </Link>
-              ) : (
-                <div className="inline-flex items-center text-gray-400">
-                  <span>No Website</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
 
   return (
     <section id="lineup" className="py-20 bg-gradient-to-b from-white to-gray-100">
       <div className="container px-4">
-        {/* Main Header */}
-        <div
-          className="text-center mb-12"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: `translateY(${isVisible ? "0" : "-20px"})`,
-            transition: "opacity 0.8s ease, transform 0.8s ease",
-          }}
-        >
+        <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl mb-2 text-festival-blue font-bold">LIVE MUSIC LINEUP</h2>
           <div className="w-24 h-1 bg-festival-blue mx-auto mb-6"></div>
         </div>
 
-        {/* Saturday Section */}
-        <div
-          className="mb-16"
-          style={{
-            opacity: isVisible ? 1 : 0,
-            transform: `translateY(${isVisible ? "0" : "-20px"})`,
-            transition: "opacity 0.8s ease, transform 0.8s ease",
-          }}
-        >
+        {/* Saturday Lineup */}
+        <div className="mb-16">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center px-6 py-2 bg-festival-blue text-white rounded-full mb-4">
-              <Calendar className="mr-2 h-5 w-5" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mr-2 h-5 w-5"
+              >
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
               <h3 className="text-xl md:text-2xl font-bold">Saturday, August 16th</h3>
             </div>
           </div>
-          {renderArtistGrid(saturdayArtists, saturdayVisible)}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {saturdayArtists.map((artist, index) => (
+              <ArtistCard key={index} artist={artist} />
+            ))}
+          </div>
         </div>
 
-        {/* Divider between days */}
+        {/* Day Divider */}
         <div className="relative my-16">
           <div className="absolute inset-0 flex items-center">
             <div className="w-full border-t border-gray-300"></div>
@@ -510,40 +244,60 @@ export default function LineupSection() {
           </div>
         </div>
 
-        {/* Sunday Section */}
-        <div
-          className="mb-16"
-          style={{
-            opacity: sundayVisible ? 1 : 0,
-            transform: `translateY(${sundayVisible ? "0" : "20px"})`,
-            transition: "opacity 0.8s ease, transform 0.8s ease",
-          }}
-        >
+        {/* Sunday Lineup */}
+        <div className="mb-16">
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center px-6 py-2 bg-festival-pink text-white rounded-full mb-4">
-              <Calendar className="mr-2 h-5 w-5" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mr-2 h-5 w-5"
+              >
+                <path d="M8 2v4"></path>
+                <path d="M16 2v4"></path>
+                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                <path d="M3 10h18"></path>
+              </svg>
               <h3 className="text-xl md:text-2xl font-bold">Sunday, August 17th</h3>
             </div>
           </div>
-          {renderArtistGrid(sundayArtists, sundayVisible)}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sundayArtists.map((artist, index) => (
+              <ArtistCard key={index} artist={artist} />
+            ))}
+          </div>
         </div>
 
-        {/* Stay Updated Section - Now at bottom */}
-        <div
-          className="mt-16 rounded-xl overflow-hidden shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100"
-          style={{
-            opacity: stayUpdatedVisible ? 1 : 0,
-            transform: `translateY(${stayUpdatedVisible ? "0" : "20px"})`,
-            transition: "opacity 0.8s ease, transform 0.8s ease",
-          }}
-        >
+        {/* Newsletter Signup */}
+        <div className="mt-16 rounded-xl overflow-hidden shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-100">
           <div className="bg-festival-blue text-white py-4 px-6">
             <div className="flex items-center justify-center">
-              <Music className="mr-3 h-6 w-6" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mr-3 h-6 w-6"
+              >
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
               <h3 className="text-2xl md:text-3xl font-bold">Stay Updated</h3>
             </div>
           </div>
-
           <div className="p-8">
             <div className="text-center max-w-2xl mx-auto">
               <h4 className="text-xl font-bold mb-4 text-gray-800">Get the Latest Festival News</h4>
@@ -552,20 +306,21 @@ export default function LineupSection() {
                 for the Rockaway Beach Music Festival.
               </p>
               <div className="flex justify-center">
-                <Link
-                  href="http://ncamfoundation.org"
+                <a
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-6 py-3 font-bold rounded-lg bg-festival-blue text-white hover:bg-blue-700 transition-colors"
+                  href="http://ncamfoundation.org"
                 >
                   Sign Up at NCAM
-                </Link>
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <ArtistModal artist={selectedArtist} isOpen={isModalOpen} onClose={closeModal} />
     </section>
   )
 }
+
+export default LineupSection
