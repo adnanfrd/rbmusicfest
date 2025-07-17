@@ -1,3 +1,7 @@
+"use client"
+
+import Image from "next/image"
+
 export default function TestImagesPage() {
   return (
     <div className="p-8">
@@ -11,7 +15,13 @@ export default function TestImagesPage() {
 
       <div className="mb-8">
         <h2 className="text-xl font-bold mb-4">Title Image Test</h2>
-        <img src="/rbmf-title.png" alt="Rockaway Beach Music Festival" className="max-w-full h-auto mb-2" />
+        <Image
+          src="/rbmf-title.png"
+          alt="Rockaway Beach Music Festival"
+          width={800}
+          height={200}
+          className="max-w-full h-auto mb-2"
+        />
         <p>Title image using img tag</p>
       </div>
 
@@ -19,17 +29,21 @@ export default function TestImagesPage() {
         <h2 className="text-xl font-bold mb-4">Direct URL Tests</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/SQUATCH-KC7DFEXQlKcceZXHJxmRFqIIwrAn3a.png"
+            <Image
+              src="/images/squatch.png"
               alt="Squatch Direct URL"
+              width={600}
+              height={400}
               className="max-w-full h-auto mb-2"
             />
             <p>Squatch image using direct URL</p>
           </div>
           <div>
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/RBMF%20TITLE-UZgGYef8oB0PDBvLRf6BdoMMqURKFp.png"
+            <Image
+              src="/images/rmbf-title.png"
               alt="Title Direct URL"
+              width={600}
+              height={200}
               className="max-w-full h-auto mb-2"
             />
             <p>Title image using direct URL</p>
