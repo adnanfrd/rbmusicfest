@@ -245,16 +245,18 @@ export default function HeroSection() {
                   program. Please consider helping, funding for music education
                   is hard to find!
                 </p>
-                <div className="flex justify-center">
-                  <div className="relative inline-block group">
+                <div className="flex justify-center px-4">
+                  <div className="relative inline-block group w-full sm:w-auto">
                     <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
                     <Link
                       href="https://www.ncamfoundation.org/donate"
                       target="_blank"
-                      className="relative inline-flex items-center justify-center px-8 py-4 font-bold text-lg rounded-xl bg-yellow-500 text-black hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 whitespace-nowrap"
+                      className="relative inline-flex items-center justify-center w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 font-bold text-base sm:text-lg rounded-xl bg-yellow-500 text-black hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 text-center break-words"
                     >
                       <DollarSign className="mr-2 h-5 w-5 flex-shrink-0" />
-                      Donate to Support Music Education
+                      <span className="block sm:inline">
+                        Donate to Support Music Education
+                      </span>
                     </Link>
                   </div>
                 </div>
