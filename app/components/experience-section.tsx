@@ -11,10 +11,10 @@ export default function ExperienceSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const merchandiseImages = [
-    { src: "/images/merchandise/hoodie-back.jpeg", alt: "RBMF Concert Hoodie Back - Festival lineup design" },
-    { src: "/images/merchandise/tee-back.jpeg", alt: "RBMF Concert Tee Back - Colorful artist lineup" },
-    { src: "/images/merchandise/hoodie-front.jpeg", alt: "RBMF Concert Hoodie Front - Festival logo" },
-    { src: "/images/merchandise/tee-front.jpeg", alt: "RBMF Concert Tee Front - Festival logo" },
+    { src: "/images/hoodie-back.jpeg", alt: "RBMF Concert Hoodie Back - Festival lineup design" },
+    { src: "/images/tee-back.jpeg", alt: "RBMF Concert Tee Back - Colorful artist lineup" },
+    { src: "/images/hoodie-front.jpeg", alt: "RBMF Concert Hoodie Front - Festival logo" },
+    { src: "/images/tee-front.jpeg", alt: "RBMF Concert Tee Front - Festival logo" },
   ]
 
   useEffect(() => {
@@ -46,10 +46,10 @@ export default function ExperienceSection() {
   }
 
   const foodBeverageImages = [
-    { src: "/images/food-beverage/pelican-beers.png", alt: "Pelican Brewing beer selection" },
-    { src: "/images/food-beverage/pelican-pour.png", alt: "Fresh Pelican beer being poured" },
-    { src: "/images/food-beverage/pelican-toast.png", alt: "Friends toasting with Pelican beers" },
-    { src: "/images/food-beverage/503-cans.png", alt: "503 Distilling craft cocktail cans" },
+    { src: "/images/pelican-beers.png", alt: "Pelican Brewing beer selection" },
+    { src: "/images/pelican-pour.png", alt: "Fresh Pelican beer being poured" },
+    { src: "/images/pelican-toast.png", alt: "Friends toasting with Pelican beers" },
+    { src: "/images/503-cans.png", alt: "503 Distilling craft cocktail cans" },
   ]
 
   const merchandise = [
@@ -294,7 +294,7 @@ export default function ExperienceSection() {
               <div className="mb-8">
                 <div className="flex items-center mb-4">
                   <img
-                    src="/images/food-beverage/pelican-logo.png"
+                    src="/images/pelican-logo.png"
                     alt="Pelican Brewing Company"
                     className="h-24 w-24 mr-3"
                   />
@@ -318,7 +318,7 @@ export default function ExperienceSection() {
               {/* 503 Distilling */}
               <div className="mb-6">
                 <div className="flex items-center mb-4">
-                  <img src="/images/food-beverage/503-logo.png" alt="503 Distilling" className="h-24 w-24 mr-3" />
+                  <img src="/images/503-logo.png" alt="503 Distilling" className="h-24 w-24 mr-3" />
                   <h5 className="text-xl font-bold text-gray-900">
                     <a
                       href="https://503distilling.com"
@@ -354,7 +354,7 @@ export default function ExperienceSection() {
               <div className="mb-8">
                 <div className="flex items-center mb-4">
                   <img
-                    src="/images/food-beverage/portside-logo.jpeg"
+                    src="/images/portside-logo.jpeg"
                     alt="Portside Bistro"
                     className="h-24 w-24 mr-3"
                   />
@@ -379,7 +379,7 @@ export default function ExperienceSection() {
               {/* Tony's Beach Bites */}
               <div className="mb-6">
                 <div className="flex items-center mb-4">
-                  <img src="/images/food-beverage/tonys-logo.png" alt="Tony's Beach Bites" className="h-24 w-24 mr-3" />
+                  <img src="/images/tonys-logo.png" alt="Tony's Beach Bites" className="h-24 w-24 mr-3" />
                   <h5 className="text-xl font-bold text-gray-900">Tony's Beach Bites</h5>
                 </div>
                 <p className="text-gray-700 mb-4">
@@ -452,7 +452,7 @@ export default function ExperienceSection() {
             <div className="flex items-start gap-6 mb-6">
               <div className="flex-shrink-0">
                 <img
-                  src="/images/promotions/sea-breeze-sign.png"
+                  src="/images/sea-breeze-sign.png"
                   alt="Sea Breeze Ice Cream Shop Sign"
                   className="w-20 h-20 object-cover rounded-xl shadow-md"
                 />
