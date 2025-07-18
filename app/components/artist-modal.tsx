@@ -11,6 +11,11 @@ interface SocialLink {
   url: string;
 }
 
+interface Video {
+  title: string;
+  url: string;
+} 
+
 interface Artist {
   name: string;
   tag?: string;
@@ -19,7 +24,7 @@ interface Artist {
   image?: string;
   images?: string[];
   socialLinks?: SocialLink[];
-  videos?: string[];
+ videos?: Video[];
   website?: string;
 }
 
@@ -143,12 +148,7 @@ export default function ArtistModal({
 
           {artist.videos && artist.videos.length > 0 && (
             <div className="mt-8">
-              <VideoEmbed
-                videos={artist.videos.map((url, index) => ({
-                  url,
-                  title: `Video ${index + 1}`,
-                }))}
-              />
+              <VideoEmbed videos={artist.videos} />
             </div>
           )}
 
