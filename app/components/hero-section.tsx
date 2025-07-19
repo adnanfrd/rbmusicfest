@@ -226,13 +226,12 @@ export default function HeroSection() {
 
           {/* Two-Column Section - Donate & Spotify - Pushed down */}
           <div
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 mb-12 ${
+            className={` max-w-6xl mx-auto px-4 mb-12 ${
               isLoaded
                 ? "opacity-100 transform-none transition-all duration-1000 delay-600"
                 : "opacity-0 transform translate-y-5"
             }`}
           >
-            {/* Left Column - Donate */}
             <div className="relative group h-full">
               <div className="absolute -inset-1 bg-gradient-to-br from-yellow-400/30 to-orange-500/30 rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
               <div className="relative bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-yellow-400/30 h-full flex flex-col shadow-xl">
