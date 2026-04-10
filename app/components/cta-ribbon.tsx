@@ -23,8 +23,7 @@ export default function CtaRibbon() {
       <div className="container py-2 sm:py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center gap-2 sm:gap-3 overflow-x-auto">
           <Link
-            href="https://rbmusicfest.eventbrite.com"
-            target="_blank"
+            href="/rsvp"
             className="inline-flex items-center justify-center h-8 sm:h-9 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold rounded-md bg-blue-500 text-white hover:bg-blue-600 whitespace-nowrap transition-colors duration-200 flex-shrink-0"
           >
             <Calendar className="mr-1 sm:mr-2 h-3 sm:h-4 w-3 sm:w-4" />
@@ -37,7 +36,7 @@ export default function CtaRibbon() {
             className="inline-flex items-center justify-center h-8 sm:h-9 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold rounded-md bg-pink-500 text-white hover:bg-pink-600 whitespace-nowrap transition-colors duration-200 flex-shrink-0"
           >
             <Crown className="mr-1 sm:mr-2 h-3 sm:h-4 w-3 sm:w-4" />
-            <span className="hidden sm:inline">VIP Access</span>
+            <span className="hidden sm:inline">VIP Seating</span>
           </Link>
 
           <Link
@@ -46,7 +45,7 @@ export default function CtaRibbon() {
             className="inline-flex items-center justify-center h-8 sm:h-9 px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-bold rounded-md bg-yellow-500 text-black hover:bg-yellow-600 whitespace-nowrap transition-colors duration-200 flex-shrink-0"
           >
             <Mail className="mr-1 sm:mr-2 h-3 sm:h-4 w-3 sm:w-4" />
-            <span className="hidden sm:inline">Get Updates</span>
+            <span className="hidden sm:inline">Newsletter</span>
           </Link>
 
           <Link
