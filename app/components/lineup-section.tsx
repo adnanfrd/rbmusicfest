@@ -123,11 +123,50 @@ const sundayArtists: Performer[] = [
   name,
   setTime,
   image: performerImages[(index + 1) % performerImages.length],
-  description: `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
-  fullBio: `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
+  description:
+    name === "Molly Bangs"
+      ? "Molly Bangs brings live country-ish originals and eclectic roots energy to the Sunday lineup."
+      : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
+  fullBio:
+    name === "Molly Bangs"
+      ? "Molly Bangs performs live with a mix of original material and country-ish recordings.\n\nLive at Artichoke Music:\nhttp://www.youtube.com/live/cJ5_oC6KQ-o\n\nSome older country-ish recordings:\n\nNational Award Winning Music Video (Sparky):\nhttps://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO\n\nRed Wine and Saltines (played on multiple radio shows):\nhttps://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9\n\nKim Smoltz (Ween Cover):\nhttps://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8"
+      : `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website: "",
-  socialLinks: [],
-  videos: [],
+  socialLinks:
+    name === "Molly Bangs"
+      ? [
+          {
+            name: "Instagram",
+            url: "https://www.instagram.com/mollybangtheband",
+          },
+          {
+            name: "Facebook",
+            url: "https://www.facebook.com/molly.bang",
+          },
+        ]
+      : [],
+  videos:
+    name === "Molly Bangs"
+      ? [
+          
+          {
+            title: "Sparky",
+            url: "https://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO",
+          },
+          {
+            title: "Red Wine and Saltines",
+            url: "https://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9",
+          },
+          {
+            title: "Kim Smoltz (Ween Cover)",
+            url: "https://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8",
+          },
+          {
+            title: "Live at Artichoke Music",
+            url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
+          },
+        ]
+      : [],
   images: [],
 }));
 
