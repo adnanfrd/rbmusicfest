@@ -2,7 +2,14 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import { X, Globe, Instagram, Youtube, LinkIcon } from "lucide-react";
+import {
+  X,
+  Globe,
+  Instagram,
+  Youtube,
+  LinkIcon,
+  FileText,
+} from "lucide-react";
 import ImageCarousel from "./image-carousel";
 import VideoEmbed from "./video-embed";
 
@@ -14,7 +21,12 @@ interface SocialLink {
 interface Video {
   title: string;
   url: string;
-} 
+}
+
+interface DocumentLink {
+  title: string;
+  url: string;
+}
 
 interface Artist {
   name: string;
@@ -24,7 +36,8 @@ interface Artist {
   image?: string;
   images?: string[];
   socialLinks?: SocialLink[];
- videos?: Video[];
+  videos?: Video[];
+  documentLinks?: DocumentLink[];
   website?: string;
 }
 
@@ -149,6 +162,26 @@ export default function ArtistModal({
           {artist.videos && artist.videos.length > 0 && (
             <div className="mt-8">
               <VideoEmbed videos={artist.videos} />
+            </div>
+          )}
+
+          {artist.documentLinks && artist.documentLinks.length > 0 && (
+            <div className="mt-8">
+              <h3 className="text-xl font-bold mb-3">Documents</h3>
+              <div className="flex flex-wrap gap-3">
+                {artist.documentLinks.map((doc, index) => (
+                  <a
+                    key={index}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+                  >
+                    <FileText className="w-4 h-4" />
+                    <span className="ml-2">{doc.title}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           )}
 

@@ -18,6 +18,7 @@ type Performer = {
   socialLinks?: { name: string; url: string }[];
   videos?: { title: string; url: string }[];
   images?: string[];
+  documentLinks?: { title: string; url: string }[];
 };
 
 const performerImages = [
@@ -40,13 +41,76 @@ const saturdayArtists: Performer[] = [
 ].map(([name, setTime], index) => ({
   name,
   setTime,
-  image: performerImages[index % performerImages.length],
-  description: `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
-  fullBio: `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
-  website: "",
-  socialLinks: [],
-  videos: [],
-  images: [],
+  image:
+    name === "Kill the Headlights"
+      ? "/images/kill-the-headlights-1.jpg"
+      : performerImages[index % performerImages.length],
+  description:
+    name === "Kill the Headlights"
+      ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
+      : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
+  fullBio:
+    name === "Kill the Headlights"
+      ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
+      : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
+  website:
+    name === "Kill the Headlights"
+      ? "https://killtheheadlightsband.com"
+      : "",
+  socialLinks:
+    name === "Kill the Headlights"
+      ? [
+          {
+            name: "Website",
+            url: "https://killtheheadlightsband.com",
+          },
+          {
+            name: "Facebook",
+            url: "https://facebook.com/killtheheadlightsband",
+          },
+          {
+            name: "Instagram",
+            url: "https://instagram.com/killtheheadlightsband",
+          },
+          {
+            name: "Spotify",
+            url: "https://open.spotify.com/artist/2ihijqKCOlKzT9ofLPWEpT?si=_KEZpJqNSZuhLPC99HuH-g",
+          },
+          {
+            name: "YouTube",
+            url: "https://youtube.com/@killtheheadlights1687?si=zjl63ryLnXachmK4",
+          },
+        ]
+      : [],
+  videos:
+    name === "Kill the Headlights"
+      ? [
+          {
+            title: "Kill the Headlights Video 1",
+            url: "https://youtu.be/IVTbKGGj7GE?si=tKvBvvGlyStXiy3v",
+          },
+          {
+            title: "Kill the Headlights Video 2",
+            url: "https://youtu.be/n3bq47U8O00?si=frhvw9Npm9jGZkaY",
+          },
+        ]
+      : [],
+  images:
+    name === "Kill the Headlights"
+      ? [
+          "/images/kill-the-headlights-1.jpg",
+          "/images/kill-the-headlights-2.jpg",
+        ]
+      : [],
+  documentLinks:
+    name === "Kill the Headlights"
+      ? [
+          {
+            title: "Kill the Headlights Stage Plot (PDF)",
+            url: "/docs/kill-the-headlights-stage-plot.pdf",
+          },
+        ]
+      : [],
 }));
 
 const sundayArtists: Performer[] = [
