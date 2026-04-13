@@ -56,6 +56,8 @@ const saturdayArtists: Performer[] = [
   website:
     name === "Kill the Headlights"
       ? "https://killtheheadlightsband.com"
+      : name === "Brenda Andrus"
+        ? "https://brendaandrus.org/"
       : "",
   socialLinks:
     name === "Kill the Headlights"
@@ -81,6 +83,17 @@ const saturdayArtists: Performer[] = [
             url: "https://youtube.com/@killtheheadlights1687?si=zjl63ryLnXachmK4",
           },
         ]
+      : name === "Brenda Andrus"
+        ? [
+            {
+              name: "Website",
+              url: "https://brendaandrus.org/",
+            },
+            {
+              name: "YouTube",
+              url: "https://youtube.com/@brendaandrus?si=YXFetxX52Zq8083e",
+            },
+          ]
       : [],
   videos:
     name === "Kill the Headlights"
