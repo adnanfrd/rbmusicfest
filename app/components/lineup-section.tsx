@@ -44,18 +44,26 @@ const saturdayArtists: Performer[] = [
   image:
     name === "Kill the Headlights"
       ? "/images/kill-the-headlights-1.jpg"
+      : name === "The Upkeeps"
+        ? "/images/the-upkeeps-promo-1.jpeg"
       : performerImages[index % performerImages.length],
   description:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
+      : name === "The Upkeeps"
+        ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
+      : name === "The Upkeeps"
+        ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website:
     name === "Kill the Headlights"
       ? "https://killtheheadlightsband.com"
+      : name === "The Upkeeps"
+        ? "https://www.theupkeeps.com/"
       : name === "Brenda Andrus"
         ? "https://brendaandrus.org/"
       : "",
@@ -83,6 +91,25 @@ const saturdayArtists: Performer[] = [
             url: "https://youtube.com/@killtheheadlights1687?si=zjl63ryLnXachmK4",
           },
         ]
+      : name === "The Upkeeps"
+        ? [
+            {
+              name: "Website",
+              url: "https://www.theupkeeps.com/",
+            },
+            {
+              name: "Bandcamp",
+              url: "https://theupkeeps.bandcamp.com/",
+            },
+            {
+              name: "Spotify",
+              url: "https://open.spotify.com/artist/1Hoi43Y6VdWIuPfiuM0w9u?si=8oMpQlEERPWqNDqFDyHe-g&nd=1&dlsi=af6839e06df14480",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/theupkeepsofficial/",
+            },
+          ]
       : name === "Brenda Andrus"
         ? [
             {
@@ -114,6 +141,12 @@ const saturdayArtists: Performer[] = [
           "/images/kill-the-headlights-1.jpg",
           "/images/kill-the-headlights-2.jpg",
         ]
+      : name === "The Upkeeps"
+        ? [
+            "/images/the-upkeeps-promo-1.jpeg",
+            "/images/the-upkeeps-promo-2.jpeg",
+            "/images/the-upkeeps-album-cover.jpg",
+          ]
       : [],
   documentLinks:
     name === "Kill the Headlights"
