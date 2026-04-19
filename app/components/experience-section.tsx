@@ -107,8 +107,9 @@ export default function ExperienceSection() {
           </h2>
           <div className="w-24 h-1 bg-festival-pink mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Enjoy two full days of music, food, art, and community at the
-            beautiful Rockaway Beach wayside, a totally free event open to all!
+            Two full days of music, vendors, art exhibits, and community at the
+            Rockaway Beach Wayside. Event experience details below are being
+            updated as new information comes in from Steeplejack Brewing.
           </p>
         </div>
 
@@ -610,39 +611,37 @@ export default function ExperienceSection() {
         >
           <div className="text-center mb-8">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Accepting Vendor Applications!
+              VENDOR SIGN-UP
             </h3>
             <p className="text-xl md:text-2xl font-semibold text-festival-pink mb-6">
-              deadline July 15th, 2025
+              Limited to about 15 spaces
             </p>
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
               <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                Join us for the first annual 2025 Rockaway Beach Music Festival!
-                We are looking for coastal crafters, artists, makers and
-                purveyors of interesting items to help create a diverse,
-                entertaining, and possibly educational fun event! Please fill
-                out the correct form and we will be in touch.
+                We are looking for vendors selling art and original crafts as
+                well as anything experiential. All spaces are 10x10 and the
+                cost for the entire festival is $100 per space. Electricity is
+                available if needed. Food and alcohol vendors have already been
+                sorted and we have no more space for those categories. Contact
+                us with any questions at hello@ncamfoundation.org and use the
+                form below when you are ready.
               </p>
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-4 justify-center items-center pt-4">
             <a
-              href="https://forms.gle/8aWUzQfmbEYnq7Kn7"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:hello@ncamfoundation.org?subject=Food%20Vendor%20Waitlist"
               className="inline-block bg-festival-blue hover:bg-festival-blue/90 text-white font-bold py-4 px-8 text-lg min-w-[250px] text-center rounded-xl transition-all duration-300 no-underline shadow-lg hover:shadow-xl btn-hover-scale"
             >
-              FOOD VENDORS
+              FOOD VENDORS FILLED
             </a>
 
             <a
-              href="https://forms.gle/RTn6MYiG3FVf4DpdA"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:hello@ncamfoundation.org?subject=Alcohol%20Vendor%20Waitlist"
               className="inline-block bg-festival-pink hover:bg-festival-pink/90 text-white font-bold py-4 px-8 text-lg min-w-[250px] text-center rounded-xl transition-all duration-300 no-underline shadow-lg hover:shadow-xl btn-hover-scale"
             >
-              ALCOHOL VENDORS
+              ALCOHOL VENDORS FILLED
             </a>
 
             <a
@@ -651,7 +650,7 @@ export default function ExperienceSection() {
               rel="noopener noreferrer"
               className="inline-block bg-festival-yellow hover:bg-festival-yellow/90 text-white font-bold py-4 px-8 text-lg min-w-[250px] text-center rounded-xl transition-all duration-300 no-underline shadow-lg hover:shadow-xl btn-hover-scale"
             >
-              RETAIL/ART VENDORS
+              ART / CRAFT VENDOR FORM
             </a>
           </div>
         </div>
