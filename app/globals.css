@@ -1,9 +1,9 @@
+@import "./components/carousel.css";
+@import "./components/modal.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import "./components/carousel.css";
-@import "./components/modal.css";
 
 :root {
   --festival-blue: #3b82f6;
