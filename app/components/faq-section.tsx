@@ -36,7 +36,7 @@ export default function FaqSection() {
     {
       question: "How does VIP seating work?",
       answer:
-        "We will have a reserved area nearest the stage with 200 seats and a reserved section in the beer garden with 50 seats. We are offering a pre-event special, a $50 donation gets you this year's hat, $75 gets you this year's concert t-shirt and $125 gets you this year's concert zip hoodie. Any remaining VIP tickets can be purchased at the day of the event for a \"name your price\" amount. Let's hope there are none left as we really need to raise money for our school's music program!!! Also, your donation can be tax deductible as we are a 501c3 nonprofit, ask your tax preparer for details.",
+        "We have 250 VIP seats available for guests who want to support live music and music education on the coast. You can pay what you want for VIP seating throughout the event, or make a donation of $75 or more to get a festival T-shirt plus your VIP seats. Also, your donation can be tax deductible as we are a 501c3 nonprofit, ask your tax preparer for details.",
     },
     {
       question: "Can I bring my kids? My dog? My giraffe?",
@@ -71,7 +71,7 @@ export default function FaqSection() {
     {
       question: "I can get free merch?!?",
       answer:
-        "Sort of! If you make a donation for a VIP seat we are giving out merch. $50 gets you this year's concert hat, $75 this year's concert t-shirt and $125 gets you this year's concert zip hoodie. While supplies last!",
+        "Sort of! A donation of $75 or more gets you this year's festival T-shirt plus VIP seating. T-shirts are available while supplies last.",
     },
     {
       question: "What are you raising money for?",

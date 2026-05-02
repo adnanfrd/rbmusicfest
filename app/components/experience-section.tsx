@@ -9,24 +9,17 @@ export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [vipVisible, setVipVisible] = useState(false);
   const [featuresVisible, setFeaturesVisible] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [merchImageIndex, setMerchImageIndex] = useState(0);
+  const [foodImageIndex, setFoodImageIndex] = useState(0);
 
   const merchandiseImages = [
     {
-      src: "/images/hoodie-back.jpeg",
-      alt: "RBMF Concert Hoodie Back - Festival lineup design",
-    },
-    {
       src: "/images/tee-back.jpeg",
-      alt: "RBMF Concert Tee Back - Colorful artist lineup",
-    },
-    {
-      src: "/images/hoodie-front.jpeg",
-      alt: "RBMF Concert Hoodie Front - Festival logo",
+      alt: "RBMF Festival T-shirt back mockup",
     },
     {
       src: "/images/tee-front.jpeg",
-      alt: "RBMF Concert Tee Front - Festival logo",
+      alt: "RBMF Festival T-shirt front mockup",
     },
   ];
 
@@ -51,11 +44,11 @@ export default function ExperienceSection() {
   }, []);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % merchandiseImages.length);
+    setMerchImageIndex((prev) => (prev + 1) % merchandiseImages.length);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex(
+    setMerchImageIndex(
       (prev) => (prev - 1 + merchandiseImages.length) % merchandiseImages.length
     );
   };
@@ -72,19 +65,16 @@ export default function ExperienceSection() {
 
   const merchandise = [
     {
-      title: "Trucker Hat",
-      description: "First edition RB Music Fest Trucker Hat",
-      price: "$50 donation",
+      title: "Pay What You Want",
+      description:
+        "Access to VIP seating throughout the event by making a donation. No donation is too small or too large.",
+      price: "Any amount",
     },
     {
-      title: "T-shirt",
-      description: "First edition RB Music Fest Tour T-shirt",
-      price: "$75 donation",
-    },
-    {
-      title: "Zip Hoodie",
-      description: "First edition RB Music Fest Zip Hoodie",
-      price: "$125 donation",
+      title: "Get the T-Shirt",
+      description:
+        "Make a donation of $75 or more and get a free festival T-shirt plus your VIP seats.",
+      price: "$75+",
     },
   ];
 
@@ -107,9 +97,9 @@ export default function ExperienceSection() {
           </h2>
           <div className="w-24 h-1 bg-festival-pink mx-auto mb-6"></div>
           <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-            Two full days of music, vendors, art exhibits, and community at the
-            Rockaway Beach Wayside. Event experience details below are being
-            updated as new information comes in from Steeplejack Brewing.
+            This event is totally free to the public, and you are welcome to
+            bring your own chair. If you want to support live music and music
+            education on the coast, VIP seating is available by donation.
           </p>
         </div>
 
@@ -137,7 +127,7 @@ export default function ExperienceSection() {
             <div className="text-center mb-10">
               <div className="inline-block relative mb-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                  Get VIP Access and Free Merch with a Donation!
+                  Support the Festival with VIP Seating
                 </h3>
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-festival-pink rounded-full"></div>
               </div>
@@ -147,28 +137,19 @@ export default function ExperienceSection() {
                 <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                   We have{" "}
                   <span className="font-bold text-festival-pink">
-                    250 spaces with chairs
+                    250 VIP seats
                   </span>{" "}
-                  reserved for VIP admission,
-                  <span className="font-bold text-festival-blue">
-                    {" "}
-                    200 in front of the stage
-                  </span>{" "}
-                  and
-                  <span className="font-bold text-festival-yellow">
-                    {" "}
-                    50 in the beer garden
-                  </span>
-                  . Choose a donation amount+reward and show your receipt to get
-                  your awesome merch and VIP wristband.
+                  available for guests who want to support live music and music
+                  education on the coast. Choose either option below and enjoy
+                  access to VIP seating throughout the event.
                   <br />
                   <span className="text-festival-blue font-semibold">
-                    To be in the beer garden you must be 21+ w/ID!
+                    The show remains totally free, and bringing your own chair
+                    is welcome.
                   </span>
                   <br />
                   <span className="text-festival-pink font-semibold">
-                    All proceeds benefit the Neah-Kah-Nie High School Music
-                    Program.
+                    To be in the beer garden you must be 21+ with valid ID.
                   </span>
                 </p>
               </div>
@@ -181,8 +162,8 @@ export default function ExperienceSection() {
                 <div className="relative max-w-lg mx-auto">
                   <div className="aspect-square bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white/50 backdrop-blur-sm">
                     <Image
-                      src={merchandiseImages[currentImageIndex].src}
-                      alt={merchandiseImages[currentImageIndex].alt}
+                      src={merchandiseImages[merchImageIndex].src}
+                      alt={merchandiseImages[merchImageIndex].alt}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 400px"
@@ -195,6 +176,7 @@ export default function ExperienceSection() {
                     size="icon"
                     className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg border-2 border-festival-pink/20 hover:border-festival-pink/40 transition-all duration-300"
                     onClick={prevImage}
+                    aria-label="Previous T-shirt image"
                   >
                     <ChevronLeft className="h-5 w-5 text-festival-pink" />
                   </Button>
@@ -203,6 +185,7 @@ export default function ExperienceSection() {
                     size="icon"
                     className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg border-2 border-festival-pink/20 hover:border-festival-pink/40 transition-all duration-300"
                     onClick={nextImage}
+                    aria-label="Next T-shirt image"
                   >
                     <ChevronRight className="h-5 w-5 text-festival-pink" />
                   </Button>
@@ -212,12 +195,14 @@ export default function ExperienceSection() {
                     {merchandiseImages.map((_, index) => (
                       <button
                         key={index}
+                        type="button"
+                        aria-label={`Show T-shirt image ${index + 1}`}
                         className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          index === currentImageIndex
+                          index === merchImageIndex
                             ? "bg-festival-pink shadow-lg scale-125"
                             : "bg-gray-300 hover:bg-gray-400"
                         }`}
-                        onClick={() => setCurrentImageIndex(index)}
+                        onClick={() => setMerchImageIndex(index)}
                       />
                     ))}
                   </div>
@@ -228,11 +213,11 @@ export default function ExperienceSection() {
               <div className="order-1 lg:order-2">
                 <div className="space-y-6">
                   <h4 className="text-2xl font-bold text-center text-gray-900 mb-4">
-                    Choose Your VIP Package
+                    Two VIP Seating Options
                   </h4>
                   <p className="text-center text-gray-600 mb-8 text-lg">
-                    Buy in advance on our Eventbrite page or at the event while
-                    supplies last.
+                    Choose the level that works for you. Every donation helps
+                    keep live music and music education thriving on the coast.
                   </p>
                   {merchandise.map((item, index) => (
                     <a
@@ -242,16 +227,16 @@ export default function ExperienceSection() {
                       rel="noopener noreferrer"
                       className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border-2 border-white/50 hover:border-festival-pink/30 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer block btn-hover-scale"
                     >
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex-1">
                           <h5 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-festival-pink transition-colors">
                             {item.title}
                           </h5>
-                          <p className="text-gray-600 mb-3">
+                          <p className="text-gray-600">
                             {item.description}
                           </p>
                         </div>
-                        <div className="ml-4 text-right">
+                        <div className="text-left sm:ml-4 sm:text-right">
                           <p className="text-2xl font-black text-festival-pink">
                             {item.price}
                           </p>
@@ -265,7 +250,6 @@ export default function ExperienceSection() {
             </div>
           </div>
         </div>
-
         {/* Food & Beverage Section */}
         <div
           className="mb-16 bg-gradient-to-br from-festival-blue/5 via-festival-pink/5 to-festival-yellow/5 rounded-3xl p-8 md:p-12 shadow-lg"
@@ -291,8 +275,8 @@ export default function ExperienceSection() {
             <div className="relative max-w-2xl mx-auto">
               <div className="aspect-video bg-white rounded-2xl shadow-xl overflow-hidden">
                 <Image
-                  src={foodBeverageImages[currentImageIndex].src}
-                  alt={foodBeverageImages[currentImageIndex].alt}
+                  src={foodBeverageImages[foodImageIndex].src}
+                  alt={foodBeverageImages[foodImageIndex].alt}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 800px"
@@ -304,7 +288,7 @@ export default function ExperienceSection() {
                 size="icon"
                 className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg"
                 onClick={() =>
-                  setCurrentImageIndex(
+                  setFoodImageIndex(
                     (prev) =>
                       (prev - 1 + foodBeverageImages.length) %
                       foodBeverageImages.length
@@ -318,7 +302,7 @@ export default function ExperienceSection() {
                 size="icon"
                 className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg"
                 onClick={() =>
-                  setCurrentImageIndex(
+                  setFoodImageIndex(
                     (prev) => (prev + 1) % foodBeverageImages.length
                   )
                 }
@@ -331,11 +315,11 @@ export default function ExperienceSection() {
                   <button
                     key={index}
                     className={`w-2 h-2 rounded-full transition-colors ${
-                      index === currentImageIndex
+                      index === foodImageIndex
                         ? "bg-festival-blue"
                         : "bg-gray-300"
                     }`}
-                    onClick={() => setCurrentImageIndex(index)}
+                    onClick={() => setFoodImageIndex(index)}
                   />
                 ))}
               </div>
