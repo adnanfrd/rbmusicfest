@@ -85,7 +85,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className={`mb-8 ${
+          className={`mb-4 ${
             isLoaded
               ? "opacity-100 transform-none transition-all duration-1000 delay-100"
               : "opacity-0 transform translate-y-5"
@@ -111,14 +111,9 @@ export default function HeroSection() {
               }}
             />
           </div>
-
-          <p className="mx-auto mt-4 max-w-4xl px-2 text-sm font-bold uppercase tracking-[0.2em] text-yellow-300 drop-shadow-lg md:text-base lg:text-lg">
-            NCAM Foundation with Steeplejack Brewing, Revival Drum Shop, and
-            Crow Cane present the
-          </p>
         </div>
 
-        <div className="h-[150px] md:h-[250px] lg:h-[320px]"></div>
+        <div className="h-[180px] md:h-[290px] lg:h-[360px]"></div>
 
         <div className="mt-8">
           <div
