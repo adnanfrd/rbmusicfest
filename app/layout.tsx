@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} font-sans`}>{children}</body>
+      <body className={`${montserrat.variable} font-sans`} suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   )
 }
