@@ -36,7 +36,7 @@ export default function FaqSection() {
     {
       question: "How does VIP seating work?",
       answer:
-        "We will have a reserved area nearest the stage with 200 seats and a reserved section in the beer garden with 50 seats. We are offering a pre-event special, a $50 donation gets you this year's hat, $75 gets you this year's concert t-shirt and $125 gets you this year's concert zip hoodie. Any remaining VIP tickets can be purchased at the day of the event for a \"name your price\" amount. Let's hope there are none left as we really need to raise money for our school's music program!!! Also, your donation can be tax deductible as we are a 501c3 nonprofit, ask your tax preparer for details.",
+        "There are 250 reserved seats near the stage. A donation of any amount gets you VIP seating access, and a donation of $75 or more gets you a free festival T-shirt plus VIP seating.",
     },
     {
       question: "Can I bring my kids? My dog? My giraffe?",
@@ -67,11 +67,6 @@ export default function FaqSection() {
       question: "How ADA Compliant is this event?",
       answer:
         "Rockaway Beach has built brand new ADA public bathrooms at the Wayside, as well as a new beach access ramp. Beach wheelchairs are available for rent and Rockaway participates in the David's Chair program. The event is in a flat large parking area overlooking the beach, all areas of the event will be accessible except for the stage itself.",
-    },
-    {
-      question: "I can get free merch?!?",
-      answer:
-        "Sort of! If you make a donation for a VIP seat we are giving out merch. $50 gets you this year's concert hat, $75 this year's concert t-shirt and $125 gets you this year's concert zip hoodie. While supplies last!",
     },
     {
       question: "What are you raising money for?",

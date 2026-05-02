@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { DollarSign } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -85,7 +84,7 @@ export default function HeroSection() {
         </div>
 
         <div
-          className={`mb-8 ${
+          className={`mb-4 ${
             isLoaded
               ? "opacity-100 transform-none transition-all duration-1000 delay-100"
               : "opacity-0 transform translate-y-5"
@@ -111,14 +110,9 @@ export default function HeroSection() {
               }}
             />
           </div>
-
-          <p className="mx-auto mt-4 max-w-4xl px-2 text-sm font-bold uppercase tracking-[0.2em] text-yellow-300 drop-shadow-lg md:text-base lg:text-lg">
-            NCAM Foundation with Steeplejack Brewing, Revival Drum Shop, and
-            Crow Cane present the
-          </p>
         </div>
 
-        <div className="h-[150px] md:h-[250px] lg:h-[320px]"></div>
+        <div className="h-[180px] md:h-[290px] lg:h-[360px]"></div>
 
         <div className="mt-8">
           <div
@@ -193,44 +187,6 @@ export default function HeroSection() {
                       className="relative inline-flex items-center justify-center w-full sm:w-auto px-10 py-4 font-bold text-lg rounded-xl bg-pink-600 text-white hover:bg-pink-700 transition-all duration-300 transform hover:scale-105 shadow-xl btn-hover-scale"
                     >
                       Donate for VIP Seating
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className={`max-w-6xl mx-auto px-4 mb-12 ${
-              isLoaded
-                ? "opacity-100 transform-none transition-all duration-1000 delay-600"
-                : "opacity-0 transform translate-y-5"
-            }`}
-          >
-            <div className="relative group h-full">
-              <div className="absolute -inset-1 bg-gradient-to-br from-yellow-400/30 to-orange-500/30 rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-300"></div>
-              <div className="relative bg-black/60 backdrop-blur-lg rounded-2xl p-8 border border-yellow-400/30 h-full flex flex-col shadow-xl">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-t-2xl"></div>
-                <h3 className="text-white text-xl md:text-2xl font-bold mb-6 drop-shadow-lg">
-                  Support Art and Music in Our Community
-                </h3>
-                <p className="text-gray-100 text-base md:text-lg mb-8 leading-relaxed flex-grow">
-                  Donations help fund art and music in our high school and in
-                  the broader community. If you can help, any amount makes a
-                  difference.
-                </p>
-                <div className="flex justify-center px-4">
-                  <div className="relative inline-block group w-full sm:w-auto">
-                    <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-xl blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
-                    <Link
-                      href="https://www.ncamfoundation.org/donate"
-                      target="_blank"
-                      className="relative inline-flex items-center justify-center w-full sm:w-auto px-4 sm:px-8 py-3 sm:py-4 font-bold text-base sm:text-lg rounded-xl bg-yellow-500 text-black hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 text-center break-words"
-                    >
-                      <DollarSign className="mr-2 h-5 w-5 flex-shrink-0" />
-                      <span className="block sm:inline">
-                        Donate to Support Music Education
-                      </span>
                     </Link>
                   </div>
                 </div>

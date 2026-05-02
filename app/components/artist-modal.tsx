@@ -9,6 +9,8 @@ import {
   Youtube,
   LinkIcon,
   FileText,
+  Facebook,
+  Mail,
 } from "lucide-react";
 import ImageCarousel from "./image-carousel";
 import VideoEmbed from "./video-embed";
@@ -86,6 +88,10 @@ export default function ArtistModal({
         return <Instagram className="w-4 h-4" />;
       case "youtube":
         return <Youtube className="w-4 h-4" />;
+      case "facebook":
+        return <Facebook className="w-4 h-4" />;
+      case "email":
+        return <Mail className="w-4 h-4" />;
       default:
         return <LinkIcon className="w-4 h-4" />;
     }
