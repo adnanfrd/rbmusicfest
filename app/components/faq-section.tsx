@@ -36,7 +36,7 @@ export default function FaqSection() {
     {
       question: "How does VIP seating work?",
       answer:
-        "We have 250 VIP seats available for guests who want to support live music and music education on the coast. You can pay what you want for VIP seating throughout the event, or make a donation of $75 or more to get a festival T-shirt plus your VIP seats. Also, your donation can be tax deductible as we are a 501c3 nonprofit, ask your tax preparer for details.",
+        "There are 250 reserved seats near the stage. A donation of any amount gets you VIP seating access, and a donation of $75 or more gets you a free festival T-shirt plus VIP seating.",
     },
     {
       question: "Can I bring my kids? My dog? My giraffe?",
@@ -67,11 +67,6 @@ export default function FaqSection() {
       question: "How ADA Compliant is this event?",
       answer:
         "Rockaway Beach has built brand new ADA public bathrooms at the Wayside, as well as a new beach access ramp. Beach wheelchairs are available for rent and Rockaway participates in the David's Chair program. The event is in a flat large parking area overlooking the beach, all areas of the event will be accessible except for the stage itself.",
-    },
-    {
-      question: "I can get free merch?!?",
-      answer:
-        "Sort of! A donation of $75 or more gets you this year's festival T-shirt plus VIP seating. T-shirts are available while supplies last.",
     },
     {
       question: "What are you raising money for?",
