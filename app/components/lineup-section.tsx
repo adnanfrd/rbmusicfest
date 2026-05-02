@@ -168,14 +168,21 @@ const sundayArtists: Performer[] = [
 ].map(([name, setTime], index) => ({
   name,
   setTime,
-  image: performerImages[(index + 1) % performerImages.length],
+  image:
+    name === "Metts Ryan Collins"
+      ? "/images/metts-ryan-collins-1.png"
+      : performerImages[(index + 1) % performerImages.length],
   description:
     name === "Molly Bangs"
       ? "Molly Bangs brings live country-ish originals and eclectic roots energy to the Sunday lineup."
+      : name === "Metts Ryan Collins"
+        ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
   fullBio:
     name === "Molly Bangs"
       ? "Molly Bangs performs live with a mix of original material and country-ish recordings.\n\nLive at Artichoke Music:\nhttp://www.youtube.com/live/cJ5_oC6KQ-o\n\nSome older country-ish recordings:\n\nNational Award Winning Music Video (Sparky):\nhttps://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO\n\nRed Wine and Saltines (played on multiple radio shows):\nhttps://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9\n\nKim Smoltz (Ween Cover):\nhttps://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8"
+      : name === "Metts Ryan Collins"
+        ? "If your idea of a real rock band for the 21st century is one that blends the swagger and bluesy elements of classic bands like The Rolling Stones, Led Zeppelin and Humble Pie, alongside more recent bands like The White Stripes, Black Keys and Rival Sons, then let me introduce you to the power trio from Portland, Oregon - Metts Ryan Collins.\n\nMetts Ryan Collins are bold new standard bearers for this rare breed. With Geoff Metts leading the charge on vocals and guitars, Dain Ryan on bass and vocals, and Mike Collins on drums and vocals, the band is taking the fight to listeners with their gritty and vibrant brand of guitar rock.\n\nFollowing up their self-titled EP with their debut full-length, Homegrown, Metts Ryan Collins garnered both local and regional acclaim, including a feature with the Portland Trail Blazers, who played the album's first single, \"Oregon,\" during games. They also showcased at NAMM and Whiskey-A-Go-Go, among others, earning a blue collar audience while delivering a tried-and-true, straight-to-the-gut rock 'n' roll brand that is timeless.\n\nThey are back with a new full-length, No Days Be Wasted, available soon on streaming, download and compact disc.\n\nRecommended if you like: Black Keys, Rival Sons, Vintage Trouble, Gary Clark Jr."
       : `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website: "",
   socialLinks:
@@ -190,6 +197,29 @@ const sundayArtists: Performer[] = [
             url: "https://www.facebook.com/molly.bang",
           },
         ]
+      : name === "Metts Ryan Collins"
+        ? [
+            {
+              name: "X",
+              url: "https://x.com/mrcpdx",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/mettsryancollins/",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/mettsryancollins",
+            },
+            {
+              name: "YouTube",
+              url: "http://www.youtube.com/channel/UCIzjbyfVDs9vCImieqoHLSg",
+            },
+            {
+              name: "Email",
+              url: "mailto:mettsryancollins@gmail.com",
+            },
+          ]
       : [],
   videos:
     name === "Molly Bangs"
@@ -212,8 +242,21 @@ const sundayArtists: Performer[] = [
             url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
           },
         ]
+      : name === "Metts Ryan Collins"
+        ? [
+            {
+              title: "Metts Ryan Collins",
+              url: "https://youtu.be/ZNNTZENzpyo?si=JFnEetM7kCiHIiuE",
+            },
+          ]
       : [],
-  images: [],
+  images:
+    name === "Metts Ryan Collins"
+      ? [
+          "/images/metts-ryan-collins-1.png",
+          "/images/metts-ryan-collins-2.png",
+        ]
+      : [],
 }));
 
 export default function LineupSection() {
