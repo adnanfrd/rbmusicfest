@@ -1,26 +1,44 @@
 "use client";
 
-import { Beer, Utensils, ChevronLeft, ChevronRight } from "lucide-react";
+import { Beer, ChevronLeft, ChevronRight, Utensils } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+
+const eventbriteUrl =
+  "https://www.eventbrite.com/e/rockaway-beach-music-festival-tickets-1350635279479";
+
+const merchandiseImages = [
+  {
+    src: "/images/tee-back.jpeg",
+    alt: "RBMF Festival T-shirt back mockup",
+  },
+  {
+    src: "/images/tee-front.jpeg",
+    alt: "RBMF Festival T-shirt front mockup",
+  },
+];
+
+const vipOptions = [
+  {
+    title: "Pay What You Want",
+    description:
+      "Access to VIP seating throughout the event by making a donation. No donation is too small or too large.",
+    price: "Any amount",
+  },
+  {
+    title: "Get the T-Shirt",
+    description:
+      "Make a donation of $75 or more and get a free festival T-shirt plus your VIP seats.",
+    price: "$75+",
+  },
+];
 
 export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [vipVisible, setVipVisible] = useState(false);
   const [featuresVisible, setFeaturesVisible] = useState(false);
   const [merchImageIndex, setMerchImageIndex] = useState(0);
-
-  const merchandiseImages = [
-    {
-      src: "/images/tee-back.jpeg",
-      alt: "RBMF Festival T-shirt back mockup",
-    },
-    {
-      src: "/images/tee-front.jpeg",
-      alt: "RBMF Festival T-shirt front mockup",
-    },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -52,21 +70,6 @@ export default function ExperienceSection() {
     );
   };
 
-  const merchandise = [
-    {
-      title: "Pay What You Want",
-      description:
-        "Access to VIP seating throughout the event by making a donation. No donation is too small or too large.",
-      price: "Any amount",
-    },
-    {
-      title: "Get the T-Shirt",
-      description:
-        "Make a donation of $75 or more and get a free festival T-shirt plus your VIP seats.",
-      price: "$75+",
-    },
-  ];
-
   return (
     <section
       id="experience"
@@ -92,7 +95,6 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        {/* VIP ACCESS Section */}
         <div
           className="mb-16 relative overflow-hidden"
           style={{
@@ -101,18 +103,13 @@ export default function ExperienceSection() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          {/* Background with festival colors */}
           <div className="absolute inset-0 bg-gradient-to-br from-festival-pink/10 via-festival-blue/10 to-festival-yellow/10 rounded-3xl"></div>
           <div className="absolute inset-0 bg-gradient-to-tr from-white/50 via-transparent to-white/30 rounded-3xl"></div>
-
-          {/* Decorative elements */}
           <div className="absolute top-4 right-4 w-20 h-20 bg-festival-pink/10 rounded-full blur-xl"></div>
           <div className="absolute bottom-4 left-4 w-16 h-16 bg-festival-blue/20 rounded-full blur-lg"></div>
           <div className="absolute top-1/2 right-8 w-12 h-12 bg-festival-yellow/15 rounded-full blur-md"></div>
 
-          {/* Content container */}
           <div className="relative z-10 p-8 md:p-12">
-            {/* Header with consistent styling */}
             <div className="text-center mb-10">
               <div className="inline-block relative mb-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -121,7 +118,6 @@ export default function ExperienceSection() {
                 <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-festival-pink rounded-full"></div>
               </div>
 
-              {/* Enhanced description */}
               <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
                 <p className="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
                   We have{" "}
@@ -144,9 +140,7 @@ export default function ExperienceSection() {
               </div>
             </div>
 
-            {/* Enhanced layout with carousel and packages side by side on larger screens */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Merchandise Carousel */}
               <div className="order-2 lg:order-1">
                 <div className="relative max-w-lg mx-auto">
                   <div className="aspect-square bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white/50 backdrop-blur-sm">
@@ -159,7 +153,6 @@ export default function ExperienceSection() {
                     />
                   </div>
 
-                  {/* Carousel Controls */}
                   <Button
                     variant="outline"
                     size="icon"
@@ -179,7 +172,6 @@ export default function ExperienceSection() {
                     <ChevronRight className="h-5 w-5 text-festival-pink" />
                   </Button>
 
-                  {/* Carousel Indicators */}
                   <div className="flex justify-center mt-6 space-x-3">
                     {merchandiseImages.map((_, index) => (
                       <button
@@ -198,7 +190,6 @@ export default function ExperienceSection() {
                 </div>
               </div>
 
-              {/* VIP Merchandise Packages */}
               <div className="order-1 lg:order-2">
                 <div className="space-y-6">
                   <h4 className="text-2xl font-bold text-center text-gray-900 mb-4">
@@ -208,10 +199,10 @@ export default function ExperienceSection() {
                     Choose the level that works for you. Every donation helps
                     keep live music and music education thriving on the coast.
                   </p>
-                  {merchandise.map((item, index) => (
+                  {vipOptions.map((item) => (
                     <a
-                      key={index}
-                      href="https://www.eventbrite.com/e/rockaway-beach-music-festival-tickets-1350635279479"
+                      key={item.title}
+                      href={eventbriteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border-2 border-white/50 hover:border-festival-pink/30 hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer block btn-hover-scale"
@@ -221,9 +212,7 @@ export default function ExperienceSection() {
                           <h5 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-festival-pink transition-colors">
                             {item.title}
                           </h5>
-                          <p className="text-gray-600">
-                            {item.description}
-                          </p>
+                          <p className="text-gray-600">{item.description}</p>
                         </div>
                         <div className="text-left sm:ml-4 sm:text-right">
                           <p className="text-2xl font-black text-festival-pink">
@@ -239,7 +228,7 @@ export default function ExperienceSection() {
             </div>
           </div>
         </div>
-        {/* Food & Beverage Section */}
+
         <div
           className="mb-16 bg-gradient-to-br from-festival-blue/5 via-festival-pink/5 to-festival-yellow/5 rounded-3xl p-8 md:p-12 shadow-lg"
           style={{
@@ -250,7 +239,7 @@ export default function ExperienceSection() {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              🍻 Food & Beverages 🍽️
+              Food & Beverages
             </h3>
             <div className="w-24 h-1 bg-festival-blue mx-auto mb-6"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -260,14 +249,12 @@ export default function ExperienceSection() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* BAR Section */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
               <div className="flex items-center justify-center mb-6">
                 <Beer className="h-8 w-8 text-festival-blue mr-3" />
                 <h4 className="text-2xl font-bold text-gray-900">BAR</h4>
               </div>
 
-              {/* Steeplejack Brewing */}
               <div className="mb-6">
                 <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
                   <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-festival-blue/30 bg-festival-blue/5 text-center text-xs font-bold uppercase tracking-wide text-festival-blue">
@@ -293,20 +280,17 @@ export default function ExperienceSection() {
 
               <div className="bg-festival-pink/10 p-4 rounded-xl">
                 <p className="text-festival-pink font-semibold text-center">
-                  🎵 Proceeds from the bar benefit the high school music
-                  program! 🎵
+                  Proceeds from the bar benefit the high school music program!
                 </p>
               </div>
             </div>
 
-            {/* FOOD Section */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
               <div className="flex items-center justify-center mb-6">
                 <Utensils className="h-8 w-8 text-festival-yellow mr-3" />
                 <h4 className="text-2xl font-bold text-gray-900">FOOD</h4>
               </div>
 
-              {/* Portside Bistro */}
               <div className="mb-8">
                 <div className="flex items-center mb-4">
                   <Image
@@ -335,7 +319,6 @@ export default function ExperienceSection() {
                 </p>
               </div>
 
-              {/* Tony's Beach Bites */}
               <div className="mb-6">
                 <div className="flex items-center mb-4">
                   <Image
@@ -360,133 +343,50 @@ export default function ExperienceSection() {
 
               <div className="bg-festival-blue/10 p-4 rounded-xl">
                 <p className="text-festival-blue font-semibold text-center">
-                  🍰 Slip into a food coma while listening to great music! 🎶
+                  Slip into a food coma while listening to great music!
                 </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Promotional Sections */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16"
+          className="mb-16"
           style={{ opacity: featuresVisible ? 1 : 0 }}
         >
-          {/* Nearby Restaurants & Shops */}
           <div
-            className="bg-gradient-to-br from-festival-blue/10 to-festival-blue/5 rounded-2xl p-8 shadow-lg"
+            className="bg-gradient-to-br from-festival-blue/10 via-festival-pink/5 to-festival-yellow/10 rounded-3xl p-8 md:p-12 shadow-lg"
             style={{
               opacity: featuresVisible ? 1 : 0,
               transform: `translateY(${featuresVisible ? "0" : "20px"})`,
               transition: "opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s",
             }}
           >
-            <div className="text-center mb-6">
-              <h4 className="text-2xl font-bold text-gray-900 mb-3">
-                🚶‍♀️ Explore Nearby 🚶‍♂️
+            <div className="text-center mb-8">
+              <h4 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
+                Explore Nearby
               </h4>
-              <div className="w-16 h-1 bg-festival-blue mx-auto mb-4"></div>
+              <div className="w-24 h-1 bg-festival-blue mx-auto mb-6"></div>
             </div>
-            <div className="space-y-4">
-              <p className="text-gray-700 leading-relaxed">
-                <strong>Just steps away from the concert</strong>, discover
-                several local restaurants and exciting new food trucks!
+            <div className="mx-auto max-w-4xl space-y-5 text-center">
+              <p className="text-lg text-gray-700 leading-relaxed md:text-xl">
+                In addition to the amenities on site at the event, there are
+                many restaurants and shops within walking distance.
               </p>
-              <p className="text-gray-700 leading-relaxed">
-                Check out the{" "}
-                <strong className="text-festival-blue">
-                  new Pelican Taproom
-                </strong>{" "}
-                just a short block away for even more craft beer options.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Browse our local shops featuring everything from{" "}
-                <strong>art supplies</strong> to <strong>unique gifts</strong>{" "}
-                to <strong>local foods</strong> - all walkable from the event!
+              <p className="text-lg text-gray-700 leading-relaxed md:text-xl">
+                We encourage you to check out our local merchants featuring
+                everything from <strong>art supplies</strong> to{" "}
+                <strong>unique gifts</strong> to <strong>local foods</strong>.
               </p>
               <div className="bg-festival-blue/10 p-4 rounded-xl mt-6">
                 <p className="text-festival-blue font-semibold text-center">
-                  👣 Everything you need is within walking distance! 👣
+                  Everything you need is within walking distance.
                 </p>
               </div>
-            </div>
-          </div>
-
-          {/* Sea Breeze Ice Cream Special */}
-          <div
-            className="bg-gradient-to-br from-festival-pink/10 to-festival-pink/5 rounded-2xl p-8 shadow-lg"
-            style={{
-              opacity: featuresVisible ? 1 : 0,
-              transform: `translateY(${featuresVisible ? "0" : "20px"})`,
-              transition: "opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s",
-            }}
-          >
-            <div className="text-center mb-6">
-              <h4 className="text-2xl font-bold text-gray-900 mb-3">
-                🍦 Sea Breeze Ice Cream & Pelican Soda Event Float Special 🥤
-              </h4>
-              <div className="w-16 h-1 bg-festival-pink mx-auto mb-4"></div>
-            </div>
-            <div className="flex items-start gap-6 mb-6">
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/sea-breeze-sign.png"
-                  alt="Sea Breeze Ice Cream Shop Sign"
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 object-cover rounded-xl shadow-md"
-                />
-              </div>
-              <div className="flex-1 space-y-4">
-                <p className="text-gray-700 leading-relaxed">
-                  <strong className="text-festival-pink">
-                    Buy a custom float for $9
-                  </strong>{" "}
-                  and{" "}
-                  <strong className="text-festival-blue">
-                    $6 supports the music program!
-                  </strong>
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Three delicious floats to choose from featuring{" "}
-                  <strong>Pelican's craft sodas</strong>:
-                </p>
-                <ul className="text-gray-700 space-y-1 ml-4">
-                  <li>
-                    • <strong>Root Beer</strong> Float
-                  </li>
-                  <li>
-                    • <strong>Creme Soda</strong> Float
-                  </li>
-                  <li>
-                    • <strong>Marionberry Soda</strong> Float
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="bg-festival-pink/10 p-4 rounded-xl mt-6">
-              <p className="text-festival-pink font-semibold text-center">
-                🎵 Sweet treats that support music education! 🎵
-              </p>
-            </div>
-            <div className="text-center mt-6">
-              <Button
-                asChild
-                className="bg-festival-blue hover:bg-festival-blue/90 text-white px-6 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <a
-                  href="https://maps.app.goo.gl/AfYvjeTd6fHWygFM7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  📍 MAP IT
-                </a>
-              </Button>
             </div>
           </div>
         </div>
 
-        {/* Vendor Application Section */}
         <div
           className="bg-gradient-to-br from-festival-yellow/10 to-festival-yellow/5 rounded-3xl p-8 md:p-12 shadow-lg border border-festival-yellow/20"
           style={{
@@ -505,8 +405,8 @@ export default function ExperienceSection() {
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
               <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
                 We are looking for vendors selling art and original crafts as
-                well as anything experiential. All spaces are 10x10 and the
-                cost for the entire festival is $100 per space. Electricity is
+                well as anything experiential. All spaces are 10x10 and the cost
+                for the entire festival is $100 per space. Electricity is
                 available if needed. Food and alcohol vendors have already been
                 sorted and we have no more space for those categories. Contact
                 us with any questions at hello@ncamfoundation.org and use the
