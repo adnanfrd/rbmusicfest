@@ -10,7 +10,6 @@ export default function ExperienceSection() {
   const [vipVisible, setVipVisible] = useState(false);
   const [featuresVisible, setFeaturesVisible] = useState(false);
   const [merchImageIndex, setMerchImageIndex] = useState(0);
-  const [foodImageIndex, setFoodImageIndex] = useState(0);
 
   const merchandiseImages = [
     {
@@ -52,16 +51,6 @@ export default function ExperienceSection() {
       (prev) => (prev - 1 + merchandiseImages.length) % merchandiseImages.length
     );
   };
-
-  const foodBeverageImages = [
-    { src: "/images/pelican-beers.png", alt: "Pelican Brewing beer selection" },
-    { src: "/images/pelican-pour.png", alt: "Fresh Pelican beer being poured" },
-    {
-      src: "/images/pelican-toast.png",
-      alt: "Friends toasting with Pelican beers",
-    },
-    { src: "/images/503-cans.png", alt: "503 Distilling craft cocktail cans" },
-  ];
 
   const merchandise = [
     {
@@ -270,62 +259,6 @@ export default function ExperienceSection() {
             </p>
           </div>
 
-          {/* Image Carousel */}
-          <div className="mb-12">
-            <div className="relative max-w-2xl mx-auto">
-              <div className="aspect-video bg-white rounded-2xl shadow-xl overflow-hidden">
-                <Image
-                  src={foodBeverageImages[foodImageIndex].src}
-                  alt={foodBeverageImages[foodImageIndex].alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 800px"
-                />
-              </div>
-
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg"
-                onClick={() =>
-                  setFoodImageIndex(
-                    (prev) =>
-                      (prev - 1 + foodBeverageImages.length) %
-                      foodBeverageImages.length
-                  )
-                }
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </Button>
-              <Button
-                variant="outline"
-                size="icon"
-                className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg"
-                onClick={() =>
-                  setFoodImageIndex(
-                    (prev) => (prev + 1) % foodBeverageImages.length
-                  )
-                }
-              >
-                <ChevronRight className="h-5 w-5" />
-              </Button>
-
-              <div className="flex justify-center mt-4 space-x-2">
-                {foodBeverageImages.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`w-2 h-2 rounded-full transition-colors ${
-                      index === foodImageIndex
-                        ? "bg-festival-blue"
-                        : "bg-gray-300"
-                    }`}
-                    onClick={() => setFoodImageIndex(index)}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* BAR Section */}
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
@@ -334,59 +267,28 @@ export default function ExperienceSection() {
                 <h4 className="text-2xl font-bold text-gray-900">BAR</h4>
               </div>
 
-              {/* Pelican Brewing */}
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src="/images/pelican-logo.png"
-                    alt="Pelican Brewing Company"
-                    width={96}
-                    height={96}
-                    className="h-24 w-24 mr-3 object-contain"
-                  />
-                  <h5 className="text-xl font-bold text-gray-900">
-                    <a
-                      href="https://pelicanbrewing.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-festival-pink transition-colors"
-                    >
-                      Pelican Brewing
-                    </a>
-                  </h5>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Our proud sponsor <strong>Pelican Brewing</strong> will be
-                  pouring their fine array of beer, cider and sparklehops on
-                  tap! Experience the taste of the Oregon Coast with every sip.
-                </p>
-              </div>
-
-              {/* 503 Distilling */}
+              {/* Steeplejack Brewing */}
               <div className="mb-6">
-                <div className="flex items-center mb-4">
-                  <Image
-                    src="/images/503-logo.png"
-                    alt="503 Distilling"
-                    width={96}
-                    height={96}
-                    className="h-24 w-24 mr-3 object-contain"
-                  />
-                  <h5 className="text-xl font-bold text-gray-900">
-                    <a
-                      href="https://503distilling.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-festival-pink transition-colors"
-                    >
-                      503 Distilling
-                    </a>
-                  </h5>
+                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
+                  <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-festival-blue/30 bg-festival-blue/5 text-center text-xs font-bold uppercase tracking-wide text-festival-blue">
+                    Logo Coming Soon
+                  </div>
+                  <div>
+                    <h5 className="text-xl font-bold text-gray-900">
+                      <a
+                        href="https://steeplejackbeer.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-festival-pink transition-colors"
+                      >
+                        Steeplejack Brewing
+                      </a>
+                    </h5>
+                    <p className="mt-3 text-gray-700">
+                      Steeplejack Brewing beverage details are coming soon.
+                    </p>
+                  </div>
                 </div>
-                <p className="text-gray-700 mb-4">
-                  <strong>503 Distilling</strong> will be serving their classic
-                  craft cocktails that capture the spirit of Oregon.
-                </p>
               </div>
 
               <div className="bg-festival-pink/10 p-4 rounded-xl">
