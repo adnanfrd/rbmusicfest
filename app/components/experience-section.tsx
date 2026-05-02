@@ -415,21 +415,7 @@ export default function ExperienceSection() {
             </div>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-4 justify-center items-center pt-4">
-            <a
-              href="mailto:hello@ncamfoundation.org?subject=Food%20Vendor%20Waitlist"
-              className="inline-block bg-festival-blue hover:bg-festival-blue/90 text-white font-bold py-4 px-8 text-lg min-w-[250px] text-center rounded-xl transition-all duration-300 no-underline shadow-lg hover:shadow-xl btn-hover-scale"
-            >
-              FOOD VENDORS FILLED
-            </a>
-
-            <a
-              href="mailto:hello@ncamfoundation.org?subject=Alcohol%20Vendor%20Waitlist"
-              className="inline-block bg-festival-pink hover:bg-festival-pink/90 text-white font-bold py-4 px-8 text-lg min-w-[250px] text-center rounded-xl transition-all duration-300 no-underline shadow-lg hover:shadow-xl btn-hover-scale"
-            >
-              ALCOHOL VENDORS FILLED
-            </a>
-
+          <div className="flex justify-center pt-4">
             <a
               href="https://forms.gle/ne19NiY9FJpCYFXV8"
               target="_blank"
