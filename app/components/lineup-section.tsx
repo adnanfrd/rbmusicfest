@@ -381,10 +381,7 @@ const sundayArtists: Performer[] = [
   videos:
     name === "Molly Bangs"
       ? [
-          {
-            title: "Live at Artichoke Music",
-            url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
-          },
+          
           {
             title: "Sparky",
             url: "https://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO",
