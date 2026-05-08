@@ -46,24 +46,32 @@ const saturdayArtists: Performer[] = [
       ? "/images/kill-the-headlights-1.jpg"
       : name === "The Upkeeps"
         ? "/images/the-upkeeps-promo-1.jpeg"
+      : name === "Mike Mannequin"
+        ? "/images/mike.png"
       : performerImages[index % performerImages.length],
   description:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
       : name === "The Upkeeps"
         ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
+      : name === "Mike Mannequin"
+        ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
       : name === "The Upkeeps"
         ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
+      : name === "Mike Mannequin"
+        ? "Mike Mannequin\nPortland, Oregon\n\nMike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes with bursts of garage rock energy and ambient punk undertones. With a goal of making spooky pop, their sound is both haunting and dynamic.\n\nFounded by Michael Young, a fixture in Portland's music scene for over 20 years, the band features members from acts like Black Shelton, Corrina Repp, King Who, and Brother's Young. Rooted in the city's grassroots music community, Mike Mannequin crafts evocative songs that resonate with fans of dark, melodic sounds."
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website:
     name === "Kill the Headlights"
       ? "https://killtheheadlightsband.com"
       : name === "The Upkeeps"
         ? "https://www.theupkeeps.com/"
+      : name === "Mike Mannequin"
+        ? "https://mikemannequin.bandzoogle.com/"
       : name === "Brenda Andrus"
         ? "https://brendaandrus.org/"
       : "",
@@ -121,6 +129,29 @@ const saturdayArtists: Performer[] = [
               url: "https://youtube.com/@brendaandrus?si=YXFetxX52Zq8083e",
             },
           ]
+      : name === "Mike Mannequin"
+        ? [
+            {
+              name: "Website",
+              url: "https://mikemannequin.bandzoogle.com/",
+            },
+            {
+              name: "Spotify",
+              url: "https://open.spotify.com/artist/7JC3PyaScW9GMGjxEeZZnA?si=xjwIzTWcSzmA3cHitwJ0hQ",
+            },
+            {
+              name: "Bandcamp",
+              url: "https://mikemannequin.bandcamp.com",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/mikemannequinmusic?igsh=MTJtc2wybmw5dm54MQ==",
+            },
+            {
+              name: "YouTube",
+              url: "https://youtube.com/@mikemannequin?si=QRWc44M8EKmBDFDC",
+            },
+          ]
       : [],
   videos:
     name === "Kill the Headlights"
@@ -147,6 +178,8 @@ const saturdayArtists: Performer[] = [
             "/images/the-upkeeps-promo-2.jpeg",
             "/images/the-upkeeps-album-cover.jpg",
           ]
+      : name === "Mike Mannequin"
+        ? ["/images/mike.png"]
       : [],
   documentLinks:
     name === "Kill the Headlights"
@@ -171,6 +204,8 @@ const sundayArtists: Performer[] = [
   image:
     name === "Oklahoma Perfect"
       ? "/images/OKP2.jpg"
+      : name === "Kris Stuart"
+      ? "/images/kris.png"
       : name === "Metts Ryan Collins"
       ? "/images/metts-ryan-collins-1.png"
       : performerImages[(index + 1) % performerImages.length],
@@ -179,6 +214,8 @@ const sundayArtists: Performer[] = [
       ? "Molly Bangs brings live country-ish originals and eclectic roots energy to the Sunday lineup."
       : name === "Oklahoma Perfect"
         ? "Oklahoma Perfect is a dream country trio from Portland, Oregon, blending Dust Bowl sunsets, lost 80's soundtrack shimmer, and neon jukebox atmosphere."
+      : name === "Kris Stuart"
+        ? "Kris Stuart is a traveling singer/guitarist whose folk, blues, and country songs carry stories of sin, salvation, and a lifetime spent mining for music."
       : name === "Metts Ryan Collins"
         ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
@@ -187,6 +224,8 @@ const sundayArtists: Performer[] = [
       ? "Molly Bangs performs live with a mix of original material and country-ish recordings.\n\nLive at Artichoke Music:\nhttp://www.youtube.com/live/cJ5_oC6KQ-o\n\nSome older country-ish recordings:\n\nNational Award Winning Music Video (Sparky):\nhttps://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO\n\nRed Wine and Saltines (played on multiple radio shows):\nhttps://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9\n\nKim Smoltz (Ween Cover):\nhttps://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8"
       : name === "Oklahoma Perfect"
         ? "Oklahoma Perfect is a dream country trio from Portland, OR, inhabiting the space between burnt orange Dust Bowl sunsets and lost 80's soundtracks, all filtered through the speakers of a neon jukebox. Songwriter Ladawn Sheffield's dulcet, swaying melodies gently weave family tales of heartbreak and hope. Rob Oberdorfer and Evan Railton (both current members of Ages & Ages) create retro futuristic backdrops of psychedelic swirls with tortured synths and glitchy guitar, evoking a Lynch-ian dream sequence."
+      : name === "Kris Stuart"
+        ? "Kris Stuart, singer/guitarist, is a traveling troubadour wandering the west. Folk music, blues and country melt together in songs of sin and salvation written and gathered from a lifetime of mining for music.\n\nSometimes seen as lead guitarist for Americana Stalwarts such as Willy Tea Taylor and the Fellership, Jaime Wyatt, The Turkey Buzzards or Riley Downing of The Deslondes.\n\nKris has shared stages with rock and roll legends like Foghat, The Marshall Tucker Band, Blue Oyster Cult, Phil Lesh, and Molly Hatchet, as well as soon to be legends The White Buffalo, Scott H Biram, Jesse Dayton, Turnpike Troubadours, and Blackberry Smoke. He has earned his place by playing most nights in a small room for a few people and in love with the opportunity to play music."
       : name === "Metts Ryan Collins"
         ? "If your idea of a real rock band for the 21st century is one that blends the swagger and bluesy elements of classic bands like The Rolling Stones, Led Zeppelin and Humble Pie, alongside more recent bands like The White Stripes, Black Keys and Rival Sons, then let me introduce you to the power trio from Portland, Oregon - Metts Ryan Collins.\n\nMetts Ryan Collins are bold new standard bearers for this rare breed. With Geoff Metts leading the charge on vocals and guitars, Dain Ryan on bass and vocals, and Mike Collins on drums and vocals, the band is taking the fight to listeners with their gritty and vibrant brand of guitar rock.\n\nFollowing up their self-titled EP with their debut full-length, Homegrown, Metts Ryan Collins garnered both local and regional acclaim, including a feature with the Portland Trail Blazers, who played the album's first single, \"Oregon,\" during games. They also showcased at NAMM and Whiskey-A-Go-Go, among others, earning a blue collar audience while delivering a tried-and-true, straight-to-the-gut rock 'n' roll brand that is timeless.\n\nThey are back with a new full-length, No Days Be Wasted, available soon on streaming, download and compact disc.\n\nRecommended if you like: Black Keys, Rival Sons, Vintage Trouble, Gary Clark Jr."
       : `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
@@ -216,6 +255,21 @@ const sundayArtists: Performer[] = [
             {
               name: "Bandcamp",
               url: "https://oklahomaperfect.bandcamp.com/album/bury-my-home",
+            },
+          ]
+      : name === "Kris Stuart"
+        ? [
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/kris_stuart_music/",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/kris.stuart.35?mibextid=LQQJ4d",
+            },
+            {
+              name: "YouTube",
+              url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
             },
           ]
       : name === "Metts Ryan Collins"
@@ -265,9 +319,16 @@ const sundayArtists: Performer[] = [
         ]
       : name === "Oklahoma Perfect"
         ? [
+          {
+            title: "Bury My Home",
+            url: "https://www.youtube.com/watch?v=VI31_SmriM4&list=RDVI31_SmriM4&start_radio=1",
+          },
+        ]
+      : name === "Kris Stuart"
+        ? [
             {
-              title: "Bury My Home",
-              url: "https://www.youtube.com/watch?v=VI31_SmriM4&list=RDVI31_SmriM4&start_radio=1",
+              title: "Kris Stuart",
+              url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
             },
           ]
       : name === "Metts Ryan Collins"
