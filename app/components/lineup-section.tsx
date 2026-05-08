@@ -202,7 +202,9 @@ const sundayArtists: Performer[] = [
   name,
   setTime,
   image:
-    name === "Oklahoma Perfect"
+    name === "Molly Bangs"
+      ? "/images/MollyBANG-1.jpg"
+      : name === "Oklahoma Perfect"
       ? "/images/OKP2.jpg"
       : name === "Kris Stuart"
       ? "/images/kris.png"
@@ -221,7 +223,7 @@ const sundayArtists: Performer[] = [
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
   fullBio:
     name === "Molly Bangs"
-      ? "Molly Bangs performs live with a mix of original material and country-ish recordings.\n\nLive at Artichoke Music:\nhttp://www.youtube.com/live/cJ5_oC6KQ-o\n\nSome older country-ish recordings:\n\nNational Award Winning Music Video (Sparky):\nhttps://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO\n\nRed Wine and Saltines (played on multiple radio shows):\nhttps://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9\n\nKim Smoltz (Ween Cover):\nhttps://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8"
+      ? "Sloppy Country Garbage Rock"
       : name === "Oklahoma Perfect"
         ? "Oklahoma Perfect is a dream country trio from Portland, OR, inhabiting the space between burnt orange Dust Bowl sunsets and lost 80's soundtracks, all filtered through the speakers of a neon jukebox. Songwriter Ladawn Sheffield's dulcet, swaying melodies gently weave family tales of heartbreak and hope. Rob Oberdorfer and Evan Railton (both current members of Ages & Ages) create retro futuristic backdrops of psychedelic swirls with tortured synths and glitchy guitar, evoking a Lynch-ian dream sequence."
       : name === "Kris Stuart"
@@ -299,7 +301,10 @@ const sundayArtists: Performer[] = [
   videos:
     name === "Molly Bangs"
       ? [
-          
+          {
+            title: "Live at Artichoke Music",
+            url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
+          },
           {
             title: "Sparky",
             url: "https://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO",
@@ -311,10 +316,6 @@ const sundayArtists: Performer[] = [
           {
             title: "Kim Smoltz (Ween Cover)",
             url: "https://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8",
-          },
-          {
-            title: "Live at Artichoke Music",
-            url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
           },
         ]
       : name === "Oklahoma Perfect"
@@ -340,7 +341,12 @@ const sundayArtists: Performer[] = [
           ]
       : [],
   images:
-    name === "Oklahoma Perfect"
+    name === "Molly Bangs"
+      ? [
+          "/images/MollyBANG-1.jpg",
+          "/images/MollyBANG-2.jpg",
+        ]
+      : name === "Oklahoma Perfect"
       ? ["/images/OKP2.jpg"]
       : name === "Metts Ryan Collins"
       ? [
