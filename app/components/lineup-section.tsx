@@ -31,7 +31,6 @@ const performerImages = [
 ];
 
 const saturdayArtists: Performer[] = [
-  ["Sneakerwave Blues Revue", "12:00 PM"],
   ["Brenda Andrus", "1:30 PM"],
   ["Wes Youssi", "3:00 PM"],
   ["The Upkeeps", "4:30 PM"],
@@ -275,7 +274,6 @@ const saturdayArtists: Performer[] = [
 const sundayArtists: Performer[] = [
   ["Oklahoma Perfect", "12:00 PM"],
   ["Kris Stuart", "1:15 PM"],
-  ["Perry Witt", "2:30 PM"],
   ["Metts Ryan Collins", "3:45 PM"],
   ["Molly Bangs", "5:00 PM"],
 ].map(([name, setTime], index) => ({
