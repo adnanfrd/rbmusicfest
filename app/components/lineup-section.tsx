@@ -48,6 +48,8 @@ const saturdayArtists: Performer[] = [
         ? "/images/the-upkeeps-promo-1.jpeg"
       : name === "Wes Youssi"
         ? "/images/wes youssi 1.png"
+      : name === "Josefina Del Norte"
+        ? "/images/JDN 1.png"
       : name === "Mike Mannequin"
         ? "/images/mike.png"
       : performerImages[index % performerImages.length],
@@ -58,6 +60,8 @@ const saturdayArtists: Performer[] = [
         ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
       : name === "Wes Youssi"
         ? "Wes Youssi brings high-octane twang from Portland, blending western music with rock, surf, and latin tones."
+      : name === "Josefina Del Norte"
+        ? "Josefina Del Norte bridges South American cumbia, Andean huaynos, Afro-Peruvian music, and psychedelic electronic rock influences."
       : name === "Mike Mannequin"
         ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
@@ -68,6 +72,8 @@ const saturdayArtists: Performer[] = [
         ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
       : name === "Wes Youssi"
         ? "Wes Youssi is a singer and songwriter from Portland, Oregon. Inspired to sing country artists his grandma loved in the 1960's, Wes formed The County Champs in 2014. He spent the next 10 years combing the loneliest roads and towns throughout the Northwest and beyond, playing for hard-working people like the ones he grew up around in Belvidere, Illinois. Along the way, he won them over with his original songs while gaining recognition from DJ's, writers, and fellow musicians for his authentic vocal and golden age sound.\n\nMany miles and whiskeys later, Wes and The County Champs have evolved to encompass a broader spectrum of music influenced by the barren roads they've traveled. Drawing inspiration from the border rock bands that first emerged in the 1950's, their newest songs celebrate the highest deserts and \"Live Free or Not At All\" kind of people. It's a sonic space they affectionately call \"high-octane twang,\" blending western music with rock, surf, and latin tones. This western noir concoction is garnished with neon lights and a dash of tragic romance. Get in your Cadillac and don't stop driving 'til sunrise!\n\nMeet the band members:\n\nWes Youssi\nGuitar / Lead Vocals\n\nDon Lawry\nDrums\n\nHowdy Darrel\nBass Guitar\n\nSpencer Schillinger\nAcoustic / Electric Guitar\n\nRoger Conley\nPedal Steel Guitar"
+      : name === "Josefina Del Norte"
+        ? "This band project began last summer through jam sessions among friends, creating a space to express our diaspora while bringing a fresh perspective. Our music reinterprets the songs we grew up with in our home countries, enriched by influences gathered through travel and cultural exchange. We see music as a bridge for community and love sharing our energy in intimate spaces and events that celebrate cultural diversity.\n\nOur fusion spans South American cumbia, Andean huaynos, and coplas from northern Argentina to Afro-Peruvian music and electronic, psychedelic rock influences, with voice and pedal effects in our instruments. Alongside our own versions of beloved songs, we are gradually bringing our well-received original compositions to the surface, authentically shaping the style we seek to develop.\n\nRight now we are working on recording music and new original songwriting to be released at the end of this year.\n\nBAND MEMBERS\n\nStefano Calles\n(El Salvador) - Guitar player and musical director and arranger, founder of Lxs Bastardxs, a project that blends music and poetry. Dreamer, composer and songwriter, his guitar is the distinctive sound of this project.\n\nJosefina del Norte\n(Argentina) is a singer and songwriter whose music is shaped by the emotions and memories of her beloved South America. Influenced by the landscapes of Jujuy, Cordoba, and Brazil, she blends ancestral and contemporary sounds into her own authentic expression.\n\nArtists like Li Saumet, Juana Molina, Susana Baca, Savia Andina, Mercedes Sosa, Gustavo Cerati, Nicola Cruz and many more guide her music, which moves between nostalgia, exploration, and deep-rooted traditions. Beyond her artistry, she is a cultural promoter who builds worldwide connections, using not just music but also other artistic expressions as a bridge for exploration and encounter.\n\nDavid Calvario\n(Mexico) - A personal groove on the bass line of the band. With over a decade of professional experience as a performing and studio musician and music educator, David offers his students a wealth of knowledge. An accomplished multi-instrumentalist specializing in bass (upright, electric, and mariachi bass), he is proficient in various genres, including Latin, R&B, rock, bossanova, folk, contemporary music, and a touch of jazz.\n\nLuis Hernandez\n(USA) is a multi-percussionist. He has led his Barrio Mestizo orchestra for 5 years, playing salsa, cumbia, and merengue music. Born in the United States, Luis identifies as Chicano with Mexican roots. The musical genres that have influenced him the most are Salsa, Cumbia, Chachacha, Mambo, Boogaloo, Soul, and Jazz.\n\nOwen Lowe\n(USA) Owen Lowe is a bassist based out of Portland, Oregon. With over 15 years of experience, Owen has performed a wide variety of styles, ranging from Funk, Soul, Jazz, Cumbia, Folk, Blues and many more. His love for music is demonstrated in his ability to keep everyone engaged in the groove."
       : name === "Mike Mannequin"
         ? "Mike Mannequin\nPortland, Oregon\n\nMike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes with bursts of garage rock energy and ambient punk undertones. With a goal of making spooky pop, their sound is both haunting and dynamic.\n\nFounded by Michael Young, a fixture in Portland's music scene for over 20 years, the band features members from acts like Black Shelton, Corrina Repp, King Who, and Brother's Young. Rooted in the city's grassroots music community, Mike Mannequin crafts evocative songs that resonate with fans of dark, melodic sounds."
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
@@ -78,6 +84,8 @@ const saturdayArtists: Performer[] = [
         ? "https://www.theupkeeps.com/"
       : name === "Wes Youssi"
         ? "https://wesyoussimusic.com"
+      : name === "Josefina Del Norte"
+        ? "https://josefinadelnorte.godaddysites.com/"
       : name === "Mike Mannequin"
         ? "https://mikemannequin.bandzoogle.com/"
       : name === "Brenda Andrus"
@@ -149,6 +157,17 @@ const saturdayArtists: Performer[] = [
               url: "https://www.facebook.com/wesyoussimusic",
             },
           ]
+      : name === "Josefina Del Norte"
+        ? [
+            {
+              name: "Website",
+              url: "https://josefinadelnorte.godaddysites.com/",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/josefinadelnorte/",
+            },
+          ]
       : name === "Brenda Andrus"
         ? [
             {
@@ -196,6 +215,17 @@ const saturdayArtists: Performer[] = [
             url: "https://youtu.be/n3bq47U8O00?si=frhvw9Npm9jGZkaY",
           },
         ]
+      : name === "Josefina Del Norte"
+        ? [
+            {
+              title: "Josefina Del Norte",
+              url: "https://youtu.be/uAvd2Lcr96U?si=TQEwPxbfCVPDNkpA",
+            },
+            {
+              title: "Josefina Del Norte",
+              url: "https://youtu.be/KHlfPzGV2Xk?si=sI0C2k09CDn5ELIw",
+            },
+          ]
       : [],
   images:
     name === "Kill the Headlights"
@@ -216,6 +246,17 @@ const saturdayArtists: Performer[] = [
             "/images/wes youssi 3.png",
             "/images/wes youssi 4.png",
             "/images/wes youssi 5.png",
+          ]
+      : name === "Josefina Del Norte"
+        ? [
+            "/images/JDN 1.png",
+            "/images/JDN 2.png",
+            "/images/JDN 3.png",
+            "/images/JDN 4.png",
+            "/images/JDN 5.png",
+            "/images/JDN 6.png",
+            "/images/JDN 7.png",
+            "/images/JDN 8.png",
           ]
       : name === "Mike Mannequin"
         ? ["/images/mike.png"]
