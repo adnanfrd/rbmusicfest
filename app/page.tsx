@@ -4,6 +4,7 @@ import { useEffect } from "react"
 import HeroSection from "./components/hero-section"
 import CtaRibbon from "./components/cta-ribbon"
 import LineupSection from "./components/lineup-section"
+import VendorSection from "./components/vendor-section"
 import ExperienceSection from "./components/experience-section"
 import MapSection from "./components/map-section"
 import FaqSection from "./components/faq-section"
@@ -32,6 +33,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <CtaRibbon />
+      <VendorSection />
       <LineupSection />
       <div className="section-divider"></div>
       <ExperienceSection />

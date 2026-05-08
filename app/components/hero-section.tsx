@@ -16,7 +16,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 pb-10 md:items-center md:py-20">
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/squatch-DCY8BTAEooyduNm7u5koD5N6njziJA.png"
@@ -38,46 +38,57 @@ export default function HeroSection() {
       ></div>
 
       <div
-        className={`container relative z-20 text-center px-4 pt-10 md:pt-0 ${
+        className={`container relative z-20 text-center px-4 pt-2 md:pt-0 ${
           isLoaded
             ? "opacity-100 transition-opacity duration-1000"
             : "opacity-0"
         }`}
       >
         <div
-          className={`mt-[60px] mb-6 ${
+          className={`mt-2 mb-2 md:mt-[60px] md:mb-6 ${
             isLoaded
               ? "opacity-100 transform-none transition-all duration-1000 delay-50"
               : "opacity-0 transform translate-y-5"
           }`}
         >
-          <div className="flex justify-center items-center gap-3 md:gap-4 mb-4 flex-wrap">
+          <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-3 mb-2 md:mb-4 flex-wrap">
             {[
               {
                 href: "https://ncamfoundation.org",
                 label: "NCAM Foundation",
+                logo: "/images/01 SPONSOR LOGO NCAM Foundation.png",
               },
               {
                 href: "https://steeplejackbeer.com",
                 label: "Steeplejack Brewing",
+                logo: "/images/02 SPONSOR LOGO Steeplejack.png",
               },
               {
                 href: "mailto:hello@ncamfoundation.org?subject=Revival%20Drum%20Shop",
                 label: "Revival Drum Shop",
+                logo: "/images/04 SPONSOR LOGO Revival Drums_.png",
               },
               {
                 href: "https://crowcane.com",
                 label: "Crow Cane",
+                logo: "/images/03 SPONSOR LOGO Crow Cane.png",
               },
-            ].map(({ href, label }) => (
+            ].map(({ href, label, logo }) => (
               <Link
                 key={label}
                 href={href}
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                className="rounded-full border border-white/30 bg-black/35 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-sm transition-transform duration-200 hover:scale-105"
+                aria-label={label}
+                className="flex h-16 w-28 items-center justify-center rounded-full bg-transparent p-0 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-36 md:h-24 md:w-40"
               >
-                {label}
+                <Image
+                  src={logo}
+                  alt={label}
+                  width={220}
+                  height={72}
+                  className="max-h-full w-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
+                />
               </Link>
             ))}
           </div>
