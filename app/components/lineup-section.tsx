@@ -46,6 +46,8 @@ const saturdayArtists: Performer[] = [
       ? "/images/kill-the-headlights-1.jpg"
       : name === "The Upkeeps"
         ? "/images/the-upkeeps-promo-1.jpeg"
+      : name === "Wes Youssi"
+        ? "/images/wes youssi 1.png"
       : name === "Mike Mannequin"
         ? "/images/mike.png"
       : performerImages[index % performerImages.length],
@@ -54,6 +56,8 @@ const saturdayArtists: Performer[] = [
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
       : name === "The Upkeeps"
         ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
+      : name === "Wes Youssi"
+        ? "Wes Youssi brings high-octane twang from Portland, blending western music with rock, surf, and latin tones."
       : name === "Mike Mannequin"
         ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
@@ -62,6 +66,8 @@ const saturdayArtists: Performer[] = [
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
       : name === "The Upkeeps"
         ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
+      : name === "Wes Youssi"
+        ? "Wes Youssi is a singer and songwriter from Portland, Oregon. Inspired to sing country artists his grandma loved in the 1960's, Wes formed The County Champs in 2014. He spent the next 10 years combing the loneliest roads and towns throughout the Northwest and beyond, playing for hard-working people like the ones he grew up around in Belvidere, Illinois. Along the way, he won them over with his original songs while gaining recognition from DJ's, writers, and fellow musicians for his authentic vocal and golden age sound.\n\nMany miles and whiskeys later, Wes and The County Champs have evolved to encompass a broader spectrum of music influenced by the barren roads they've traveled. Drawing inspiration from the border rock bands that first emerged in the 1950's, their newest songs celebrate the highest deserts and \"Live Free or Not At All\" kind of people. It's a sonic space they affectionately call \"high-octane twang,\" blending western music with rock, surf, and latin tones. This western noir concoction is garnished with neon lights and a dash of tragic romance. Get in your Cadillac and don't stop driving 'til sunrise!\n\nMeet the band members:\n\nWes Youssi\nGuitar / Lead Vocals\n\nDon Lawry\nDrums\n\nHowdy Darrel\nBass Guitar\n\nSpencer Schillinger\nAcoustic / Electric Guitar\n\nRoger Conley\nPedal Steel Guitar"
       : name === "Mike Mannequin"
         ? "Mike Mannequin\nPortland, Oregon\n\nMike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes with bursts of garage rock energy and ambient punk undertones. With a goal of making spooky pop, their sound is both haunting and dynamic.\n\nFounded by Michael Young, a fixture in Portland's music scene for over 20 years, the band features members from acts like Black Shelton, Corrina Repp, King Who, and Brother's Young. Rooted in the city's grassroots music community, Mike Mannequin crafts evocative songs that resonate with fans of dark, melodic sounds."
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
@@ -70,6 +76,8 @@ const saturdayArtists: Performer[] = [
       ? "https://killtheheadlightsband.com"
       : name === "The Upkeeps"
         ? "https://www.theupkeeps.com/"
+      : name === "Wes Youssi"
+        ? "https://wesyoussimusic.com"
       : name === "Mike Mannequin"
         ? "https://mikemannequin.bandzoogle.com/"
       : name === "Brenda Andrus"
@@ -116,6 +124,29 @@ const saturdayArtists: Performer[] = [
             {
               name: "Instagram",
               url: "https://www.instagram.com/theupkeepsofficial/",
+            },
+          ]
+      : name === "Wes Youssi"
+        ? [
+            {
+              name: "Website",
+              url: "https://wesyoussimusic.com",
+            },
+            {
+              name: "SoundCloud",
+              url: "https://soundcloud.com/neverluckyreocords",
+            },
+            {
+              name: "Spotify",
+              url: "https://open.spotify.com/artist/5IDHMY8A0kuCTgE5jOaHvB?si=z6Y7lNgJQbCouPDPuKc04Q",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/wesyoussimusic",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/wesyoussimusic",
             },
           ]
       : name === "Brenda Andrus"
@@ -177,6 +208,14 @@ const saturdayArtists: Performer[] = [
             "/images/the-upkeeps-promo-1.jpeg",
             "/images/the-upkeeps-promo-2.jpeg",
             "/images/the-upkeeps-album-cover.jpg",
+          ]
+      : name === "Wes Youssi"
+        ? [
+            "/images/wes youssi 1.png",
+            "/images/wes youssi 2.png",
+            "/images/wes youssi 3.png",
+            "/images/wes youssi 4.png",
+            "/images/wes youssi 5.png",
           ]
       : name === "Mike Mannequin"
         ? ["/images/mike.png"]
