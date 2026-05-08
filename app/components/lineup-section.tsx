@@ -46,24 +46,48 @@ const saturdayArtists: Performer[] = [
       ? "/images/kill-the-headlights-1.jpg"
       : name === "The Upkeeps"
         ? "/images/the-upkeeps-promo-1.jpeg"
+      : name === "Wes Youssi"
+        ? "/images/wes youssi 1.png"
+      : name === "Josefina Del Norte"
+        ? "/images/JDN 1.png"
+      : name === "Mike Mannequin"
+        ? "/images/mike.png"
       : performerImages[index % performerImages.length],
   description:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
       : name === "The Upkeeps"
         ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
+      : name === "Wes Youssi"
+        ? "Wes Youssi brings high-octane twang from Portland, blending western music with rock, surf, and latin tones."
+      : name === "Josefina Del Norte"
+        ? "Josefina Del Norte bridges South American cumbia, Andean huaynos, Afro-Peruvian music, and psychedelic electronic rock influences."
+      : name === "Mike Mannequin"
+        ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
     name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
       : name === "The Upkeeps"
         ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
+      : name === "Wes Youssi"
+        ? "Wes Youssi is a singer and songwriter from Portland, Oregon. Inspired to sing country artists his grandma loved in the 1960's, Wes formed The County Champs in 2014. He spent the next 10 years combing the loneliest roads and towns throughout the Northwest and beyond, playing for hard-working people like the ones he grew up around in Belvidere, Illinois. Along the way, he won them over with his original songs while gaining recognition from DJ's, writers, and fellow musicians for his authentic vocal and golden age sound.\n\nMany miles and whiskeys later, Wes and The County Champs have evolved to encompass a broader spectrum of music influenced by the barren roads they've traveled. Drawing inspiration from the border rock bands that first emerged in the 1950's, their newest songs celebrate the highest deserts and \"Live Free or Not At All\" kind of people. It's a sonic space they affectionately call \"high-octane twang,\" blending western music with rock, surf, and latin tones. This western noir concoction is garnished with neon lights and a dash of tragic romance. Get in your Cadillac and don't stop driving 'til sunrise!\n\nMeet the band members:\n\nWes Youssi\nGuitar / Lead Vocals\n\nDon Lawry\nDrums\n\nHowdy Darrel\nBass Guitar\n\nSpencer Schillinger\nAcoustic / Electric Guitar\n\nRoger Conley\nPedal Steel Guitar"
+      : name === "Josefina Del Norte"
+        ? "This band project began last summer through jam sessions among friends, creating a space to express our diaspora while bringing a fresh perspective. Our music reinterprets the songs we grew up with in our home countries, enriched by influences gathered through travel and cultural exchange. We see music as a bridge for community and love sharing our energy in intimate spaces and events that celebrate cultural diversity.\n\nOur fusion spans South American cumbia, Andean huaynos, and coplas from northern Argentina to Afro-Peruvian music and electronic, psychedelic rock influences, with voice and pedal effects in our instruments. Alongside our own versions of beloved songs, we are gradually bringing our well-received original compositions to the surface, authentically shaping the style we seek to develop.\n\nRight now we are working on recording music and new original songwriting to be released at the end of this year.\n\nBAND MEMBERS\n\nStefano Calles\n(El Salvador) - Guitar player and musical director and arranger, founder of Lxs Bastardxs, a project that blends music and poetry. Dreamer, composer and songwriter, his guitar is the distinctive sound of this project.\n\nJosefina del Norte\n(Argentina) is a singer and songwriter whose music is shaped by the emotions and memories of her beloved South America. Influenced by the landscapes of Jujuy, Cordoba, and Brazil, she blends ancestral and contemporary sounds into her own authentic expression.\n\nArtists like Li Saumet, Juana Molina, Susana Baca, Savia Andina, Mercedes Sosa, Gustavo Cerati, Nicola Cruz and many more guide her music, which moves between nostalgia, exploration, and deep-rooted traditions. Beyond her artistry, she is a cultural promoter who builds worldwide connections, using not just music but also other artistic expressions as a bridge for exploration and encounter.\n\nDavid Calvario\n(Mexico) - A personal groove on the bass line of the band. With over a decade of professional experience as a performing and studio musician and music educator, David offers his students a wealth of knowledge. An accomplished multi-instrumentalist specializing in bass (upright, electric, and mariachi bass), he is proficient in various genres, including Latin, R&B, rock, bossanova, folk, contemporary music, and a touch of jazz.\n\nLuis Hernandez\n(USA) is a multi-percussionist. He has led his Barrio Mestizo orchestra for 5 years, playing salsa, cumbia, and merengue music. Born in the United States, Luis identifies as Chicano with Mexican roots. The musical genres that have influenced him the most are Salsa, Cumbia, Chachacha, Mambo, Boogaloo, Soul, and Jazz.\n\nOwen Lowe\n(USA) Owen Lowe is a bassist based out of Portland, Oregon. With over 15 years of experience, Owen has performed a wide variety of styles, ranging from Funk, Soul, Jazz, Cumbia, Folk, Blues and many more. His love for music is demonstrated in his ability to keep everyone engaged in the groove."
+      : name === "Mike Mannequin"
+        ? "Mike Mannequin\nPortland, Oregon\n\nMike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes with bursts of garage rock energy and ambient punk undertones. With a goal of making spooky pop, their sound is both haunting and dynamic.\n\nFounded by Michael Young, a fixture in Portland's music scene for over 20 years, the band features members from acts like Black Shelton, Corrina Repp, King Who, and Brother's Young. Rooted in the city's grassroots music community, Mike Mannequin crafts evocative songs that resonate with fans of dark, melodic sounds."
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website:
     name === "Kill the Headlights"
       ? "https://killtheheadlightsband.com"
       : name === "The Upkeeps"
         ? "https://www.theupkeeps.com/"
+      : name === "Wes Youssi"
+        ? "https://wesyoussimusic.com"
+      : name === "Josefina Del Norte"
+        ? "https://josefinadelnorte.godaddysites.com/"
+      : name === "Mike Mannequin"
+        ? "https://mikemannequin.bandzoogle.com/"
       : name === "Brenda Andrus"
         ? "https://brendaandrus.org/"
       : "",
@@ -110,6 +134,40 @@ const saturdayArtists: Performer[] = [
               url: "https://www.instagram.com/theupkeepsofficial/",
             },
           ]
+      : name === "Wes Youssi"
+        ? [
+            {
+              name: "Website",
+              url: "https://wesyoussimusic.com",
+            },
+            {
+              name: "SoundCloud",
+              url: "https://soundcloud.com/neverluckyreocords",
+            },
+            {
+              name: "Spotify",
+              url: "https://open.spotify.com/artist/5IDHMY8A0kuCTgE5jOaHvB?si=z6Y7lNgJQbCouPDPuKc04Q",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/wesyoussimusic",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/wesyoussimusic",
+            },
+          ]
+      : name === "Josefina Del Norte"
+        ? [
+            {
+              name: "Website",
+              url: "https://josefinadelnorte.godaddysites.com/",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/josefinadelnorte/",
+            },
+          ]
       : name === "Brenda Andrus"
         ? [
             {
@@ -119,6 +177,29 @@ const saturdayArtists: Performer[] = [
             {
               name: "YouTube",
               url: "https://youtube.com/@brendaandrus?si=YXFetxX52Zq8083e",
+            },
+          ]
+      : name === "Mike Mannequin"
+        ? [
+            {
+              name: "Website",
+              url: "https://mikemannequin.bandzoogle.com/",
+            },
+            {
+              name: "Spotify",
+              url: "https://open.spotify.com/artist/7JC3PyaScW9GMGjxEeZZnA?si=xjwIzTWcSzmA3cHitwJ0hQ",
+            },
+            {
+              name: "Bandcamp",
+              url: "https://mikemannequin.bandcamp.com",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/mikemannequinmusic?igsh=MTJtc2wybmw5dm54MQ==",
+            },
+            {
+              name: "YouTube",
+              url: "https://youtube.com/@mikemannequin?si=QRWc44M8EKmBDFDC",
             },
           ]
       : [],
@@ -134,6 +215,17 @@ const saturdayArtists: Performer[] = [
             url: "https://youtu.be/n3bq47U8O00?si=frhvw9Npm9jGZkaY",
           },
         ]
+      : name === "Josefina Del Norte"
+        ? [
+            {
+              title: "Josefina Del Norte",
+              url: "https://youtu.be/uAvd2Lcr96U?si=TQEwPxbfCVPDNkpA",
+            },
+            {
+              title: "Josefina Del Norte",
+              url: "https://youtu.be/KHlfPzGV2Xk?si=sI0C2k09CDn5ELIw",
+            },
+          ]
       : [],
   images:
     name === "Kill the Headlights"
@@ -147,6 +239,27 @@ const saturdayArtists: Performer[] = [
             "/images/the-upkeeps-promo-2.jpeg",
             "/images/the-upkeeps-album-cover.jpg",
           ]
+      : name === "Wes Youssi"
+        ? [
+            "/images/wes youssi 1.png",
+            "/images/wes youssi 2.png",
+            "/images/wes youssi 3.png",
+            "/images/wes youssi 4.png",
+            "/images/wes youssi 5.png",
+          ]
+      : name === "Josefina Del Norte"
+        ? [
+            "/images/JDN 1.png",
+            "/images/JDN 2.png",
+            "/images/JDN 3.png",
+            "/images/JDN 4.png",
+            "/images/JDN 5.png",
+            "/images/JDN 6.png",
+            "/images/JDN 7.png",
+            "/images/JDN 8.png",
+          ]
+      : name === "Mike Mannequin"
+        ? ["/images/mike.png"]
       : [],
   documentLinks:
     name === "Kill the Headlights"
@@ -169,8 +282,12 @@ const sundayArtists: Performer[] = [
   name,
   setTime,
   image:
-    name === "Oklahoma Perfect"
+    name === "Molly Bangs"
+      ? "/images/MollyBANG-1.jpg"
+      : name === "Oklahoma Perfect"
       ? "/images/OKP2.jpg"
+      : name === "Kris Stuart"
+      ? "/images/kris.png"
       : name === "Metts Ryan Collins"
       ? "/images/metts-ryan-collins-1.png"
       : performerImages[(index + 1) % performerImages.length],
@@ -179,14 +296,18 @@ const sundayArtists: Performer[] = [
       ? "Molly Bangs brings live country-ish originals and eclectic roots energy to the Sunday lineup."
       : name === "Oklahoma Perfect"
         ? "Oklahoma Perfect is a dream country trio from Portland, Oregon, blending Dust Bowl sunsets, lost 80's soundtrack shimmer, and neon jukebox atmosphere."
+      : name === "Kris Stuart"
+        ? "Kris Stuart is a traveling singer/guitarist whose folk, blues, and country songs carry stories of sin, salvation, and a lifetime spent mining for music."
       : name === "Metts Ryan Collins"
         ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
   fullBio:
     name === "Molly Bangs"
-      ? "Molly Bangs performs live with a mix of original material and country-ish recordings.\n\nLive at Artichoke Music:\nhttp://www.youtube.com/live/cJ5_oC6KQ-o\n\nSome older country-ish recordings:\n\nNational Award Winning Music Video (Sparky):\nhttps://youtu.be/3MQbjv26IO4?si=KJfy8LyBzRmIwybO\n\nRed Wine and Saltines (played on multiple radio shows):\nhttps://youtu.be/W0b0LZiY_QY?si=5rIPwCrkoqWSK9Y9\n\nKim Smoltz (Ween Cover):\nhttps://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8"
+      ? "Sloppy Country Garbage Rock"
       : name === "Oklahoma Perfect"
         ? "Oklahoma Perfect is a dream country trio from Portland, OR, inhabiting the space between burnt orange Dust Bowl sunsets and lost 80's soundtracks, all filtered through the speakers of a neon jukebox. Songwriter Ladawn Sheffield's dulcet, swaying melodies gently weave family tales of heartbreak and hope. Rob Oberdorfer and Evan Railton (both current members of Ages & Ages) create retro futuristic backdrops of psychedelic swirls with tortured synths and glitchy guitar, evoking a Lynch-ian dream sequence."
+      : name === "Kris Stuart"
+        ? "Kris Stuart, singer/guitarist, is a traveling troubadour wandering the west. Folk music, blues and country melt together in songs of sin and salvation written and gathered from a lifetime of mining for music.\n\nSometimes seen as lead guitarist for Americana Stalwarts such as Willy Tea Taylor and the Fellership, Jaime Wyatt, The Turkey Buzzards or Riley Downing of The Deslondes.\n\nKris has shared stages with rock and roll legends like Foghat, The Marshall Tucker Band, Blue Oyster Cult, Phil Lesh, and Molly Hatchet, as well as soon to be legends The White Buffalo, Scott H Biram, Jesse Dayton, Turnpike Troubadours, and Blackberry Smoke. He has earned his place by playing most nights in a small room for a few people and in love with the opportunity to play music."
       : name === "Metts Ryan Collins"
         ? "If your idea of a real rock band for the 21st century is one that blends the swagger and bluesy elements of classic bands like The Rolling Stones, Led Zeppelin and Humble Pie, alongside more recent bands like The White Stripes, Black Keys and Rival Sons, then let me introduce you to the power trio from Portland, Oregon - Metts Ryan Collins.\n\nMetts Ryan Collins are bold new standard bearers for this rare breed. With Geoff Metts leading the charge on vocals and guitars, Dain Ryan on bass and vocals, and Mike Collins on drums and vocals, the band is taking the fight to listeners with their gritty and vibrant brand of guitar rock.\n\nFollowing up their self-titled EP with their debut full-length, Homegrown, Metts Ryan Collins garnered both local and regional acclaim, including a feature with the Portland Trail Blazers, who played the album's first single, \"Oregon,\" during games. They also showcased at NAMM and Whiskey-A-Go-Go, among others, earning a blue collar audience while delivering a tried-and-true, straight-to-the-gut rock 'n' roll brand that is timeless.\n\nThey are back with a new full-length, No Days Be Wasted, available soon on streaming, download and compact disc.\n\nRecommended if you like: Black Keys, Rival Sons, Vintage Trouble, Gary Clark Jr."
       : `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
@@ -216,6 +337,21 @@ const sundayArtists: Performer[] = [
             {
               name: "Bandcamp",
               url: "https://oklahomaperfect.bandcamp.com/album/bury-my-home",
+            },
+          ]
+      : name === "Kris Stuart"
+        ? [
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/kris_stuart_music/",
+            },
+            {
+              name: "Facebook",
+              url: "https://www.facebook.com/kris.stuart.35?mibextid=LQQJ4d",
+            },
+            {
+              name: "YouTube",
+              url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
             },
           ]
       : name === "Metts Ryan Collins"
@@ -258,16 +394,19 @@ const sundayArtists: Performer[] = [
             title: "Kim Smoltz (Ween Cover)",
             url: "https://youtu.be/8KegyoRFULQ?si=ZTdlSN9IMWy2TYz8",
           },
-          {
-            title: "Live at Artichoke Music",
-            url: "http://www.youtube.com/live/cJ5_oC6KQ-o",
-          },
         ]
       : name === "Oklahoma Perfect"
         ? [
+          {
+            title: "Bury My Home",
+            url: "https://www.youtube.com/watch?v=VI31_SmriM4&list=RDVI31_SmriM4&start_radio=1",
+          },
+        ]
+      : name === "Kris Stuart"
+        ? [
             {
-              title: "Bury My Home",
-              url: "https://www.youtube.com/watch?v=VI31_SmriM4&list=RDVI31_SmriM4&start_radio=1",
+              title: "Kris Stuart",
+              url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
             },
           ]
       : name === "Metts Ryan Collins"
@@ -279,7 +418,12 @@ const sundayArtists: Performer[] = [
           ]
       : [],
   images:
-    name === "Oklahoma Perfect"
+    name === "Molly Bangs"
+      ? [
+          "/images/MollyBANG-1.jpg",
+          "/images/MollyBANG-2.jpg",
+        ]
+      : name === "Oklahoma Perfect"
       ? ["/images/OKP2.jpg"]
       : name === "Metts Ryan Collins"
       ? [
