@@ -32,7 +32,7 @@ export default function HeroSection() {
               : "opacity-0 transform translate-y-5"
           }`}
         >
-          <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-3 mb-2 md:mb-4 flex-wrap">
+          <div className="flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-3 mb-2 md:mb-4">
             {[
               {
                 href: "https://ncamfoundation.org",
@@ -61,7 +61,7 @@ export default function HeroSection() {
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
-                className="flex h-16 w-28 items-center justify-center rounded-full bg-transparent p-0 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-36 md:h-24 md:w-40"
+                className="flex h-12 w-[22%] max-w-20 items-center justify-center rounded-full bg-transparent p-0 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-36 sm:max-w-none md:h-24 md:w-40"
               >
                 <Image
                   src={logo}
