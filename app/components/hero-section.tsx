@@ -16,26 +16,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 pb-10 md:items-center md:py-20">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/squatch-DCY8BTAEooyduNm7u5koD5N6njziJA.png"
-          alt="Festival Background"
-          className="w-full h-full object-cover object-[center_90%] md:object-center"
-          width={300}
-          height={200}
-          onError={(e) => {
-            console.error("Error loading background image:", e);
-            e.currentTarget.src =
-              "/placeholder.svg?height=1080&width=1920&text=Festival+Background";
-          }}
-        />
-      </div>
-
-      <div
-        className="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/60 to-black/70"
-        style={{ backgroundPosition: "0% 0%" }}
-      ></div>
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden bg-gradient-to-b from-festival-blue via-festival-pink to-festival-yellow pt-20 pb-10 md:items-center md:py-20">
 
       <div
         className={`container relative z-20 text-center px-4 pt-2 md:pt-0 ${
@@ -103,7 +84,7 @@ export default function HeroSection() {
         >
           <div className="title-image-container w-full px-2">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/rbmf-title-GWRcFb3YGP7Fiulma7arIRkXrZpcl0.png"
+              src="/images/rbmf-title.png"
               alt="Rockaway Beach Music Festival"
               className="mx-auto filter drop-shadow-lg w-full"
               width={300}
@@ -123,7 +104,22 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="h-[180px] md:h-[290px] lg:h-[360px]"></div>
+        <div
+          className={`mx-auto mb-8 max-w-5xl px-2 ${
+            isLoaded
+              ? "opacity-100 transform-none transition-all duration-1000 delay-150"
+              : "opacity-0 transform translate-y-5"
+          }`}
+        >
+          <Image
+            src="/images/squatches@4x.png"
+            alt="Festival squatches"
+            width={1400}
+            height={700}
+            priority
+            className="mx-auto h-auto w-full max-h-[420px] object-contain drop-shadow-2xl"
+          />
+        </div>
 
         <div className="mt-8">
           <div
