@@ -255,12 +255,24 @@ export default function ExperienceSection() {
                 <h4 className="text-2xl font-bold text-gray-900">BAR</h4>
               </div>
 
-              <div className="mb-6">
-                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-                  <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-festival-blue/30 bg-festival-blue/5 text-center text-xs font-bold uppercase tracking-wide text-festival-blue">
-                    Logo Coming Soon
-                  </div>
-                  <div>
+              <div>
+                <div className="flex flex-col items-center gap-6 text-center">
+                  <a
+                    href="https://steeplejackbeer.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Steeplejack Brewing"
+                    className="transition-transform hover:scale-105"
+                  >
+                    <Image
+                      src="/images/NEB6202_Steeplejack_Logo_M2_1_2021JAN19_RGB_LOGO_PRIMARY_2COLOR_POSITIVE_GOLD.png"
+                      alt="Steeplejack Brewing"
+                      width={320}
+                      height={180}
+                      className="h-auto w-64 sm:w-80"
+                    />
+                  </a>
+                  <div className="max-w-lg">
                     <h5 className="text-xl font-bold text-gray-900">
                       <a
                         href="https://steeplejackbeer.com"
@@ -272,16 +284,14 @@ export default function ExperienceSection() {
                       </a>
                     </h5>
                     <p className="mt-3 text-gray-700">
-                      Steeplejack Brewing beverage details are coming soon.
+                      Steeplejack Brewing is providing a variety of their
+                      fantastic local beers and craft cocktails. We are grateful
+                      to have them as a sponsor for this event! All proceeds
+                      benefit the Music Tech Club program at Neah-Kah-Nie High
+                      School.
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-festival-pink/10 p-4 rounded-xl">
-                <p className="text-festival-pink font-semibold text-center">
-                  Proceeds from the bar benefit the high school music program!
-                </p>
               </div>
             </div>
 
