@@ -56,22 +56,22 @@ export default function HeroSection() {
               {
                 href: "https://ncamfoundation.org",
                 label: "NCAM Foundation",
-                logo: "/images/01 SPONSOR LOGO NCAM Foundation.png",
+                logo: "/images/Crow Cane.png",
               },
               {
                 href: "https://steeplejackbeer.com",
                 label: "Steeplejack Brewing",
-                logo: "/images/02 SPONSOR LOGO Steeplejack.png",
+                logo: "/images/NCAM.png",
               },
               {
                 href: "mailto:hello@ncamfoundation.org?subject=Revival%20Drum%20Shop",
                 label: "Revival Drum Shop",
-                logo: "/images/04 SPONSOR LOGO Revival Drums_.png",
+                logo: "/images/Revival.png",
               },
               {
                 href: "https://crowcane.com",
                 label: "Crow Cane",
-                logo: "/images/03 SPONSOR LOGO Crow Cane.png",
+                logo: "/images/Steeplejack.png",
               },
             ].map(({ href, label, logo }) => (
               <Link
