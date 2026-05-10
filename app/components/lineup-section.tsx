@@ -30,7 +30,23 @@ const performerImages = [
   "/images/Sunkicks 1.jpg",
 ];
 
+const sneakerWaveBio = `DORAL VANCE - Keys and Vocals
+Doral Vance has been involved in music all her life, beginning in church choir with her music director mother. She was involved in musical theater in Portland for many years, including the 1975 Portland company of "Hair," which inspired her to actually study music (Jazz in particular) and become a musician. She fronted many bands over the years as a vocalist/keyboardist/songwriter, including a Top-40 Disco band, rock/blues dance bands, country bands, and a 12 piece "Motown Sound" show group. For the past 10 years she's been leading the popular cover band "N.E. Daynow," and as of 2026, also formed "SNEAKERWAVE Blues Revue" with several top Oregon Coast musicians. Both bands are very actively enjoying playing throughout our region.
+
+JESSIE SAMSEL - Guitar and Vocals
+A fixture of the Northwest music scene since the 1970s, Jesse Samsel is a seasoned guitarist, songwriter, and producer. His career spans decades of worldwide touring and recording, with credits ranging from his own solo albums to collaborations with legendary artists like Terry Evans, Ry Cooder, Jim Keltner and Meredith Brooks. Today, Jesse brings his veteran guitar work and vocals to Sneaker Wave's mix of original blues and reimagined covers. Find out more at Jessesamsel.com and Lightning In A Bottle Records.
+
+RODNEY DAHL - Guitar and vox
+Rodney Dahl began performing in theater in Central Oregon (Bend) and performed in many theatrical productions. He worked as a player on the Crooked River Dinner Train for 7 years, where he played Jesse James, and also sang and played guitar. He subsequently formed a trio called "Doc Brown's Delorean," with one of his sons and a close friend, which played in the Bend area until 2012. He's been playing guitar and doing vocals with "N.E. Daynow" for the past 10 years, and is a founding member of "SNEAKERWAVE Blues Revue."
+
+WILL IRACE - Bass
+Will Irace--we don't know how to pronounce it either, we just call him Will from Nehalem--picked up bass guitar in high school so that he could chill on the sidelines instead of lugging a sousaphone around during field shows. His other musical projects include Portland's Sounds Like Chicken (they play everything, get it?) and Wheeler's Spindriff (drift, riff, get it!?). Don't tell anyone but SNEAKERWAVE is definitely Will's favorite ocean-themed band name pun. Plus he asked us to mention something about pinball.
+
+COSMO JONES - Drums
+Cosmo grew up unable to decide between drums and guitar so he plays both, but sticks to drums in this group of coastal maniacs. As the founder of one of LA's biggest rehearsal and recording studios he had the opportunity to play on a bunch of great records and engineer some as well. Somehow he stumbled into a Grammy, a couple of Emmys and a bunch of plaques. Prior to that he played/recorded/toured with a multitude of different bands, a few you've heard of, far more that you haven't.`;
+
 const saturdayArtists: Performer[] = [
+  ["Sneaker Wave", "TBA"],
   ["Brenda Andrus", "1:30 PM"],
   ["Wes Youssi", "3:00 PM"],
   ["The Upkeeps", "4:30 PM"],
@@ -41,7 +57,9 @@ const saturdayArtists: Performer[] = [
   name,
   setTime,
   image:
-    name === "Kill the Headlights"
+    name === "Sneaker Wave"
+      ? "/images/sneakerwave.png"
+      : name === "Kill the Headlights"
       ? "/images/kill-the-headlights-1.jpg"
       : name === "The Upkeeps"
         ? "/images/the-upkeeps-promo-1.jpeg"
@@ -53,7 +71,9 @@ const saturdayArtists: Performer[] = [
         ? "/images/mike.jpg"
       : performerImages[index % performerImages.length],
   description:
-    name === "Kill the Headlights"
+    name === "Sneaker Wave"
+      ? "Sneaker Wave Blues Revue brings original blues and reimagined covers from a lineup of seasoned Oregon Coast musicians."
+      : name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area, blending classic rock, hard rock, blues and outlaw country."
       : name === "The Upkeeps"
         ? "Influenced by early rock n' roll, punk, and power-pop, The UpKeeps bring their own sharp-edged flavor to the Saturday lineup."
@@ -65,7 +85,9 @@ const saturdayArtists: Performer[] = [
         ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
-    name === "Kill the Headlights"
+    name === "Sneaker Wave"
+      ? sneakerWaveBio
+      : name === "Kill the Headlights"
       ? "Kill the Headlights is a 4 piece rock 'n roll band out of the Vancouver, WA area that formed in 2017 by founding members, Ryan Bowen and Nathun Finkhouse. Since then, the band has put out 2 full length studio albums and several singles through the Blind Squirrel Recording Label.\n\nThe band has been described as a mix of classic rock, hard rock, blues and outlaw country. They are known for their memorable original music and crowd pleasing covers!"
       : name === "The Upkeeps"
         ? "Influenced from the sounds of early rock n' roll, punk and power-pop, The UpKeeps bring their own sounds and flavor to the mouths of the world's dinner table. In a world with such appetite, they encourage difference between taste and a proud middle finger to the bland, a salute to the misfit and a friendly reminder to- KEEP UP."
@@ -91,7 +113,14 @@ const saturdayArtists: Performer[] = [
         ? "https://brendaandrus.org/"
       : "",
   socialLinks:
-    name === "Kill the Headlights"
+    name === "Sneaker Wave"
+      ? [
+          {
+            name: "Facebook",
+            url: "https://www.facebook.com/sneakerwaveblues",
+          },
+        ]
+      : name === "Kill the Headlights"
       ? [
           {
             name: "Website",
@@ -227,7 +256,15 @@ const saturdayArtists: Performer[] = [
           ]
       : [],
   images:
-    name === "Kill the Headlights"
+    name === "Sneaker Wave"
+      ? [
+          "/images/Cosmo1.JPG",
+          "/images/Doral1.JPG",
+          "/images/Jesse1.JPG",
+          "/images/Rodney1.JPG",
+          "/images/Will1.JPG",
+        ]
+      : name === "Kill the Headlights"
       ? [
           "/images/kill-the-headlights-1.jpg",
           "/images/kill-the-headlights-2.jpg",
