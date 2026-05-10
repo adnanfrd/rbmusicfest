@@ -61,14 +61,14 @@ export default function HeroSection() {
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
-                className="flex h-12 w-[22%] max-w-20 items-center justify-center rounded-full bg-transparent p-0 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-36 sm:max-w-none md:h-24 md:w-40"
+                className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white p-1 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 sm:max-w-none md:h-24 md:w-24"
               >
                 <Image
                   src={logo}
                   alt={label}
                   width={220}
                   height={72}
-                  className="max-h-full w-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
+                  className="h-full w-full rounded-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
                 />
               </Link>
             ))}
