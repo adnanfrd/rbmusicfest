@@ -1,23 +1,12 @@
 "use client";
 
-import { Beer, ChevronLeft, ChevronRight, Utensils } from "lucide-react";
+import { Beer, Utensils } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 const eventbriteUrl =
   "https://www.eventbrite.com/e/rockaway-beach-music-festival-tickets-1350635279479";
-
-const merchandiseImages = [
-  {
-    src: "/images/tee-back.jpeg",
-    alt: "RBMF Festival T-shirt back mockup",
-  },
-  {
-    src: "/images/tee-front.jpeg",
-    alt: "RBMF Festival T-shirt front mockup",
-  },
-];
 
 const vipOptions = [
   {
@@ -38,7 +27,6 @@ export default function ExperienceSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [vipVisible, setVipVisible] = useState(false);
   const [featuresVisible, setFeaturesVisible] = useState(false);
-  const [merchImageIndex, setMerchImageIndex] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,16 +47,6 @@ export default function ExperienceSection() {
       if (section) observer.unobserve(section);
     };
   }, []);
-
-  const nextImage = () => {
-    setMerchImageIndex((prev) => (prev + 1) % merchandiseImages.length);
-  };
-
-  const prevImage = () => {
-    setMerchImageIndex(
-      (prev) => (prev - 1 + merchandiseImages.length) % merchandiseImages.length
-    );
-  };
 
   return (
     <section
@@ -143,49 +121,12 @@ export default function ExperienceSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div className="order-2 lg:order-1">
                 <div className="relative max-w-lg mx-auto">
-                  <div className="aspect-square bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white/50 backdrop-blur-sm">
-                    <Image
-                      src={merchandiseImages[merchImageIndex].src}
-                      alt={merchandiseImages[merchImageIndex].alt}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 400px"
-                    />
-                  </div>
-
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg border-2 border-festival-pink/20 hover:border-festival-pink/40 transition-all duration-300"
-                    onClick={prevImage}
-                    aria-label="Previous T-shirt image"
-                  >
-                    <ChevronLeft className="h-5 w-5 text-festival-pink" />
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/95 hover:bg-white shadow-lg border-2 border-festival-pink/20 hover:border-festival-pink/40 transition-all duration-300"
-                    onClick={nextImage}
-                    aria-label="Next T-shirt image"
-                  >
-                    <ChevronRight className="h-5 w-5 text-festival-pink" />
-                  </Button>
-
-                  <div className="flex justify-center mt-6 space-x-3">
-                    {merchandiseImages.map((_, index) => (
-                      <button
-                        key={index}
-                        type="button"
-                        aria-label={`Show T-shirt image ${index + 1}`}
-                        className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          index === merchImageIndex
-                            ? "bg-festival-pink shadow-lg scale-125"
-                            : "bg-gray-300 hover:bg-gray-400"
-                        }`}
-                        onClick={() => setMerchImageIndex(index)}
-                      />
-                    ))}
+                  <div className="aspect-square bg-white/85 rounded-2xl shadow-xl overflow-hidden border-4 border-white/50 backdrop-blur-sm">
+                    <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-festival-pink/10 via-white to-festival-blue/10 p-8 text-center">
+                      <p className="text-2xl font-bold uppercase tracking-wide text-gray-500">
+                        Image Coming Soon
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -255,12 +196,24 @@ export default function ExperienceSection() {
                 <h4 className="text-2xl font-bold text-gray-900">BAR</h4>
               </div>
 
-              <div className="mb-6">
-                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:text-left">
-                  <div className="flex h-24 w-24 flex-shrink-0 items-center justify-center rounded-xl border-2 border-dashed border-festival-blue/30 bg-festival-blue/5 text-center text-xs font-bold uppercase tracking-wide text-festival-blue">
-                    Logo Coming Soon
-                  </div>
-                  <div>
+              <div>
+                <div className="flex flex-col items-center gap-6 text-center">
+                  <a
+                    href="https://steeplejackbeer.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit Steeplejack Brewing"
+                    className="transition-transform hover:scale-105"
+                  >
+                    <Image
+                      src="/images/NEB6202_Steeplejack_Logo_M2_1_2021JAN19_RGB_LOGO_PRIMARY_2COLOR_POSITIVE_GOLD.png"
+                      alt="Steeplejack Brewing"
+                      width={320}
+                      height={180}
+                      className="h-auto w-64 sm:w-80"
+                    />
+                  </a>
+                  <div className="max-w-lg">
                     <h5 className="text-xl font-bold text-gray-900">
                       <a
                         href="https://steeplejackbeer.com"
@@ -272,16 +225,14 @@ export default function ExperienceSection() {
                       </a>
                     </h5>
                     <p className="mt-3 text-gray-700">
-                      Steeplejack Brewing beverage details are coming soon.
+                      Steeplejack Brewing is providing a variety of their
+                      fantastic local beers and craft cocktails. We are grateful
+                      to have them as a sponsor for this event! All proceeds
+                      benefit the Music Tech Club program at Neah-Kah-Nie High
+                      School.
                     </p>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-festival-pink/10 p-4 rounded-xl">
-                <p className="text-festival-pink font-semibold text-center">
-                  Proceeds from the bar benefit the high school music program!
-                </p>
               </div>
             </div>
 

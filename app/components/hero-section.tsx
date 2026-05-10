@@ -16,26 +16,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-20 pb-10 md:items-center md:py-20">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/squatch-DCY8BTAEooyduNm7u5koD5N6njziJA.png"
-          alt="Festival Background"
-          className="w-full h-full object-cover object-[center_90%] md:object-center"
-          width={300}
-          height={200}
-          onError={(e) => {
-            console.error("Error loading background image:", e);
-            e.currentTarget.src =
-              "/placeholder.svg?height=1080&width=1920&text=Festival+Background";
-          }}
-        />
-      </div>
-
-      <div
-        className="absolute inset-0 z-10 bg-gradient-to-br from-black/70 via-black/60 to-black/70"
-        style={{ backgroundPosition: "0% 0%" }}
-      ></div>
+    <section className="relative min-h-screen flex items-start justify-center overflow-hidden bg-gradient-to-b from-festival-blue via-festival-pink to-festival-yellow pt-20 pb-10 md:items-center md:py-20">
 
       <div
         className={`container relative z-20 text-center px-4 pt-2 md:pt-0 ${
@@ -51,27 +32,27 @@ export default function HeroSection() {
               : "opacity-0 transform translate-y-5"
           }`}
         >
-          <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-3 mb-2 md:mb-4 flex-wrap">
+          <div className="flex flex-nowrap justify-center items-center gap-2 sm:gap-3 md:gap-3 mb-2 md:mb-4">
             {[
               {
                 href: "https://ncamfoundation.org",
                 label: "NCAM Foundation",
-                logo: "/images/01 SPONSOR LOGO NCAM Foundation.png",
+                logo: "/images/Crow Cane.png",
               },
               {
                 href: "https://steeplejackbeer.com",
                 label: "Steeplejack Brewing",
-                logo: "/images/02 SPONSOR LOGO Steeplejack.png",
+                logo: "/images/NCAM.png",
               },
               {
                 href: "mailto:hello@ncamfoundation.org?subject=Revival%20Drum%20Shop",
                 label: "Revival Drum Shop",
-                logo: "/images/04 SPONSOR LOGO Revival Drums_.png",
+                logo: "/images/Revival.png",
               },
               {
                 href: "https://crowcane.com",
                 label: "Crow Cane",
-                logo: "/images/03 SPONSOR LOGO Crow Cane.png",
+                logo: "/images/Steeplejack.png",
               },
             ].map(({ href, label, logo }) => (
               <Link
@@ -80,14 +61,14 @@ export default function HeroSection() {
                 target={href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={label}
-                className="flex h-16 w-28 items-center justify-center rounded-full bg-transparent p-0 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-36 md:h-24 md:w-40"
+                className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white p-1 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 sm:max-w-none md:h-24 md:w-24"
               >
                 <Image
                   src={logo}
                   alt={label}
                   width={220}
                   height={72}
-                  className="max-h-full w-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
+                  className="h-full w-full rounded-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
                 />
               </Link>
             ))}
@@ -103,7 +84,7 @@ export default function HeroSection() {
         >
           <div className="title-image-container w-full px-2">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/zip-blob/v0-RBMF-v0-SITE-main/public/rbmf-title-GWRcFb3YGP7Fiulma7arIRkXrZpcl0.png"
+              src="/images/rbmf-title.png"
               alt="Rockaway Beach Music Festival"
               className="mx-auto filter drop-shadow-lg w-full"
               width={300}
@@ -123,7 +104,22 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="h-[180px] md:h-[290px] lg:h-[360px]"></div>
+        <div
+          className={`mx-auto mb-8 max-w-5xl px-2 ${
+            isLoaded
+              ? "opacity-100 transform-none transition-all duration-1000 delay-150"
+              : "opacity-0 transform translate-y-5"
+          }`}
+        >
+          <Image
+            src="/images/squatches@4x.png"
+            alt="Festival squatches"
+            width={1400}
+            height={700}
+            priority
+            className="mx-auto h-auto w-full max-h-[420px] object-contain drop-shadow-2xl"
+          />
+        </div>
 
         <div className="mt-8">
           <div
