@@ -50,7 +50,7 @@ const saturdayArtists: Performer[] = [
       : name === "Josefina Del Norte"
         ? "/images/JDN 1.png"
       : name === "Mike Mannequin"
-        ? "/images/mike.png"
+        ? "/images/mike.jpg"
       : performerImages[index % performerImages.length],
   description:
     name === "Kill the Headlights"
@@ -258,7 +258,7 @@ const saturdayArtists: Performer[] = [
             "/images/JDN 8.png",
           ]
       : name === "Mike Mannequin"
-        ? ["/images/mike.png"]
+        ? ["/images/mike.jpg"]
       : [],
   documentLinks:
     name === "Kill the Headlights"
