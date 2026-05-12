@@ -221,15 +221,15 @@ export default function ExperienceSection() {
                         rel="noopener noreferrer"
                         className="hover:text-festival-pink transition-colors"
                       >
-                        Steeplejack Brewing
+                        Steeplejack Brewing and Harder Day Distilling
                       </a>
                     </h5>
                     <p className="mt-3 text-gray-700">
-                      Steeplejack Brewing is providing a variety of their
-                      fantastic local beers and craft cocktails. We are grateful
-                      to have them as a sponsor for this event! All proceeds
-                      benefit the Music Tech Club program at Neah-Kah-Nie High
-                      School.
+                      Steeplejack Brewing and Harder Day Distilling are
+                      providing a variety of their fantastic local beers and
+                      craft cocktails. We are grateful to have them as a sponsor
+                      for this event! All proceeds benefit the Music Tech Club
+                      program at Neah-Kah-Nie High School.
                     </p>
                   </div>
                 </div>
