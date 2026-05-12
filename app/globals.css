@@ -27,6 +27,25 @@ body {
   height: auto;
 }
 
+.sponsor-logo-frame,
+.sponsor-logo-link,
+.sponsor-logo {
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+.sponsor-logo-frame,
+.sponsor-logo-link {
+  background: transparent !important;
+}
+
+.sponsor-logo-link:focus-visible {
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
 @media (max-width: 640px) {
   .title-image-container {
     max-width: 90%;

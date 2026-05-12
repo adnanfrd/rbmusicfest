@@ -210,7 +210,7 @@ export default function ExperienceSection() {
                       alt="Steeplejack Brewing"
                       width={320}
                       height={180}
-                      className="h-auto w-64 sm:w-80"
+                      className="sponsor-logo h-auto w-64 sm:w-80"
                     />
                   </a>
                   <div className="max-w-lg">
@@ -249,7 +249,7 @@ export default function ExperienceSection() {
                     alt="Portside Bistro"
                     width={96}
                     height={96}
-                    className="h-24 w-24 mr-3 object-contain"
+                    className="sponsor-logo h-24 w-24 mr-3 object-contain"
                   />
                   <h5 className="text-xl font-bold text-gray-900">
                     <a
@@ -277,7 +277,7 @@ export default function ExperienceSection() {
                     alt="Tony's Beach Bites"
                     width={96}
                     height={96}
-                    className="h-24 w-24 mr-3 object-contain"
+                    className="sponsor-logo h-24 w-24 mr-3 object-contain"
                   />
                   <h5 className="text-xl font-bold text-gray-900">
                     Tony's Beach Bites

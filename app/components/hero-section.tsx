@@ -37,41 +37,64 @@ export default function HeroSection() {
               {
                 href: "https://ncamfoundation.org",
                 label: "NCAM Foundation",
+                logo: "/images/NCAM.png",
+              },
+              {
+                href: "https://crowcane.com",
+                label: "Crow Cane",
                 logo: "/images/Crow Cane.png",
               },
               {
                 href: "https://steeplejackbeer.com",
                 label: "Steeplejack Brewing",
-                logo: "/images/NCAM.png",
+                logo: "/images/Steeplejack.png",
               },
               {
-                href: "mailto:hello@ncamfoundation.org?subject=Revival%20Drum%20Shop",
+                href: "https://revivaldrumshop.com",
                 label: "Revival Drum Shop",
                 logo: "/images/Revival.png",
               },
               {
-                href: "https://crowcane.com",
-                label: "Crow Cane",
-                logo: "/images/Steeplejack.png",
+                href: "https://fivestarguitars.com",
+                label: "Five Star",
+                logo: "/images/Five Star.png",
               },
-            ].map(({ href, label, logo }) => (
-              <Link
-                key={label}
-                href={href}
-                target={href.startsWith("mailto:") ? undefined : "_blank"}
-                rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
-                aria-label={label}
-                className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-white p-1 transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 sm:max-w-none md:h-24 md:w-24"
-              >
+            ].map(({ href, label, logo }) => {
+              const logoImage = (
                 <Image
                   src={logo}
                   alt={label}
                   width={220}
                   height={72}
-                  className="h-full w-full rounded-full object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.85)]"
+                  className="sponsor-logo h-full w-full rounded-full object-contain"
                 />
-              </Link>
-            ))}
+              )
+
+              if (!href) {
+                return (
+                  <span
+                    key={label}
+                    aria-label={label}
+                    className="sponsor-logo-link flex h-10 w-10 items-center justify-center rounded-full sm:h-20 sm:w-20 sm:max-w-none md:h-24 md:w-24"
+                  >
+                    {logoImage}
+                  </span>
+                )
+              }
+
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  target={href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                  aria-label={label}
+                  className="sponsor-logo-link flex h-10 w-10 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 sm:max-w-none md:h-24 md:w-24"
+                >
+                  {logoImage}
+                </Link>
+              )
+            })}
           </div>
         </div>
 
