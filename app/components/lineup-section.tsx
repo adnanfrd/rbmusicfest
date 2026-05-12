@@ -45,8 +45,11 @@ Will Irace--we don't know how to pronounce it either, we just call him Will from
 COSMO JONES - Drums
 Cosmo grew up unable to decide between drums and guitar so he plays both, but sticks to drums in this group of coastal maniacs. As the founder of one of LA's biggest rehearsal and recording studios he had the opportunity to play on a bunch of great records and engineer some as well. Somehow he stumbled into a Grammy, a couple of Emmys and a bunch of plaques. Prior to that he played/recorded/toured with a multitude of different bands, a few you've heard of, far more that you haven't.`;
 
+const brendaAndrusBio =
+  "Brenda Andrus is a singer/songwriter from the Portland area. Along with her own heartfelt songs, she pulls in an array of songs from the 70s, 80s, and 90s, with a unique acoustic spin on classic rock, folk, and alternative hits.";
+
 const saturdayArtists: Performer[] = [
-  ["Sneaker Wave", "TBA"],
+  ["Sneaker Wave", "12:00 PM"],
   ["Brenda Andrus", "1:30 PM"],
   ["Wes Youssi", "3:00 PM"],
   ["The Upkeeps", "4:30 PM"],
@@ -69,6 +72,8 @@ const saturdayArtists: Performer[] = [
         ? "/images/JDN 1.png"
       : name === "Mike Mannequin"
         ? "/images/mike.jpg"
+      : name === "Brenda Andrus"
+        ? "/images/IMG_0659.png"
       : performerImages[index % performerImages.length],
   description:
     name === "Sneaker Wave"
@@ -83,6 +88,8 @@ const saturdayArtists: Performer[] = [
         ? "Josefina Del Norte bridges South American cumbia, Andean huaynos, Afro-Peruvian music, and psychedelic electronic rock influences."
       : name === "Mike Mannequin"
         ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
+      : name === "Brenda Andrus"
+        ? brendaAndrusBio
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
     name === "Sneaker Wave"
@@ -97,6 +104,8 @@ const saturdayArtists: Performer[] = [
         ? "This band project began last summer through jam sessions among friends, creating a space to express our diaspora while bringing a fresh perspective. Our music reinterprets the songs we grew up with in our home countries, enriched by influences gathered through travel and cultural exchange. We see music as a bridge for community and love sharing our energy in intimate spaces and events that celebrate cultural diversity.\n\nOur fusion spans South American cumbia, Andean huaynos, and coplas from northern Argentina to Afro-Peruvian music and electronic, psychedelic rock influences, with voice and pedal effects in our instruments. Alongside our own versions of beloved songs, we are gradually bringing our well-received original compositions to the surface, authentically shaping the style we seek to develop.\n\nRight now we are working on recording music and new original songwriting to be released at the end of this year.\n\nBAND MEMBERS\n\nStefano Calles\n(El Salvador) - Guitar player and musical director and arranger, founder of Lxs Bastardxs, a project that blends music and poetry. Dreamer, composer and songwriter, his guitar is the distinctive sound of this project.\n\nJosefina del Norte\n(Argentina) is a singer and songwriter whose music is shaped by the emotions and memories of her beloved South America. Influenced by the landscapes of Jujuy, Cordoba, and Brazil, she blends ancestral and contemporary sounds into her own authentic expression.\n\nArtists like Li Saumet, Juana Molina, Susana Baca, Savia Andina, Mercedes Sosa, Gustavo Cerati, Nicola Cruz and many more guide her music, which moves between nostalgia, exploration, and deep-rooted traditions. Beyond her artistry, she is a cultural promoter who builds worldwide connections, using not just music but also other artistic expressions as a bridge for exploration and encounter.\n\nDavid Calvario\n(Mexico) - A personal groove on the bass line of the band. With over a decade of professional experience as a performing and studio musician and music educator, David offers his students a wealth of knowledge. An accomplished multi-instrumentalist specializing in bass (upright, electric, and mariachi bass), he is proficient in various genres, including Latin, R&B, rock, bossanova, folk, contemporary music, and a touch of jazz.\n\nLuis Hernandez\n(USA) is a multi-percussionist. He has led his Barrio Mestizo orchestra for 5 years, playing salsa, cumbia, and merengue music. Born in the United States, Luis identifies as Chicano with Mexican roots. The musical genres that have influenced him the most are Salsa, Cumbia, Chachacha, Mambo, Boogaloo, Soul, and Jazz.\n\nOwen Lowe\n(USA) Owen Lowe is a bassist based out of Portland, Oregon. With over 15 years of experience, Owen has performed a wide variety of styles, ranging from Funk, Soul, Jazz, Cumbia, Folk, Blues and many more. His love for music is demonstrated in his ability to keep everyone engaged in the groove."
       : name === "Mike Mannequin"
         ? "Mike Mannequin\nPortland, Oregon\n\nMike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes with bursts of garage rock energy and ambient punk undertones. With a goal of making spooky pop, their sound is both haunting and dynamic.\n\nFounded by Michael Young, a fixture in Portland's music scene for over 20 years, the band features members from acts like Black Shelton, Corrina Repp, King Who, and Brother's Young. Rooted in the city's grassroots music community, Mike Mannequin crafts evocative songs that resonate with fans of dark, melodic sounds."
+      : name === "Brenda Andrus"
+        ? brendaAndrusBio
       : `${name} is scheduled to perform on Saturday, August 15th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
   website:
     name === "Kill the Headlights"
@@ -110,7 +119,7 @@ const saturdayArtists: Performer[] = [
       : name === "Mike Mannequin"
         ? "https://mikemannequin.bandzoogle.com/"
       : name === "Brenda Andrus"
-        ? "https://brendaandrus.org/"
+        ? "https://brendaandrus.org/home"
       : "",
   socialLinks:
     name === "Sneaker Wave"
@@ -200,11 +209,15 @@ const saturdayArtists: Performer[] = [
         ? [
             {
               name: "Website",
-              url: "https://brendaandrus.org/",
+              url: "https://brendaandrus.org/home",
+            },
+            {
+              name: "Instagram",
+              url: "https://www.instagram.com/brendaandrusmusic?igsh=MWI2cWYwemFxYXB3eQ%3D%3D&utm_source=qr",
             },
             {
               name: "YouTube",
-              url: "https://youtube.com/@brendaandrus?si=YXFetxX52Zq8083e",
+              url: "https://youtube.com/playlist?list=PLRsPFBg0fEhn3a5I-leL_efZbli0GJqU4&si=24faa1TSGWc2NOtO",
             },
           ]
       : name === "Mike Mannequin"
@@ -296,6 +309,12 @@ const saturdayArtists: Performer[] = [
           ]
       : name === "Mike Mannequin"
         ? ["/images/mike.jpg"]
+      : name === "Brenda Andrus"
+        ? [
+            "/images/IMG_0659.png",
+            "/images/IMG_0475.jpeg",
+            "/images/00073_FritzPhoto-BrendaA-4040-063.jpeg",
+          ]
       : [],
   documentLinks:
     name === "Kill the Headlights"
@@ -311,6 +330,7 @@ const saturdayArtists: Performer[] = [
 const sundayArtists: Performer[] = [
   ["Oklahoma Perfect", "12:00 PM"],
   ["Kris Stuart", "1:15 PM"],
+  ["Perry Witt", "2:30 PM"],
   ["Metts Ryan Collins", "3:45 PM"],
   ["Molly Bangs", "5:00 PM"],
 ].map(([name, setTime], index) => ({
@@ -323,6 +343,8 @@ const sundayArtists: Performer[] = [
       ? "/images/OKP2.jpg"
       : name === "Kris Stuart"
       ? "/images/kris.png"
+      : name === "Perry Witt"
+      ? "/images/Perry Witt.png"
       : name === "Metts Ryan Collins"
       ? "/images/metts-ryan-collins-1.png"
       : performerImages[(index + 1) % performerImages.length],
@@ -333,6 +355,8 @@ const sundayArtists: Performer[] = [
         ? "Oklahoma Perfect is a dream country trio from Portland, Oregon, blending Dust Bowl sunsets, lost 80's soundtrack shimmer, and neon jukebox atmosphere."
       : name === "Kris Stuart"
         ? "Kris Stuart is a traveling singer/guitarist whose folk, blues, and country songs carry stories of sin, salvation, and a lifetime spent mining for music."
+      : name === "Perry Witt"
+        ? "more info coming soon"
       : name === "Metts Ryan Collins"
         ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,

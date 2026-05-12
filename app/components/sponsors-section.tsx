@@ -1,4 +1,33 @@
 import Image from "next/image"
+import Link from "next/link"
+
+const sponsors = [
+  {
+    href: "https://ncamfoundation.org",
+    label: "NCAM Foundation",
+    logo: "/images/NCAM.png",
+  },
+  {
+    href: "https://crowcane.com",
+    label: "Crow Cane",
+    logo: "/images/Crow Cane.png",
+  },
+  {
+    href: "https://steeplejackbeer.com",
+    label: "Steeplejack Brewing",
+    logo: "/images/Steeplejack.png",
+  },
+  {
+    href: "https://revivaldrumshop.com",
+    label: "Revival Drum Shop",
+    logo: "/images/Revival.png",
+  },
+  {
+    href: "https://fivestarguitars.com",
+    label: "Five Star",
+    logo: "/images/Five Star.png",
+  },
+]
 
 export default function SponsorsSection() {
   return (
@@ -6,25 +35,25 @@ export default function SponsorsSection() {
       <div className="container mx-auto px-4">
         <h2 className="mb-12 text-center text-4xl font-bold">Our Sponsors</h2>
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          <div className="relative h-24 w-auto">
-            <Image
-              src="/images/NCAM logo-Xokg7f76SdXDj6nq8JpcdfQsVYtKDu.svg"
-              alt="NCAM Foundation"
-              width={120}
-              height={60}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
-          <div className="relative h-24 w-auto">
-            <Image
-              src="/images/grants-bug-5.png"
-              alt="Sponsors"
-              width={480}
-              height={90}
-              style={{ objectFit: "contain" }}
-            />
-          </div>
+        <div className="flex flex-nowrap items-center justify-center gap-3 sm:gap-8">
+          {sponsors.map(({ href, label, logo }) => (
+            <Link
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="sponsor-logo-link flex h-12 w-12 items-center justify-center rounded-full transition-transform duration-200 hover:scale-110 sm:h-20 sm:w-20 md:h-24 md:w-24"
+            >
+              <Image
+                src={logo}
+                alt={label}
+                width={120}
+                height={120}
+                className="sponsor-logo h-full w-full rounded-full object-contain"
+              />
+            </Link>
+          ))}
         </div>
 
         <div className="mt-12 text-center">

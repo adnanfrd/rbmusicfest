@@ -24,13 +24,13 @@ export default function Footer() {
 
           <div className="mb-8 flex flex-col items-center">
             <div className="w-48 h-48 relative mb-4 flex items-center justify-center">
-              <div className="w-[120px] h-[120px] bg-white rounded-lg flex items-center justify-center p-2">
+              <div className="sponsor-logo-frame w-[120px] h-[120px] rounded-lg flex items-center justify-center">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/NCAM%20black%20logo%402x-5qsfdNpDCEs08s3T8Z0bgwxqfhs8mC.png"
                   alt="NCAM Foundation Logo"
                   width={120}
                   height={120}
-                  className="object-contain"
+                  className="sponsor-logo object-contain"
                 />
               </div>
             </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                 alt="Sponsors"
                 width={480}
                 height={90}
-                className="object-contain"
+                className="sponsor-logo object-contain"
               />
             </div>
           </div>
