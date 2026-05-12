@@ -49,7 +49,7 @@ const brendaAndrusBio =
   "Brenda Andrus is a singer/songwriter from the Portland area. Along with her own heartfelt songs, she pulls in an array of songs from the 70s, 80s, and 90s, with a unique acoustic spin on classic rock, folk, and alternative hits.";
 
 const saturdayArtists: Performer[] = [
-  ["Sneaker Wave", "TBA"],
+  ["Sneaker Wave", "12:00 PM"],
   ["Brenda Andrus", "1:30 PM"],
   ["Wes Youssi", "3:00 PM"],
   ["The Upkeeps", "4:30 PM"],
