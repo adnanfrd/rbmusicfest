@@ -69,6 +69,8 @@ const saturdayArtists: Performer[] = [
         ? "/images/JDN 1.png"
       : name === "Mike Mannequin"
         ? "/images/mike.jpg"
+      : name === "Brenda Andrus"
+        ? "/images/Brenda Andrus title card.png"
       : performerImages[index % performerImages.length],
   description:
     name === "Sneaker Wave"
@@ -83,6 +85,8 @@ const saturdayArtists: Performer[] = [
         ? "Josefina Del Norte bridges South American cumbia, Andean huaynos, Afro-Peruvian music, and psychedelic electronic rock influences."
       : name === "Mike Mannequin"
         ? "Mike Mannequin is a melodic post-punk band from Portland, Oregon, blending moody landscapes, garage rock energy, and ambient punk undertones."
+      : name === "Brenda Andrus"
+        ? "more info coming soon"
       : `Scheduled live performance on Saturday, August 15th at ${setTime}.`,
   fullBio:
     name === "Sneaker Wave"
