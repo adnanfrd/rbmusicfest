@@ -330,6 +330,7 @@ const saturdayArtists: Performer[] = [
 const sundayArtists: Performer[] = [
   ["Oklahoma Perfect", "12:00 PM"],
   ["Kris Stuart", "1:15 PM"],
+  ["Perry Witt", "2:30 PM"],
   ["Metts Ryan Collins", "3:45 PM"],
   ["Molly Bangs", "5:00 PM"],
 ].map(([name, setTime], index) => ({
@@ -342,6 +343,8 @@ const sundayArtists: Performer[] = [
       ? "/images/OKP2.jpg"
       : name === "Kris Stuart"
       ? "/images/kris.png"
+      : name === "Perry Witt"
+      ? "/images/Perry Witt.png"
       : name === "Metts Ryan Collins"
       ? "/images/metts-ryan-collins-1.png"
       : performerImages[(index + 1) % performerImages.length],
@@ -352,6 +355,8 @@ const sundayArtists: Performer[] = [
         ? "Oklahoma Perfect is a dream country trio from Portland, Oregon, blending Dust Bowl sunsets, lost 80's soundtrack shimmer, and neon jukebox atmosphere."
       : name === "Kris Stuart"
         ? "Kris Stuart is a traveling singer/guitarist whose folk, blues, and country songs carry stories of sin, salvation, and a lifetime spent mining for music."
+      : name === "Perry Witt"
+        ? "more info coming soon"
       : name === "Metts Ryan Collins"
         ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
