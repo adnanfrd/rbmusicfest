@@ -213,6 +213,13 @@ export default function ExperienceSection() {
                       className="sponsor-logo h-auto w-64 sm:w-80"
                     />
                   </a>
+                  <Image
+                    src="/images/harddays.png"
+                    alt="Harder Days"
+                    width={1508}
+                    height={842}
+                    className="sponsor-logo h-auto w-52 sm:w-64"
+                  />
                   <div className="max-w-lg">
                     <h5 className="text-xl font-bold text-gray-900">
                       <a
