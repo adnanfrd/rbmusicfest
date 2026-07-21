@@ -34,7 +34,9 @@ export default function Home() {
       <section className="bg-black pt-12 sm:pt-14">
         <div className="container px-4">
           <video
-            className="w-full"
+            className="mx-auto w-full max-w-4xl"
+            autoPlay
+            muted
             controls
             playsInline
             preload="metadata"
