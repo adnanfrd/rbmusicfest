@@ -30,8 +30,22 @@ export default function Home() {
 
   return (
     <main>
-      <HeroSection />
       <CtaRibbon />
+      <section className="bg-black pt-12 sm:pt-14">
+        <div className="container px-4">
+          <video
+            className="w-full"
+            controls
+            playsInline
+            preload="metadata"
+            aria-label="Dark Days of Freedom commercial"
+          >
+            <source src="/images/%E2%80%9CDark%20Days%20of%20Freedom%E2%80%9D.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+      <HeroSection />
       <LineupSection />
       <div className="section-divider"></div>
       <ExperienceSection />
