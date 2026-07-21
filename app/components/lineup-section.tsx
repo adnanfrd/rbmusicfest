@@ -34,7 +34,7 @@ const sneakerWaveBio = `DORAL VANCE - Keys and Vocals
 Doral Vance has been involved in music all her life, beginning in church choir with her music director mother. She was involved in musical theater in Portland for many years, including the 1975 Portland company of "Hair," which inspired her to actually study music (Jazz in particular) and become a musician. She fronted many bands over the years as a vocalist/keyboardist/songwriter, including a Top-40 Disco band, rock/blues dance bands, country bands, and a 12 piece "Motown Sound" show group. For the past 10 years she's been leading the popular cover band "N.E. Daynow," and as of 2026, also formed "SNEAKERWAVE Blues Revue" with several top Oregon Coast musicians. Both bands are very actively enjoying playing throughout our region.
 
 JESSIE SAMSEL - Guitar and Vocals
-A fixture of the Northwest music scene since the 1970s, Jesse Samsel is a seasoned guitarist, songwriter, and producer. His career spans decades of worldwide touring and recording, with credits ranging from his own solo albums to collaborations with legendary artists like Terry Evans, Ry Cooder, Jim Keltner and Meredith Brooks. Today, Jesse brings his veteran guitar work and vocals to Sneaker Wave's mix of original blues and reimagined covers. Find out more at Jessesamsel.com and Lightning In A Bottle Records.
+A fixture of the Northwest music scene since the 1970s, Jessie Samsel is a seasoned guitarist, songwriter, and producer. His career spans decades of worldwide touring and recording, with credits ranging from his own solo albums to collaborations with legendary artists like Terry Evans, Ry Cooder, Jim Keltner and Meredith Brooks. Today, Jessie brings his veteran guitar work and vocals to Sneaker Wave's mix of original blues and reimagined covers. Find out more at Jessesamsel.com and Lightning In A Bottle Records.
 
 RODNEY DAHL - Guitar and vox
 Rodney Dahl began performing in theater in Central Oregon (Bend) and performed in many theatrical productions. He worked as a player on the Crooked River Dinner Train for 7 years, where he played Jesse James, and also sang and played guitar. He subsequently formed a trio called "Doc Brown's Delorean," with one of his sons and a close friend, which played in the Bend area until 2012. He's been playing guitar and doing vocals with "N.E. Daynow" for the past 10 years, and is a founding member of "SNEAKERWAVE Blues Revue."
@@ -271,11 +271,11 @@ const saturdayArtists: Performer[] = [
   images:
     name === "Sneaker Wave"
       ? [
-          "/images/Cosmo1.JPG",
           "/images/Doral1.JPG",
-          "/images/Jesse1.JPG",
           "/images/Rodney1.JPG",
+          "/images/Jesse1.JPG",
           "/images/Will1.JPG",
+          "/images/Cosmo1.JPG",
         ]
       : name === "Kill the Headlights"
       ? [
@@ -330,7 +330,7 @@ const saturdayArtists: Performer[] = [
 const sundayArtists: Performer[] = [
   ["Oklahoma Perfect", "12:00 PM"],
   ["Kris Stuart", "1:15 PM"],
-  ["Perry Witt", "2:30 PM"],
+  ["Mitch Whitaker", "2:30 PM"],
   ["Metts Ryan Collins", "3:45 PM"],
   ["Molly Bangs", "5:00 PM"],
 ].map(([name, setTime], index) => ({
@@ -343,8 +343,8 @@ const sundayArtists: Performer[] = [
       ? "/images/OKP2.jpg"
       : name === "Kris Stuart"
       ? "/images/kris.png"
-      : name === "Perry Witt"
-      ? "/images/Perry Witt.png"
+      : name === "Mitch Whitaker"
+      ? "/images/mitch-whitaker-band.webp"
       : name === "Metts Ryan Collins"
       ? "/images/metts-ryan-collins-1.png"
       : performerImages[(index + 1) % performerImages.length],
@@ -355,8 +355,8 @@ const sundayArtists: Performer[] = [
         ? "Oklahoma Perfect is a dream country trio from Portland, Oregon, blending Dust Bowl sunsets, lost 80's soundtrack shimmer, and neon jukebox atmosphere."
       : name === "Kris Stuart"
         ? "Kris Stuart is a traveling singer/guitarist whose folk, blues, and country songs carry stories of sin, salvation, and a lifetime spent mining for music."
-      : name === "Perry Witt"
-        ? "more info coming soon"
+      : name === "Mitch Whitaker"
+        ? "Alt-folk artist Mitch Whitaker is a songwriter's songwriter. With a poet's instinct and a guitar style shaped by classical conservatory training, Whitaker's distinctive voice delivers songs that confront complicated truths in complicated times."
       : name === "Metts Ryan Collins"
         ? "Metts Ryan Collins is a Portland, Oregon power trio delivering gritty, vibrant guitar rock for fans of bluesy classic swagger and modern rock punch."
       : `Scheduled live performance on Sunday, August 16th at ${setTime}.`,
@@ -367,6 +367,8 @@ const sundayArtists: Performer[] = [
         ? "Oklahoma Perfect is a dream country trio from Portland, OR, inhabiting the space between burnt orange Dust Bowl sunsets and lost 80's soundtracks, all filtered through the speakers of a neon jukebox. Songwriter Ladawn Sheffield's dulcet, swaying melodies gently weave family tales of heartbreak and hope. Rob Oberdorfer and Evan Railton (both current members of Ages & Ages) create retro futuristic backdrops of psychedelic swirls with tortured synths and glitchy guitar, evoking a Lynch-ian dream sequence."
       : name === "Kris Stuart"
         ? "Kris Stuart, singer/guitarist, is a traveling troubadour wandering the west. Folk music, blues and country melt together in songs of sin and salvation written and gathered from a lifetime of mining for music.\n\nSometimes seen as lead guitarist for Americana Stalwarts such as Willy Tea Taylor and the Fellership, Jaime Wyatt, The Turkey Buzzards or Riley Downing of The Deslondes.\n\nKris has shared stages with rock and roll legends like Foghat, The Marshall Tucker Band, Blue Oyster Cult, Phil Lesh, and Molly Hatchet, as well as soon to be legends The White Buffalo, Scott H Biram, Jesse Dayton, Turnpike Troubadours, and Blackberry Smoke. He has earned his place by playing most nights in a small room for a few people and in love with the opportunity to play music."
+      : name === "Mitch Whitaker"
+        ? "Alt-folk artist Mitch Whitaker is a songwriter's songwriter. With a poet's instinct and a guitar style shaped by classical conservatory training, Whitaker's distinctive voice delivers songs that confront complicated truths in complicated times.\n\nIn 2025, he released his debut album Wicked or Broken and earned top honors at the Portland Folk Festival Songwriting Contest, establishing himself as a rising talent in the Pacific Northwest's folk scene.\n\nTrained in classical guitar at Western Washington University, he's been a student at Berklee College of Music, lived and performed in Nashville, TN, and now resides in Portland, Oregon, where in 2026 he released two EPs: Which Side Are You On? and Dark Days of Freedom."
       : name === "Metts Ryan Collins"
         ? "If your idea of a real rock band for the 21st century is one that blends the swagger and bluesy elements of classic bands like The Rolling Stones, Led Zeppelin and Humble Pie, alongside more recent bands like The White Stripes, Black Keys and Rival Sons, then let me introduce you to the power trio from Portland, Oregon - Metts Ryan Collins.\n\nMetts Ryan Collins are bold new standard bearers for this rare breed. With Geoff Metts leading the charge on vocals and guitars, Dain Ryan on bass and vocals, and Mike Collins on drums and vocals, the band is taking the fight to listeners with their gritty and vibrant brand of guitar rock.\n\nFollowing up their self-titled EP with their debut full-length, Homegrown, Metts Ryan Collins garnered both local and regional acclaim, including a feature with the Portland Trail Blazers, who played the album's first single, \"Oregon,\" during games. They also showcased at NAMM and Whiskey-A-Go-Go, among others, earning a blue collar audience while delivering a tried-and-true, straight-to-the-gut rock 'n' roll brand that is timeless.\n\nThey are back with a new full-length, No Days Be Wasted, available soon on streaming, download and compact disc.\n\nRecommended if you like: Black Keys, Rival Sons, Vintage Trouble, Gary Clark Jr."
       : `${name} is scheduled to perform on Sunday, August 16th at ${setTime} for the 2026 Rockaway Beach Music Festival. Additional artist details will be shared as they are confirmed.`,
@@ -411,6 +413,13 @@ const sundayArtists: Performer[] = [
             {
               name: "YouTube",
               url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
+            },
+          ]
+      : name === "Mitch Whitaker"
+        ? [
+            {
+              name: "YouTube",
+              url: "https://youtu.be/sOGEbZpMQA8?si=c-xwHyZlYwdpBscu",
             },
           ]
       : name === "Metts Ryan Collins"
@@ -468,6 +477,13 @@ const sundayArtists: Performer[] = [
               url: "https://youtu.be/x0YqwV_89ck?si=13yruPKMpr2aW9ji",
             },
           ]
+      : name === "Mitch Whitaker"
+        ? [
+            {
+              title: "Mitch Whitaker",
+              url: "https://youtu.be/sOGEbZpMQA8?si=c-xwHyZlYwdpBscu",
+            },
+          ]
       : name === "Metts Ryan Collins"
         ? [
             {
@@ -484,6 +500,13 @@ const sundayArtists: Performer[] = [
         ]
       : name === "Oklahoma Perfect"
       ? ["/images/OKP2.jpg"]
+      : name === "Mitch Whitaker"
+      ? [
+          "/images/mitch-whitaker-1.webp",
+          "/images/mitch-whitaker-2.webp",
+          "/images/mitch-whitaker-3.webp",
+          "/images/mitch-whitaker-4.webp",
+        ]
       : name === "Metts Ryan Collins"
       ? [
           "/images/metts-ryan-collins-1.png",
